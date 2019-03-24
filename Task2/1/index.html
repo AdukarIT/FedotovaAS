@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML> 
+<html lang="ru"> 
+<head> 
+	<meta charset="utf-8"> 
+	<title>Instagram</title>
+</head> 
+<body> 
+	<header>
+		<h1>Instagram</h1>
+		<img src="images/logo.png" height="50" alt="Логотип">
+	</header>
+	<main>
+		<section>
+			<form autocomplete="on">
+				<h2>Есть аккуант?</h2>
+				<input type="text" name="name" placeholder="Имя пользователя" required><br>
+				<input type="password" name="passwordSignIn" placeholder="Пароль" required><br>
+				<button type="button" name="sign.in" onclick="location.href='feed.html'">Вход</button>
+			</form>
+		</section>
+		<section>
+		<form action="feed.html">	
+			<h2>Регистрация</h2>
+			<input type="text" name="logo" placeholder="Имя пользователя" required><br>
+			<input type="email" name="email" placeholder="Почтовый адрес" required><br>
+			<input type="password" name="password1" placeholder="Пароль" required><br>
+			<input type="password" name="password2" placeholder="Подтвердите пароль" required><br>
+			<input type="checkbox" id="order" required>
+			<label for="order">Я согласен с порядком обработки персональных данных</label><br>
+			<button type="submit">Зарегистрироваться</button><br>
+		</form>
+		</section>
+	</main>
+</body> 
+</html>
