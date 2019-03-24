@@ -10,21 +10,21 @@
 		<img src="images/logo.png" height="50" alt="Логотип">
 	</header>
 	<main>
-		<section>
+		<section class="signIn">
 			<form autocomplete="on">
 				<h2>Есть аккуант?</h2>
-				<input type="text" name="name" placeholder="Имя пользователя" required><br>
+				<input type="text" name="userName" placeholder="Имя пользователя" required><br>
 				<input type="password" name="passwordSignIn" placeholder="Пароль" required><br>
-				<button type="button" name="sign.in" onclick="location.href='feed.html'">Вход</button>
+				<button type="button" name="signInButton" onclick="location.href='feed.html'">Вход</button>
 			</form>
 		</section>
 		<section>
 		<form action="feed.html">	
 			<h2>Регистрация</h2>
-			<input type="text" name="logo" placeholder="Имя пользователя" required><br>
+			<input type="text" name="newUserName" placeholder="Имя пользователя" required><br>
 			<input type="email" name="email" placeholder="Почтовый адрес" required><br>
-			<input type="password" name="password1" placeholder="Пароль" required><br>
-			<input type="password" name="password2" placeholder="Подтвердите пароль" required><br>
+			<input type="password" name="newPassword" placeholder="Пароль" required><br>
+			<input type="password" name="newPasswordRepeat" placeholder="Подтвердите пароль" required><br>
 			<input type="checkbox" id="order" required>
 			<label for="order">Я согласен с порядком обработки персональных данных</label><br>
 			<button type="submit">Зарегистрироваться</button><br>
