@@ -11,14 +11,14 @@
 	</header>
 	<main>
 		<section class="signIn">
-			<form autocomplete="on">
+			<form action="feed.html" autocomplete="on">
 				<h2>Есть аккуант?</h2>
 				<input type="text" name="userName" placeholder="Имя пользователя" required><br>
 				<input type="password" name="passwordSignIn" placeholder="Пароль" required><br>
-				<button type="button" name="signInButton" onclick="location.href='feed.html'">Вход</button>
+				<button type="submit" name="buttonSignIn">Вход</button>
 			</form>
 		</section>
-		<section>
+		<section class="signUp">
 		<form action="feed.html">	
 			<h2>Регистрация</h2>
 			<input type="text" name="newUserName" placeholder="Имя пользователя" required><br>
@@ -27,7 +27,7 @@
 			<input type="password" name="newPasswordRepeat" placeholder="Подтвердите пароль" required><br>
 			<input type="checkbox" id="order" required>
 			<label for="order">Я согласен с порядком обработки персональных данных</label><br>
-			<button type="submit">Зарегистрироваться</button><br>
+			<button type="submit" name="buttonSignUp">Зарегистрироваться</button><br>
 		</form>
 		</section>
 	</main>
