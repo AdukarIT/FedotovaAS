@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css.css">
+</head>
+<body>
+<header>
+	<img src="images/logo.png" height="150"><br>
+	<span>*Сеть магазинов техники</span>
+</header>
+<nav>
+		<span class="type_of_equipment">Бытовая техника</span>
+			<ul class="choice_of_equipment">
+				<li>Стиральные машины</li>
+				<li>Стиральные машины</li>
+				<li>Пылесосы</li>
+				<li>Швейные, вышивальные машины</li>
+				<li>Утюги</li>
+				<li>Электровеники</li>
+				<li>Сушилки для обуви</li>
+			</ul>
+		<span class="type_of_equipment">Техника для кухни</span>
+			<ul class="choice_of_equipment">
+				<li>Холодильники</li>
+				<li>Кухонные плиты</li>
+				<li>Морозильники</li>
+				<li>Настольные плиты</li>
+				<li>Ростеры, мини-печи</li>
+				<li>Вытяжки</li>
+				<li>Микроволновые печи</li>
+			</ul>
+		<span class="type_of_equipment">Компьютерная техникаи</span>
+			<ul class="choice_of_equipment">
+				<li>Ноутбуки</li>
+				<li>Планшеты</li>
+				<li>Компьютеры, моноблоки</li>
+				<li>Игровые приставки</li>
+				<li>Серверное оборудование</li>
+			</ul>
+		<span class="type_of_equipment">Корзина</span>
+	</ul>
+</nav>
+<div class="clear"></div>
+<form action="" class="order">
+	<h1>Заказать:</h1>
+	<input class="personal_data" type="text" name="name" placeholder="Введите имя и фамилию">
+	<input class="personal_data" type="tel" name="number" placeholder="Введите телефон">
+	<input class="personal_data" type="email" name="email" placeholder="Введите адресс эл.почты"><br>
+	<span>Выберите способ доставки:</span>
+	<input class="delivery" type="radio" name="delivery" id="adres"><label for="adres">Самовывоз</label>
+	<input class="delivery" type="radio" name="delivery" id="delivery"><label for="delivery">Доставка по городу</label><br>
+	<textarea placeholder="Введите комментарий к заказу"></textarea><br>
+	<label for="conditions">Я прочитал и согласен с условиями доставки</label>
+	<input type="checkbox" name="" id="conditions">
+	<button type="submit" class="activ_button">Заказать</button>
+	<button type="submit" class="passiv_button" disabled>Заказать</button>
+</form>
+<footer>
+	
+</footer>
+</body>
+</html>
