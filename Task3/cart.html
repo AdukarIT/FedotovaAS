@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -40,25 +40,31 @@
 				<li>Серверное оборудование</li>
 			</ul>
 		<span class="type_of_equipment">Корзина</span>
-	</ul>
 </nav>
 <div class="clear"></div>
 <form action="" class="order">
-	<h1>Заказать:</h1>
-	<input class="personal_data" type="text" name="name" placeholder="Введите имя и фамилию">
-	<input class="personal_data" type="tel" name="number" placeholder="Введите телефон">
-	<input class="personal_data" type="email" name="email" placeholder="Введите адресс эл.почты"><br>
-	<span>Выберите способ доставки:</span>
-	<input class="delivery" type="radio" name="delivery" id="adres"><label for="adres">Самовывоз</label>
-	<input class="delivery" type="radio" name="delivery" id="delivery"><label for="delivery">Доставка по городу</label><br>
-	<textarea placeholder="Введите комментарий к заказу"></textarea><br>
-	<label for="conditions">Я прочитал и согласен с условиями доставки</label>
-	<input type="checkbox" name="" id="conditions">
-	<button type="submit" class="activ_button">Заказать</button>
-	<button type="submit" class="passiv_button" disabled>Заказать</button>
+    <h1>Заказать:</h1>
+    <input class="personal_data" type="text" name="name" placeholder="Введите имя и фамилию">
+    <input class="personal_data" type="tel" name="number" placeholder="Введите телефон">
+    <input class="personal_data" type="email" name="email" placeholder="Введите адресс эл.почты"><br>
+    <span>Выберите способ доставки:</span><br>
+    <label for="adres">Самовывоз</label>
+    <input class="delivery" type="radio" name="delivery" id="adres">
+    <iframe src="https://maps.google.com/maps?width=100%&height=600&hl=ru&q=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%A7%D0%BA%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%205+(%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD)&ie=UTF8&t=&z=17&iwloc=B&output=embed"></iframe>
+    <label for="delivery">Доставка по городу</label>
+    <input class="delivery" type="radio" name="delivery" id="delivery">
+    <input class="adres" type="text" placeholder="Введите адрес">
+    <br><textarea placeholder="Введите комментарий к заказу"></textarea><br>
+    <label for="conditions">Я прочитал и согласен с условиями доставки</label>
+    <input type="checkbox" name="" id="conditions" required>
+    <button type="submit" class="activ_button">Заказать</button>
 </form>
 <footer>
-	
+    <h2 id="connectionс">Связь с нами</h2>
+    <span>тел: </span><a href="tel:2222222">222-22-22</a>
+    <span>Skype: </span><a href="skype:robin_rob">robin_rob</a>
+    <p>г. Минск, ул. Чкалова 6, пом. 210</p>
+    <p>время работы: пн.-сб.10.00 - 18.00</p>
 </footer>
 </body>
 </html>

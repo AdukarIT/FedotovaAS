@@ -13,8 +13,8 @@ header {
 	list-style-type: none;
 }
 
-.choice_of_equipment, button.activ_button {
-	display: none;
+.choice_of_equipment, iframe, .adres {
+    display: none;
 }
 .type_of_equipment {
 		display: inline-block;
@@ -29,9 +29,9 @@ header {
 		margin: 5px;
 }
 .type_of_equipment:hover + .choice_of_equipment {
-	display: inline-block;
+	display: inline-block;    
 	background-color: white;
-	position: relative;
+	float: left;
 }
 
 h1 {
@@ -49,13 +49,29 @@ input.delivery {
 button {
 	width: 100px;
 	height: 25px;
-	border: 1px solid black;
+	border: 1px solid ;
+    color: gray;
+    background-color: darkgray;
 }
 
 input:checked + button {
-		display: inline-block;
+		background-color: white;
+        border: 1px solid darkred;
+        color: darkred;
 }
 
-button:checked + button + button {
-		display: none;	
+input[type="radio"]:checked + iframe {
+    display: inline-block;
+    width: 400px;
+    height: 200px;
+}
+input:checked + input {
+    display: inline-block;
+} 
+textarea {
+    width: 300px;
+    height: 150px;
+    border: 1px solid red;
+    margin: 30px 0 30px 0;
+
 }
