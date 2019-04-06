@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="css.css">
+	<title>Robin</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
+<header class="logo">
 	<img src="images/logo.png" height="150"><br>
 	<span>*Сеть магазинов техники</span>
 </header>
-<nav>
-		<span class="type_of_equipment">Бытовая техника</span>
-			<ul class="choice_of_equipment">
+<nav class="menu">
+		<span class="menu_section">Бытовая техника</span>
+			<ul class="part_of_the_section">
 				<li>Стиральные машины</li>
 				<li>Стиральные машины</li>
 				<li>Пылесосы</li>
@@ -21,8 +21,8 @@
 				<li>Электровеники</li>
 				<li>Сушилки для обуви</li>
 			</ul>
-		<span class="type_of_equipment">Техника для кухни</span>
-			<ul class="choice_of_equipment">
+		<span class="menu_section">Техника для кухни</span>
+			<ul class="part_of_the_section">
 				<li>Холодильники</li>
 				<li>Кухонные плиты</li>
 				<li>Морозильники</li>
@@ -31,40 +31,50 @@
 				<li>Вытяжки</li>
 				<li>Микроволновые печи</li>
 			</ul>
-		<span class="type_of_equipment">Компьютерная техникаи</span>
-			<ul class="choice_of_equipment">
+		<span class="menu_section">Компьютерная техникаи</span>
+			<ul class="part_of_the_section">
 				<li>Ноутбуки</li>
 				<li>Планшеты</li>
 				<li>Компьютеры, моноблоки</li>
 				<li>Игровые приставки</li>
 				<li>Серверное оборудование</li>
 			</ul>
-		<span class="type_of_equipment">Корзина</span>
+		<span class="menu_section">Корзина</span>
 </nav>
-<div class="clear"></div>
+	<div class="clear"></div>
 <form action="" class="order">
-    <h1>Заказать:</h1>
-    <input class="personal_data" type="text" name="name" placeholder="Введите имя и фамилию">
-    <input class="personal_data" type="tel" name="number" placeholder="Введите телефон">
-    <input class="personal_data" type="email" name="email" placeholder="Введите адресс эл.почты"><br>
-    <span>Выберите способ доставки:</span><br>
-    <label for="adres">Самовывоз</label>
-    <input class="delivery" type="radio" name="delivery" id="adres">
-    <iframe src="https://maps.google.com/maps?width=100%&height=600&hl=ru&q=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%A7%D0%BA%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%205+(%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD)&ie=UTF8&t=&z=17&iwloc=B&output=embed"></iframe>
-    <label for="delivery">Доставка по городу</label>
-    <input class="delivery" type="radio" name="delivery" id="delivery">
-    <input class="adres" type="text" placeholder="Введите адрес">
-    <br><textarea placeholder="Введите комментарий к заказу"></textarea><br>
-    <label for="conditions">Я прочитал и согласен с условиями доставки</label>
-    <input type="checkbox" name="" id="conditions" required>
-    <button type="submit" class="activ_button">Заказать</button>
+    <div class="order_section">
+	    <h1>Заказать:</h1>
+	    	<input class="personal_data" type="text" name="name" placeholder="Введите имя и фамилию">
+	    	<input class="personal_data" type="tel" name="number" placeholder="Введите телефон">
+	    	<input class="personal_data" type="email" name="email" placeholder="Введите адресс эл.почты">
+	</div>	 	
+    <div class="order_section">	 
+    	<h2>Выберите способ доставки:</h2>
+    		<label for="adres">Самовывоз</label>
+    		<input class="delivery_method" type="radio" name="delivery" id="adres">
+    		<iframe src="https://maps.google.com/maps?width=100%&height=600&hl=ru&q=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%A7%D0%BA%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%205+(%D0%A0%D0%BE%D0%B1%D0%B8%D0%BD)&ie=UTF8&t=&z=17&iwloc=B&output=embed"></iframe>
+    		<label for="delivery_method">Доставка по городу</label>
+    		<input class="delivery_method" type="radio" name="delivery" id="delivery">
+    		<input class="delivery_method delivery_adres" type="text" placeholder="Введите адрес">
+    </div>	
+	<div class="order_section">
+    	<textarea class="customer_comment"	placeholder="Введите комментарий к заказу"></textarea>
+    </div>
+	<div class="order_section">	
+    	<label for="conditions">Я прочитал и согласен с условиями доставки</label>
+    	<input type="checkbox" name="" id="conditions" required>
+    	<button type="submit" class="activ_button">Заказать</button>
+    </div>	
 </form>
 <footer>
-    <h2 id="connectionс">Связь с нами</h2>
-    <span>тел: </span><a href="tel:2222222">222-22-22</a>
-    <span>Skype: </span><a href="skype:robin_rob">robin_rob</a>
-    <p>г. Минск, ул. Чкалова 6, пом. 210</p>
-    <p>время работы: пн.-сб.10.00 - 18.00</p>
+	<div class="connectionс">
+	    <h2 >Связь с нами</h2>
+	    <span>тел: </span><a href="tel:2222222">222-22-22</a>
+	    <span>Skype: </span><a href="skype:robin_rob">robin_rob</a>
+	    <p>г. Минск, ул. Чкалова 6, пом. 210</p>
+	    <p>время работы: пн.-сб.10.00 - 18.00</p>
+	</div>
 </footer>
 </body>
 </html>
