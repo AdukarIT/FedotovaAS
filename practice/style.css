@@ -1,0 +1,13 @@
+[name="order"] {
+	border: 0;
+	border-bottom: 2px solid green;
+	display: block;
+	width: 300px;
+	height: 30px;
+}
+button {
+	border: 0;
+	width: 300px;	
+	height: 30px;
+	background-color: green;
+}
