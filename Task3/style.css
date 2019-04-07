@@ -25,8 +25,8 @@ body {
 		background-color: white;
 		padding: 0;
 		float: left;
-		border: 1px solid black;
-		margin: 5px;
+		border: 1px solid darkred;
+		margin: 1px;
 }
 .menu_section:hover + .part_of_the_section {
 	display: inline-block;    
@@ -37,14 +37,16 @@ body {
 	border: 1px solid darkred;
 	padding: 20px;
 }
-h1 {
+h1.order_section_headline {
 	font-size: 150%;
 }
-h2 {
+h2.order_section_headline {
 	font-size: 100%;
 }
 input.personal_data {
 	margin: 10px 0 20px 0;
+	border: 1px solid darkred;
+	padding: 10px;
 }
 input.delivery_method {
 	margin-bottom: 20px;
@@ -52,7 +54,7 @@ input.delivery_method {
 .clear {
 	clear: left;
 }
-button {
+button[type="submit"] {
 	width: 100px;
 	height: 25px;
 	border: 1px solid gray;
@@ -73,6 +75,8 @@ input[type="radio"]:checked + iframe {
 }
 input:checked + input {
     display: inline-block;
+    border: 1px solid darkred;
+    padding: 10px;
 } 
 .customer_comment {
     width: 300px;
