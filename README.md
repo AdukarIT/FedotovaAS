@@ -9,3 +9,7 @@
 [Task 2.1](https://github.com/AdukarIT/FedotovaAS/tree/master/Task2/1/)
 
 [Task 2.2](https://github.com/AdukarIT/FedotovaAS/tree/master/Task2/2/)
+
+## 3. Float. Псевдоклассы и составные селекторы
+
+[Task 3] (https://github.com/AdukarIT/FedotovaAS/tree/master/Task3) 
