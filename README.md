@@ -12,4 +12,4 @@
 
 ## 3. Float. Псевдоклассы и составные селекторы
 
-[Task 3] (https://github.com/AdukarIT/FedotovaAS/tree/master/Task3) 
+[Task 3](https://github.com/AdukarIT/FedotovaAS/tree/master/Task3) 
