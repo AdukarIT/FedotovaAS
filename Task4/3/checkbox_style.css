@@ -1,0 +1,15 @@
+#checkbox {
+	display: none;
+}
+.checkbox_intermediary {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-image: url('http://pluspng.com/img-png/tick-box-png-unchecked-checkbox-icon-png-50-px-1600.png');
+	background-repeat: no-repeat;
+	background-size: 100%;	
+	transition: all 1s;
+}
+#checkbox:checked + .checkbox_intermediary {
+	background-image: url('https://im0-tub-by.yandex.net/i?id=5c316b469df45581a5037a085ca89cc1-l&n=13');
+}

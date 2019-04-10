@@ -1,0 +1,24 @@
+#like {
+	display: none;
+}
+.like_intermediary {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-image: url('image/like-link.png');
+	background-repeat: no-repeat;
+	background-size: 100%;	
+	transition: all 1s;
+}
+#like:hover + .like_intermediary {
+	background-image: url('image/like-hover.png');
+
+}
+#like:checked + .like_intermediary {
+	background-image: url('image/like-checked.png');
+}
+
+#like:checked + .like_intermediary:hover  {
+	background-image: url('image/like-checked.png');
+	opacity: 0.3;
+}

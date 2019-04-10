@@ -1,0 +1,11 @@
+.beach {
+	width: 50%;
+	height: 90%;
+	background-color: blue;
+	background-image: url("https://raw.githubusercontent.com/AdukarIT/_Tasks_/master/assets/beach/sun.png"),
+	url("https://raw.githubusercontent.com/AdukarIT/_Tasks_/master/assets/beach/sea.jpg"), 
+	url("https://raw.githubusercontent.com/AdukarIT/_Tasks_/master/assets/beach/sky.jpg"); 
+	background-size: 20%, 100%, 60%;
+	background-repeat: no-repeat, no-repeat, repeat;
+	background-position: top, bottom, center;
+}
