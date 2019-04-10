@@ -1,0 +1,27 @@
+#like {
+	display: none;
+}
+span {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-image: url('https://ya-webdesign.com/images/vector-heart-png-1.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#like:checked + span {
+	background-image: url('https://www.publicdomainpictures.net/pictures/50000/velka/simple-red-heart.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;	
+}
+#like:hover + span {
+	background-image: url('https://ya-webdesign.com/images/blue-hearts-png-1.png');
+	background-repeat: no-repeat;
+	background-size: 100%;	
+}
+#like:checked + span:hover  {
+	background-image: url('https://www.publicdomainpictures.net/pictures/50000/velka/simple-red-heart.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;	
+	opacity: 0.3;	
+}
