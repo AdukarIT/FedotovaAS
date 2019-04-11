@@ -1,13 +1,16 @@
 #checkbox {
 	display: none;
 }
+@font-face {
+    font-family: Fontello;
+    src: url(fontello.ttf); 
+}
 .checkbox_intermediary {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-	background-image: url('http://pluspng.com/img-png/tick-box-png-unchecked-checkbox-icon-png-50-px-1600.png');
-	background-repeat: no-repeat;
-	background-size: 100%;	
+    font-family: Fontello;
+
 	transition: all 1s;
 }
 #checkbox:checked + .checkbox_intermediary {
