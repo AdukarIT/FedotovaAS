@@ -1,18 +1,24 @@
-#checkbox {
+.checkbox_input {
 	display: none;
 }
-@font-face {
-    font-family: Fontello;
-    src: url(fontello.ttf); 
+.checkbox_label {
+	padding-left: 30px;
+	cursor: pointer; 
 }
-.checkbox_intermediary {
+
+.checkbox_label::before {
+	content: "";
 	display: inline-block;
+	box-sizing: border-box;
 	width: 30px;
 	height: 30px;
-    font-family: Fontello;
-
-	transition: all 1s;
+	background-color: blue;
+	border-radius: 50%;	
+	border: 1px solid blue;
+	transition: 0.2s;
 }
-#checkbox:checked + .checkbox_intermediary {
-	background-image: url('https://im0-tub-by.yandex.net/i?id=5c316b469df45581a5037a085ca89cc1-l&n=13');
+.checkbox_input:checked + .checkbox_label::before {
+	content: '&#10084;';
+	background-color: white;
+	border: 7px solid blue;
 }
