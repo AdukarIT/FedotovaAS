@@ -17,15 +17,15 @@ body {
     display: none;
 }
 .menu_section {
-		display: inline-block;
+		display: inline-block; // следите за стилями
 		width: 200px;
 		height: 50px;
 		text-align: center;
 		line-height: 3;
-		background-color: white;
+		background-color: white; // еще хорошо
 		padding: 0;
 		float: left;
-		border: 1px solid darkred;
+		border: 1px solid darkred; // группировать по типу стилей, эти относятся к отображению и неплохо, чтоб они были рядом
 		margin: 1px;
 }
 .menu_section:hover + .part_of_the_section {
@@ -54,12 +54,12 @@ input.delivery_method {
 .clear {
 	clear: left;
 }
-button[type="submit"] {
+button[type="submit"] { // про эти вещи уже говорил, это крайний случай
 	width: 100px;
 	height: 25px;
 	border: 1px solid gray;
     color: gray;
-    background-color: darkgray;
+    background-color: darkgray; // ну кхм
 }
 
 #conditions:checked + button {
@@ -68,12 +68,12 @@ button[type="submit"] {
         color: darkred;
 }
 
-input[type="radio"]:checked + iframe {
+input[type="radio"]:checked + iframe { // лучше не завязываться на селекторы, а использовать классы
     display: inline-block;
     width: 400px;
     height: 200px;
 }
-input:checked + input {
+input:checked + input { // лучше не завязываться на селекторы, а использовать классы
     display: inline-block;
     border: 1px solid darkred;
     padding: 10px;
