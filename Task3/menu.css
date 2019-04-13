@@ -1,0 +1,27 @@
+.menu {
+	display: inline-block;
+}
+.menu_section {
+	display: inline-block;
+	padding: 10px;
+	height: 16px;
+	width: 200px;
+	color: white;
+	background-color: #483D8B;
+	text-align: center;
+}
+.partsection_part {
+	display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f1f1f1;
+    margin-top: 40px;
+}
+.partsection_part li {
+	color: black;
+	list-style-type: none;
+    padding: 12px; 
+}
+.menu_section:hover + .partsection_part {
+	display: block;
+}

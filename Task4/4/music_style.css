@@ -6,10 +6,11 @@ body {
 	background-color: white;
 	color:  #2F4F4F;
 	font-family: Fontello;
+	padding: 0;
+	margin: 0;
 }
 .logo {
-	text-align: left;
-	margin: 5% 0 5% 0;
+	margin: 5% 0 5% 2%;
 } 
 .logo > img {
 	width: 10%;
@@ -23,17 +24,19 @@ body {
 	border: 1px solid lightgray; 
 	border-radius: 10px;
 	padding: 5px;
+	margin-left: 2%;
 	cursor: pointer;
 }
 .search_input:focus {
 	border-color: #2F4F4F; 
-	width: 50%;
+	width: 30%;
 }
 .menu_section {
-	margin: 5% 0 5% 0;
+	margin: 2% 0 10% 2%;
 	list-style-type: none;
 	padding: 0;
 	font-size: 130%;
+
 }
 .menu_section_part:hover {
 	display: inline-block;
@@ -42,5 +45,10 @@ body {
 	cursor: pointer;
 } 
 .connection {
-	margin-top: 30%;
+	height: 100px;
+	width: 100%; 
+	background-color: #2F4F4F;
+	color: white;
+	padding: 10px;
+	position: fixed;
 }
