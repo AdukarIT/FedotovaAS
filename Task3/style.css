@@ -62,12 +62,15 @@ button[type="submit"] { // про эти вещи уже говорил, это 
     background-color: darkgray; // ну кхм
 }
 
-#conditions:checked + button {
-		background-color: white;
-        border: 1px solid darkred;
-        color: darkred;
+#conditions + button {
+	pointer-events: none;
 }
-
+#conditions:checked + button {
+	pointer-events: auto;
+	background-color: white;
+    border: 1px solid darkred;
+    color: darkred;
+}
 input[type="radio"]:checked + iframe { // лучше не завязываться на селекторы, а использовать классы
     display: inline-block;
     width: 400px;

@@ -10,15 +10,15 @@
 	background-size: 100%;	
 	transition: all 1s;
 }
-#like:hover + .like_intermediary {
+.like_checkbox:hover + .like_intermediary {
 	background-image: url('image/like-hover.png');
 
 }
-#like:checked + .like_intermediary {
+.like_checkbox:checked + .like_intermediary {
 	background-image: url('image/like-checked.png');
 }
 
-#like:checked + .like_intermediary:hover  {
+.like_checkbox:checked + .like_intermediary:hover  {
 	background-image: url('image/like-checked.png');
 	opacity: 0.3;
 }

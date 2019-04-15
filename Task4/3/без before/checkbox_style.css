@@ -1,0 +1,19 @@
+.checkbox_input {
+	display: none;
+}
+
+.checkbox_label {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	background-color: blue;
+	border-radius: 50%;	
+	border: 1px solid blue;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.checkbox_input:checked + .checkbox_label {
+	background-color: white;
+	border: 7px solid blue;
+}
