@@ -1,0 +1,34 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif, Algerian;
+}
+.adukar {
+    display: flex;
+    flex-direction: column;    
+    background-image: url('https://news.ncsu.edu/wp-content/uploads/2018/08/delta-1500-1024x546.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    color: white;
+    text-align: center;
+
+
+}
+.menu {
+
+}
+.menu_item {
+    flex-wrap: nowrap;
+}
+.contacts_social {
+    height: 40px;
+}
+.advantages_symbol {
+    height: 90px;
+}
+.menu_item.option {
+    flex: 3;
+}
