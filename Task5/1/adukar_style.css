@@ -7,28 +7,61 @@ body {
 .adukar {
     display: flex;
     flex-direction: column;    
-    background-image: url('https://news.ncsu.edu/wp-content/uploads/2018/08/delta-1500-1024x546.jpg');
+    padding: 2%;
+    height: 400px;
+    background-image: url('https://www.tendervprok.ru/upload/iblock/06c/06cec12a31fa45b96850b14d78935722.jpg');
+    background-blend-mode: saturation;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    width: 100%;
     color: white;
-    text-align: center;
-
 
 }
 .menu {
-
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between; 
+    align-content: center;  
 }
-.menu_item {
-    flex-wrap: nowrap;
+.invitation {
+    text-align: center;
+}
+.advantages {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+.advantages_item {
+    width: 20%;
 }
 .contacts_social {
-    height: 40px;
+    height: 30px;
+    padding: 4px;
 }
-.advantages_symbol {
-    height: 90px;
+.advantages_item_symbol {
+    margin: 0;    
+    padding: 0 3px 0 3px;
+    height: 50px;
+    float: left;
 }
-.menu_item.option {
-    flex: 3;
+.advantages_item_description {
+    font-size: 0.9em;
+    text-align: left;
 }
+.contacts_social.number {
+    text-align: center; 
+}
+.recording {
+    text-align: center;
+}
+.recording_sign-up {
+    padding: 10px;    
+    border: none;
+    border-radius: 5px;
+    background-color: #CD5C5C;
+    color: white;
+    font-weight: 900;
+    font-size: 1em;
+}
+
