@@ -4,7 +4,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif, Algerian;
     line-height: 1.5;
-    background-color: #D4E6ED;
+    background-color: #E6EAEC;
     color: #628D9E;
 }
 header {
@@ -12,6 +12,7 @@ header {
 		justify-content: space-between;
 		align-content: center;
 		align-items: center;
+		height: 40px;
 		background-color: #4682B4;
 		text-align: center;
 		vertical-align: middle;
@@ -27,33 +28,50 @@ main {
 a {
 	text-decoration: none;
 }
-.notice_icon, .music_icon {
-	height: 20px;
+
+.search {
+	position: relative;
+	flex: 3;
+}
+.profile {
+	flex: 2;
+}
+.notice, .music, .logo {
+	flex: 1;	
+}
+.profile:hover, .logo:hover, .notice:hover {
+	background-color: #224b7a;
 }
 .profile_photo, .logo img {
 	height: 30px;
+	vertical-align: middle;
 }
+.notice_icon, .music_icon {
+	height: 20px;
+}
+
 .profile_choice {
 	height: 5px;
 }
-.search {
-	width: 400px;
-}
+
 .search > input {
-	display: inline-block;
-	padding: 5px 5px 5px 20px;
-	border: none;
-	border-radius: 15px;
-	width: 200px;
-	background-color: #22396E;
-	background: url('cdn.onlinewebfonts.com/svg/img_534826.png') left no-repeat 10px;
+	border: 0;
+    box-sizing: border-box;
+    padding: 2px 2px 2px 40px;
+    height: 25px;
+    width: 200px;
+    color: #d9e2ec;
+    background: url('http://thailandstopover.com/images/flysearch.png') no-repeat; 
+	background-size: 10px;
+    background-position: 5% 50%;	
+	background-color: #224b7a;
+    border-radius: 15px;	
 }
-.logo {
-	width: 200px;
+.search > input:focus {
+	background-color: #fff;
+	color: #000;
 }
-.notice, .music {
-	width: 100px;	
-}
+
 .ptofile_settings {
 	margin: 1% 5% 0 5%;
 }
@@ -62,14 +80,45 @@ a {
 	text-align: left;
 
 }
+.ptofile_settings > ul li:hover {
+	display: inline-block;
+	background-color: #D4E6ED;
+}
+.ptofile_settings > ul li:last-of-type {
+	padding: 5px 0 5px 0;
+	border-style: solid;
+    border-width: 1px 0 1px 0;
+	border-color: #B0C4DE;
+}	
+
+.blogsss li {
+	display: inline-block;
+	font-size: 2px;
+}
 .ptofile_settings img {
 	width: 10px;
 }
 .news {
 	margin: 1% 5% 0 5%;
-	padding: 0 5%;
+	padding: 2% 2% 5% 2%;
 	background-color: white;
 	text-align: left;
+}
+.news_settings div {
+	margin-bottom: 5%;
+	margin-top: 10%;
+	background-color: #fff;
+	border: #fff 1px solid;
+	border-radius: 5px;
+	border-style: ridge;	
+}
+.news_settings ul {
+	list-style-type: none;
+	text-align: left;
+	padding: 2px 10px 2px 10px;
+}
+.news_settings ul li:hover {
+	background-color: #E6EAEC;
 }
 .content_photo {
 	width: 500px;
@@ -79,4 +128,8 @@ a {
 }
 .news_settings {
 	margin: 1% 5% 0 5%;	
+}
+.interesting span {
+	font-size: 100px;
+	background-color: black;
 }
