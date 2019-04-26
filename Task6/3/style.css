@@ -1,0 +1,16 @@
+.sheet {
+	margin: 20px;		
+	width: 66px;
+	height: 135px;
+	border: 2px solid #62C2C7;
+	overflow: hidden;
+	box-shadow: 0 0 20px 1px #86ECF2;
+}
+.ninja {
+	transition: transform 0.1s;
+	transition-timing-function: cubic-bezier(0.1, -0.6);
+
+}
+.ninja:hover {
+	transform: translate(-396px);
+}

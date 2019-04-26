@@ -1,0 +1,19 @@
+input {
+	display: none;
+}
+.wall {
+	margin: 20px;		
+	width: 400px;
+	height: 500px;
+	border: 1px solid #9DD5CC;
+	box-shadow: 0 0 20px 4px #CDEDE8;
+	background-image: linear-gradient(to right, #48974B, #95E7D5);
+}
+.ball {
+	width: 150px;
+	margin: 150px 0 0 0;
+	transition: transform 2s ease-out;
+}
+input:checked + .ball {
+	transform: translate(250px);
+}
