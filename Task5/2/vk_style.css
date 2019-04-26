@@ -134,11 +134,7 @@ a {
 .blog li:hover {
 	border-bottom: 1px solid gray; 
 }
-.interesting {
-	display: inline-block;
-	font-size: 10px;
-	background-color: black;
-}
-input[type="checkbox"] {
+
+.interesting ~ input {
 	display: none;
 }
