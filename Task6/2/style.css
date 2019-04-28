@@ -1,5 +1,5 @@
 .air {
-	margin: 20px;		
+	margin: 20px auto;		
 	width: 400px;
 	height: 400px;
 	border: 1px solid #9C689F;
@@ -15,5 +15,6 @@
 	
 }
 .screw:hover {
-	transform: rotate(1080deg);
+	transform: rotate(1080deg); 
+	background-image: radial-gradient(ellipse at 50% 50%, #E3C3E5, #C3A0C6);
 }

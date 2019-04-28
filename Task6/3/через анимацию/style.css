@@ -1,0 +1,52 @@
+.sheet {
+	margin: 20px auto;		
+	width: 66px;
+	height: 135px;
+	border: 2px solid #62C2C7;
+	overflow: hidden;
+	box-shadow: 0 0 20px 1px #86ECF2;
+}
+.ninja:hover {
+	animation: forward 0.3s linear 1s;
+}
+@keyframes forward {
+	0% {
+		transform: translate(0px);
+	}
+	15% {
+		transform: translate(-66px);
+	}
+	16.66% {
+		transform: translate(-66px);		
+	}
+	31.66% {
+		transform: translate(-132px);			
+	}
+	33.32% {
+		transform: translate(-132px);
+	}
+	48.32% {
+		transform: translate(-198px);	
+	}
+	49.98% {
+		transform: translate(-198px);
+	}
+	64.98% {
+		transform: translate(-264px);	
+	}
+	66.64% {
+		transform: translate(-264px);
+	}
+	81.64% {
+		transform: translate(-330px);	
+	}
+	83.30% {
+		transform: translate(-330px);
+	}
+	98.34% {
+		transform: translate(-396px);	
+	}
+	100% {
+		transform: translate(-396px);
+	}
+}
