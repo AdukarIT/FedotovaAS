@@ -29,3 +29,7 @@
 [Task 4.4](https://github.com/AdukarIT/FedotovaAS/tree/master/Task4/4)
 
 ## 9. Flexbox
+
+[Task 5.1](https://github.com/AdukarIT/FedotovaAS/tree/master/Task5/1)
+
+[Task 5.2](https://github.com/AdukarIT/FedotovaAS/tree/master/Task5/2)
