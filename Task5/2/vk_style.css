@@ -100,21 +100,23 @@ a {
 	width: 150px;
 	list-style-type: none;
 	text-align: left;
-	color: gray;
+	color: #808080;
 	font-size: 10px;
 }
 .blog li {
 	display: inline-block;
 }
 .blog li:hover {
-	border-bottom: 1px solid gray; 
+	border-bottom: 1px solid #808080; 
 }
 .tape {
-	margin: 0 2%;
+	margin: 0 3%;
 }
 .tape_user {
+	margin-bottom: 3%;
 	padding: 2% 4%;
 	width: 100%;
+	box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;	
 	background-color: white;
 	text-align: left;
 }
@@ -126,7 +128,7 @@ a {
 }
 .tape_like {
 	margin-bottom: 20px;
-	border-top: 1px solid gray;
+	border-top: 1px solid #D3D3D3;
 }
 .tape_like_icon {
 	padding: 20px 10px 10px 20px;	
@@ -134,21 +136,27 @@ a {
 	display: inline-block;
 }
 .news_settings {
-	margin-left: 2%;
+	margin: 0 0 0 2%;
+	padding-top; 10px;
 }
 .news_settings .news {
 	margin-bottom: 5%;
-	border: #fff 1px solid;
-	border-radius: 4px;
-	border-style: ridge;		
+	box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;		
 	background-color: #fff;
 
 }
 .news_settings ul {
-	padding: 2px 10px 2px 10px;
+	margin: 0 10px 0 0;
+	padding: 10px;
 	width: 140px;
 	list-style-type: none;
 	text-align: left;
+}
+.news_settings ul:nth-child(2) {
+	padding: 0 0 0 10px;
+	margin: 0;
+	font-size: 0.9em;
+	color: #808080;
 }
 .news_settings ul li {
 	padding: 0 10px;
@@ -160,12 +168,20 @@ a {
 }
 .interesting {
 	 display: inline-block;
-	 padding: 0 40px 0 0; 
+	 box-sizing: border-box;	
+	 padding: 5px 40px 5px 5px;
+	 width: 100%;
+	 box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+	 background-color: #fff;
 	 background-image: url('icon/checkbox.png');
 	 background-size: 30px;
-	 background-position: right;
+	 background-position: 90% 50%;
 	 background-repeat: no-repeat;
 	 text-align: left;
+	 font-size: 0.8em;
+}
+.interesting img {
+	padding: 0 5px;
 }
 .switch {
 	display: none;
