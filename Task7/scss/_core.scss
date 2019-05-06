@@ -1,0 +1,26 @@
+$color_base:  #DFDFDF;
+$color_shadow: #3F3F40;
+@mixin indent_menu($dimensions){
+	padding: $dimensions;
+	margin: $dimensions;
+}
+@mixin text_menu{
+	font-family: 'Open Sans', sans-serif;
+	color: #646464;
+	text-align: center;
+	line-height: 1.2;
+	font-size: 1em;
+	cursor: pointer;
+	p {
+		font-weight: 600;
+		transition: color 1s;
+	}
+	span {
+		display: inline-block;
+		width: 220px;
+		transition: color 1s;
+	}
+	:hover {
+		color: #151515;
+	}
+}
