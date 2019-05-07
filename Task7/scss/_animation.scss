@@ -1,0 +1,54 @@
+@mixin animation_left_menu {
+	.left_menu_item {
+		animation-name: shift_left;
+		animation-duration: 2s;
+		animation-timing-function: ease;
+		animation-iteration-count: 1;
+	}
+}
+@mixin keyframes_animation_left_menu {
+	@keyframes shift_left {
+		0% {
+			background-position: -200px;
+		}
+		100% {
+			background-position: left center;
+		}
+	}
+}
+@mixin animation_right_menu {
+	.right_menu_item {
+		animation-name: shift_right;
+		animation-duration: 2s;
+		animation-timing-function: ease;
+		animation-iteration-count: 1;
+	}
+}
+@mixin keyframes_animation_right_menu	{
+	@keyframes shift_right {
+		0% {
+			background-position: 200px;
+		}
+		100% {
+			background-position: left center;
+		}
+	}
+}
+@mixin animation_logo {
+	.logo_title.bottom, .logo_title, .logo_icon {
+		animation-name: animation_logo;
+		animation-duration: 2s;
+		animation-timing-function: ease;
+		animation-iteration-count: 1;
+	}
+}
+@mixin keyframes_animation_logo {
+	@keyframes animation_logo {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}

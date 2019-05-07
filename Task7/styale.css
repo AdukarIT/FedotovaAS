@@ -1,1 +1,191 @@
-.container{margin-top:2%;margin-bottom:2%;background-color:#DFDFDF;border-radius:15px;box-shadow:0 0 5px #292929}.left_menu{padding:0;margin:0}.left_menu>.left_menu_item{font-family:'Open Sans', sans-serif;color:#646464;text-align:center;line-height:1.2;font-size:1em;cursor:pointer;margin:15%;width:255px;height:250px;background:url("image/BG_elem_left.png") left center no-repeat;background-size:auto}.left_menu>.left_menu_item p{font-weight:600;transition:color 1s}.left_menu>.left_menu_item span{display:inline-block;width:220px;transition:color 1s}.left_menu>.left_menu_item :hover{color:#151515}.right_menu{padding:0;margin:0}.right_menu>.right_menu_item{font-family:'Open Sans', sans-serif;color:#646464;text-align:center;line-height:1.2;font-size:1em;cursor:pointer;margin:15%;width:284px;height:250px;background:url("image/BG_elem_right.png") right center no-repeat;background-size:auto}.right_menu>.right_menu_item p{font-weight:600;transition:color 1s}.right_menu>.right_menu_item span{display:inline-block;width:220px;transition:color 1s}.right_menu>.right_menu_item :hover{color:#151515}.menu_icon{padding:40px 10px 10px 10px;width:50px}.logo{line-height:1.2;margin-top:300px}.logo .logo_icon{padding:20px}.logo .logo_icon_connection{box-sizing:content-box;width:50px;padding:10px;cursor:pointer;transition:transform 0.7s}.logo .logo_icon_connection:hover{transform:scale(1.4)}.logo>h1{font-size:6em;text-align:center}.logo>pre{font-size:3em;text-align:center}.logo>p{padding-top:60px;text-align:center}
+/* line 1, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.container {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: #DFDFDF;
+  border-radius: 15px;
+  box-shadow: 0 0 5px #292929;
+}
+
+/* line 8, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.left_menu {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 10, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.left_menu > .left_menu_item {
+  font-family: 'Open Sans', sans-serif;
+  color: #646464;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 15%;
+  width: 255px;
+  height: 250px;
+  background: url("image/BG_elem_left.png") left center no-repeat;
+  background-size: auto;
+}
+
+/* line 8, ../FedotovaAS/FedotovaAS/Task7/scss/_text.scss */
+.left_menu > .left_menu_item .menu_title {
+  font-weight: 600;
+  transition: color 1s;
+}
+
+/* line 12, ../FedotovaAS/FedotovaAS/Task7/scss/_text.scss */
+.left_menu > .left_menu_item .menu_description {
+  display: inline-block;
+  width: 220px;
+  transition: color 1s;
+}
+
+/* line 17, ../FedotovaAS/FedotovaAS/Task7/scss/_text.scss */
+.left_menu > .left_menu_item :hover {
+  color: #151515;
+}
+
+/* line 2, ../FedotovaAS/FedotovaAS/Task7/scss/_animation.scss */
+.left_menu .left_menu_item {
+  animation-name: shift_left;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes shift_left {
+  0% {
+    background-position: -200px;
+  }
+  100% {
+    background-position: left center;
+  }
+}
+
+/* line 22, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.right_menu {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 24, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.right_menu > .right_menu_item {
+  font-family: 'Open Sans', sans-serif;
+  color: #646464;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 15%;
+  width: 284px;
+  height: 250px;
+  background: url("image/BG_elem_right.png") right center no-repeat;
+  background-size: auto;
+}
+
+/* line 8, ../FedotovaAS/FedotovaAS/Task7/scss/_text.scss */
+.right_menu > .right_menu_item .menu_title {
+  font-weight: 600;
+  transition: color 1s;
+}
+
+/* line 12, ../FedotovaAS/FedotovaAS/Task7/scss/_text.scss */
+.right_menu > .right_menu_item .menu_description {
+  display: inline-block;
+  width: 220px;
+  transition: color 1s;
+}
+
+/* line 17, ../FedotovaAS/FedotovaAS/Task7/scss/_text.scss */
+.right_menu > .right_menu_item :hover {
+  color: #151515;
+}
+
+/* line 20, ../FedotovaAS/FedotovaAS/Task7/scss/_animation.scss */
+.right_menu .right_menu_item {
+  animation-name: shift_right;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes shift_right {
+  0% {
+    background-position: 200px;
+  }
+  100% {
+    background-position: left center;
+  }
+}
+
+/* line 35, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.menu_icon {
+  padding: 40px 10px 10px 10px;
+  width: 50px;
+}
+
+/* line 39, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.logo {
+  margin-top: 200px;
+  font-family: 'BankGothicBold';
+  line-height: 1.2;
+}
+
+/* line 24, ../FedotovaAS/FedotovaAS/Task7/scss/_text.scss */
+.logo .logo_title {
+  font-size: 5em;
+  text-align: center;
+}
+
+/* line 28, ../FedotovaAS/FedotovaAS/Task7/scss/_text.scss */
+.logo .logo_title.bottom {
+  letter-spacing: 1.30em;
+  text-transform: uppercase;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* line 42, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.logo .logo_icon {
+  padding: 20px;
+}
+
+/* line 45, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.logo .logo_icon_connection {
+  box-sizing: content-box;
+  width: 50px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.7s;
+}
+
+/* line 51, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.logo .logo_icon_connection:hover {
+  transform: scale(1.4);
+}
+
+/* line 55, ../FedotovaAS/FedotovaAS/Task7/scss/_blocks.scss */
+.logo > p {
+  padding-top: 20px;
+  text-align: center;
+}
+
+/* line 38, ../FedotovaAS/FedotovaAS/Task7/scss/_animation.scss */
+.logo .logo_title.bottom, .logo .logo_title, .logo .logo_icon {
+  animation-name: animation_logo;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes animation_logo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=styale.css.map */

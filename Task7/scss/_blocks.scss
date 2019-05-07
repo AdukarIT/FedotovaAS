@@ -15,6 +15,8 @@
 		background: url('image/BG_elem_left.png') left center no-repeat;
 		background-size:  auto;
 	} 
+	@include animation_left_menu;
+	@include keyframes_animation_left_menu;
 }
 
 .right_menu {
@@ -26,38 +28,34 @@
 		height: 250px;
 		background: url('image/BG_elem_right.png') right center no-repeat;
 		background-size: auto;
-	}	
+	}
+	@include animation_right_menu;
+	@include keyframes_animation_right_menu;	
 }
 .menu_icon {
 	padding: 40px 10px 10px 10px;
 	width: 50px;
 }
 .logo {
-		line-height: 1.2;
-		margin-top: 300px;
-		.logo_icon {
-			padding: 20px;
-		}
-		.logo_icon_connection {
-			box-sizing: content-box;
-			width: 50px;
-			padding: 10px;
-			cursor: pointer;
-			transition: transform 0.7s;
+	margin-top: 200px;
+	@include text_logo;
+	.logo_icon {
+		padding: 20px;
+	}
+	.logo_icon_connection {
+		box-sizing: content-box;
+		width: 50px;
+		padding: 10px;
+		cursor: pointer;
+		transition: transform 0.7s;
 			&:hover {
 				transform: scale(1.4);
 			}
-		}
-		>h1 {
-			font-size: 6em;
-			text-align: center;
-		}
-		>pre {
-			font-size: 3em;
-			text-align: center;
-		}
-		>p {
-			padding-top: 60px;
-			text-align: center;
-		}
 	}
+	>p {
+		padding-top: 20px;
+		text-align: center;
+	}
+	@include animation_logo;
+	@include keyframes_animation_logo;
+}
