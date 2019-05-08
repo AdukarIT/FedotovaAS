@@ -17,3 +17,5 @@ input {
 input:checked + .ball {
 	transform: translate(252px);
 }
+
+// ок
