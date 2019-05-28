@@ -1,0 +1,6 @@
+$color_base:  #DFDFDF;
+$color_shadow: #3F3F40;
+@mixin indent_menu($dimensions){
+	padding: $dimensions;
+	margin: $dimensions;
+}

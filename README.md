@@ -37,3 +37,7 @@
 [Task 6.2](https://github.com/AdukarIT/FedotovaAS/tree/master/Task6/2)
 
 [Task 6.3](https://github.com/AdukarIT/FedotovaAS/tree/master/Task6/3)
+
+## 17. node.js + npm + sass
+
+[Task 7.0](https://github.com/AdukarIT/FedotovaAS/tree/master/Task7/)

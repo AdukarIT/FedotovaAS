@@ -12,7 +12,7 @@
 }
 .partsection_part {
 	display: none;
-    position: absolute;
+    position: absolute; // выравнивание
     z-index: 1;
     background-color: #f1f1f1;
     margin-top: 40px;
