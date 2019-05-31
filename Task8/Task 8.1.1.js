@@ -1,7 +1,7 @@
 var num;
 do {
 	num = prompt('Enter apartment number','');
-} while (isNaN(num) || +num <= 0 || +num > 100);
+} while (isNaN(num) || num <= 0 || num > 100);
 if (num <=20) {
 	console.log('first');
 } else if (num <= 40) {
