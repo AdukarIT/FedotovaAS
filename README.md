@@ -44,5 +44,5 @@
 
 ## Practice JS
 
-[Task 7.0] (https://github.com/AdukarIT/FedotovaAS/tree/master/practice/practice_js)
+[Task 7.0] ('https://github.com/AdukarIT/FedotovaAS/tree/master/practice/practice js')
 
