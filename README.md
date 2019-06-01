@@ -41,3 +41,7 @@
 ## 17. node.js + npm + sass
 
 [Task 7.0](https://github.com/AdukarIT/FedotovaAS/tree/master/Task7/)
+
+## [Practice JS] (https://github.com/AdukarIT/FedotovaAS/tree/master/practice/practice js)
+
+
