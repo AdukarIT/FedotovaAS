@@ -2,7 +2,7 @@ function getNumber() {
 	var numberUser = prompt('Enter the number', '');
 	return numberUser;
 }
-function main () {
+function getResultInConsol () {
 	var outputNumber = getNumber();
 	outputNumbers(+outputNumber);
 }

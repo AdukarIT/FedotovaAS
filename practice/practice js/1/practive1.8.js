@@ -8,7 +8,11 @@ function main () {
 }
 function outputNumbers(someNumber) {
 	while (someNumber > 0) {
-		console.log (someNumber);
-		someNumber--;
+		someNumber = someNumber--
+		if (somenumber%2 != 0) {
+			continue;
+		} else {
+			console.log (someNumber);
+		}
 	}
 }

@@ -8,6 +8,10 @@ function main () {
 }
 function outputNumbers(someNumber) {
 	for(; someNumber > 0; someNumber--) {
-		console.log(someNumber); 
+		if (someNumber % 2 != 0) {
+			continue;
+		} else	{
+			console.log(someNumber);
+		} 
 	}
 }
