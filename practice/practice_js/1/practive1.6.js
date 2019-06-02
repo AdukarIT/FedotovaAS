@@ -8,7 +8,7 @@ function getResultInConsol() {
 }
 function outputNumbers(Numbers) {
 	for(var i = 2; i <= Numbers; Numbers--) {
-		if (Numbers % 2 === 0 || Numbers % 3 === 0 || Number % 5 === 0) {
+		if (Numbers % 2 === 0 || Numbers % 3 === 0 || Numbers % 5 === 0 || Numbers % 7 === 0) {
 			continue;
 		} else {
 			console.log(Numbers);
