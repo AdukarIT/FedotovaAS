@@ -7,7 +7,7 @@ function main () {
 	outputNumbers(+outputNumber);
 }
 function outputNumbers(someNumber) {
-	for(; someNumber > 0; someNumber--) {
+	for(; someNumber >= 0; someNumber--) {
 		if (someNumber % 2 != 0) {
 			continue;
 		} else	{

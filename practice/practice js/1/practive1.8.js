@@ -2,17 +2,20 @@ function getNumber() {
 	var numberUser = prompt('Enter the number', '');
 	return numberUser;
 }
+
 function main () {
 	var outputNumber = getNumber();
-	outputNumbers(+outputNumber);
+	outputNumbers(parseInt(outputNumber));
 }
+
 function outputNumbers(someNumber) {
-	while (someNumber > 0) {
-		someNumber = someNumber--
-		if (somenumber%2 != 0) {
+	while (someNumber >= 0) {
+		if (someNumber % 2 != 0) {
+			someNumber--;
 			continue;
 		} else {
-			console.log (someNumber);
+			console.log(someNumber);
 		}
+		someNumber--;
 	}
 }
