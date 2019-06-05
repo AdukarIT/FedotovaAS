@@ -1,10 +1,7 @@
-for (i = 1; i <= 8; i++) {
-	a = " " + "#";
-	b = "#" + " ";
-	c = "\n";
-	if (i % 2 === 0) {
-		console.log(a + a + a + a + c);
-	} else { 
-		console.log(b + b + b + b + c);
-	}
+var presentValue1 = 0, presentValue2 = 1, previousValue, result; 
+for (i = 0; i < 15; i++) { 
+	previousValue = presentValue1 + presentValue2; 
+	presentValue1 = presentValue2; 
+	presentValue2 = previousValue; 
+	console.log(previousValue); 
 }

@@ -1,13 +1,10 @@
-function getFactorial (num){
-    if (num === 0) {
-        result = 1;
-    } else {
-       for (; num > 0; num--) {
-           result = num * getFactorial(num);
-       }
+function getFactorial(num) {
+	var result;
+    if (num > 0) {
+		result = num * getFactorial(num - 1);
+		
+    } else if (num == 0) {
+       result = 1;
     }
-    displayFactorial(result);
-}
-function displayFactorial(num) {
-    return console.log(num);
+	return result;
 }
