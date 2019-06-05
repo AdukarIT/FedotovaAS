@@ -49,3 +49,7 @@
 ## 20. Операторы. Циклы
 
 [Task 8](https://github.com/AdukarIT/FedotovaAS/tree/master/Task8/)
+
+## 21. Функции
+
+[Task 9](https://github.com/AdukarIT/FedotovaAS/tree/master/Task9/)
