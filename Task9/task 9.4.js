@@ -9,3 +9,6 @@ function reverseNum(num) {
          return num ;
      }
  }
+ //8738
+ //8
+ //873
