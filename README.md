@@ -53,3 +53,7 @@
 ## 21. Функции
 
 [Task 9](https://github.com/AdukarIT/FedotovaAS/tree/master/Task9/)
+
+## 23. Массивы
+
+[Task 10](https://github.com/AdukarIT/FedotovaAS/tree/master/Task10/)
