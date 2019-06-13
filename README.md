@@ -44,7 +44,7 @@
 
 ## Practice JS
 
-[practicу 1-8](https://github.com/AdukarIT/FedotovaAS/tree/master/practice/practice_js/1)
+[practice](https://github.com/AdukarIT/FedotovaAS/tree/master/practice/practice_js/)
 
 ## 20. Операторы. Циклы
 
