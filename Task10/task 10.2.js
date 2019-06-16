@@ -1,3 +1,5 @@
+/*Выведите в консоль элементы массива, 
+которые больше среднего арифметического всех элементов.*/
 function getRandomArray(len) {
 	let randomArray = [];
 	for(i = 0; i < len; i++) {
@@ -6,7 +8,6 @@ function getRandomArray(len) {
 	return randomArray;
 }
 function findArithmeticAverage(len) {
-    //let ArithmeticAverage = [];
     let randomArray = getRandomArray(len);
     let sum = 0;
     for(i = 0; i < randomArray.length; i++) {

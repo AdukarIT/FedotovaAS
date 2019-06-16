@@ -1,3 +1,4 @@
+/*Найдите два наименьших элемента массива.*/
 function getRandomArray(len) {
 	let randomArray = [];
 	for(i = 0; i < len; i++) {
