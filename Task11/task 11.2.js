@@ -14,11 +14,12 @@ let favouriteRecipe = {
     },
     portions: 4
 }
+
 function calculatePortions(recipe) {
     let recipeOnePortions = {};
     for(let key in recipe.ingredients) {
-        recipeOnePortions[key] = key / recipe.portions;
+    recipeOnePortions[key] = recipe.ingredients[key] / recipe.portions;
     } 
-   return console.log(recipeOnePortions);
+   return recipeOnePortions;
 }
 calculatePortions(favouriteRecipe);
