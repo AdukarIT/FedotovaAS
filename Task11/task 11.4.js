@@ -16,8 +16,6 @@ penguin.sayHello = function() {
 penguin.fly = function() {
 	if(this.canFly === true){
 		return  this.name + 'can fly!';
-	} else {
-		return  this.name + 'сan\'t fly';
-    }
+	} return  this.name + ' сan\'t fly';
 }
 
