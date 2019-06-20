@@ -57,3 +57,7 @@
 ## 23. Массивы
 
 [Task 10](https://github.com/AdukarIT/FedotovaAS/tree/master/Task10/)
+
+## 24. Объекты
+
+[Task 11](https://github.com/AdukarIT/FedotovaAS/tree/master/Task11/)
