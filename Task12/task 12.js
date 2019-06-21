@@ -8,8 +8,9 @@ function randomArr(len, min, max) {
 }
 function getNewArr() {
 	let oldArr = randomArr(5, 1, 30);
-	let obj = {}, newArr = [];
-	for(i = 0; i < randomArr.length; i++) {
+	let newArr = [];
+	for(i = 0; i < oldArr.length; i++) {
+		let obj = {}; 
 		obj['initial'] = oldArr[i];
 		obj['sqrt'] = Math.sqrt(obj.initial);
 		if(Math.round(obj.sqrt) == Math.floor(obj.sqrt)) {
@@ -22,7 +23,17 @@ function getNewArr() {
 		newArr[i] = obj;
 	}
 	console.log(oldArr);
-	console.log(obj);
 	return newArr;
 }
-//2
+getNewArr();
+//2 Добавьте в каждый элемент массива из задачи 1 ещё одно свойство: значение sqrt, округлённое до сотых.
+function getSqrtRoundedToOneHundred() {
+	let newArr = getNewArr();
+	for(i = 0; i < newArr.length; i++) {
+		let sqrt = newArr[i]['sqrt'];
+		newArr[i]['sqrtRoundedToOneHundred'] = +(sqrt.toFixed(2));
+	}
+	return newArr;
+}
+getSqrtRoundedToOneHundred();
+//3 Напишите функцию, которая определяет, является ли строка палиндромом.
