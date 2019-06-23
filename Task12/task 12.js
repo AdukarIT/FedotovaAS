@@ -37,3 +37,26 @@ function getSqrtRoundedToOneHundred() {
 }
 getSqrtRoundedToOneHundred();
 //3 Напишите функцию, которая определяет, является ли строка палиндромом.
+function reversString(str) {
+		let strRevers = '';
+		for(i = 1; i <= str.length; i++) {
+			strRevers += str[str.length - i];
+		}
+		return strRevers;
+}
+function calculatePalindrome() {
+	let str = prompt('enter the string', '');
+	let strRevers = reversString(str);
+	if(str === strRevers) {
+		return 'This String is Palendrome';
+	} return 'This String isn\'t palendrome';
+}
+//4 Напишите функцию, которая принимает строку и возвращает символ, который встречается в ней чаще всего. 
+//Если таких символов несколько, функция должна возвращать строку из этих символов.
+function findRepetition(str) {
+	for(i = 0; i < str.length; i++) {
+		for(i = 0; i < str.length; i++)  {
+			if(str[i] =
+		}
+	}
+}
