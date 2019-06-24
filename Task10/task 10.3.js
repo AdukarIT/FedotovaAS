@@ -1,20 +1,19 @@
 /*Найдите два наименьших элемента массива.*/
-function getRandomArray(len) {
-	let randomArray = [];
-	for(i = 0; i < len; i++) {
-		randomArray.push(Math.random());
-	}
-	return randomArray;
-}
-function findLess(len) {
-    let randomArray = getRandomArray(len);
-    let sum = 0;
-    for(i = 0; i < randomArray.length; i++) {
-        sum += randomArray[i]
-    }
-    sum /= randomArray.length;
-    for(i = 0; i < randomArray.length; i++) {
-		if(randomArray[i] > sum) console.log(randomArray[i]);
-    }
-
+function getRandomArray(len) { 
+  let randomArr = []; 
+  for(i = 0; i <= len; i++) 
+    randomArr.push(Math.random()); 
+    return randomArr; 
+} 
+function findTheSmallest(len) { 
+    let arr = getRandomArray(len); 
+    let num = arr[0]; 
+    let num2 = arr[0]; 
+    for(i = 1; i < arr.length; i++) { 
+      if(arr[i] < num) num = arr[i]; 
+    } 
+    for(i = 1; i < arr.length; i++) { 
+      if(arr[i] < num2 && arr[i] != num) num2 = arr[i]; 
+    } 
+    return [num, num2]; 
 }

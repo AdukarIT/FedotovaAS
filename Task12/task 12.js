@@ -54,9 +54,18 @@ function calculatePalindrome() {
 //4 Напишите функцию, которая принимает строку и возвращает символ, который встречается в ней чаще всего. 
 //Если таких символов несколько, функция должна возвращать строку из этих символов.
 function findRepetition(str) {
-	for(i = 0; i < str.length; i++) {
-		for(i = 0; i < str.length; i++)  {
-			if(str[i] =
+	let arr = [], arr2 = [];
+	for(var i = 0; i < str.length; i++) {
+		for(j = 1; j < str.length; j++)  {
+			if(str[i] === str[j]) arr.push(str[i]);
+		}
+		if(arr.length > arr2.length && arr.length == arr2.length) {
+			arr2 = arr;
+			arr.length = 0; 
 		}
 	}
+	return arr[0];
 }
+findRepetition('сокол');
+//Напишите функцию, которая получает в аргументы три строки – str, search, replace. 
+//Функция ищет ВСЕ вхождения search в str, заменяет каждую подстроку search на подстроку replace и возвращает результат.
