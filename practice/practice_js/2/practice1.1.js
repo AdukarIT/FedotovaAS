@@ -5,3 +5,4 @@ function getCathetus(a, b, c) {
 		return false;
 	}
 } 
+// хорошо
