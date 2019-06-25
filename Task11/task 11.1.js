@@ -9,3 +9,4 @@ function checkPropertyAtObject(object, property) {
 	}
 	return 'property with that name is not in object';
 }
+// хорошо
