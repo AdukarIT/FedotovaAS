@@ -10,3 +10,4 @@ else if(!result) {
 else {
 	console.log('Something went wrong!')
 }
+// хорошо
