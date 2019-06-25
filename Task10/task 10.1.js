@@ -8,3 +8,4 @@ function getRandomArray(len) {
 	}
 	return randomArray;
 }
+// хорошо
