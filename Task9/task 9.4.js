@@ -12,3 +12,5 @@ function reverseNum(num) {
  //8738
  //8
  //873
+
+// хорошо
