@@ -10,3 +10,5 @@ cylinder['volume'] = function() {
     return volume;
 }
 cylinder.volume();
+
+// хорошо
