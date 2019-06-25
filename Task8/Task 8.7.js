@@ -8,3 +8,4 @@ for (i = 1; i <= 8; i++) {
 		console.log(b + b + b + b + c);
 	}
 }
+// хорошо
