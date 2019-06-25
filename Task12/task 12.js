@@ -1,4 +1,14 @@
-//1
+/*Напишите функцию, которая принимает массив случайных чисел 
+(см. задачу 2 в практике) и создаёт на его основе новый. 
+Элементы нового массива – объекты вида {initial: num1, sqrt: num2, floor: boolean1, ceil: boolean2}.
+ initial – значение элемента исходного массива с тем же индексом, 
+ sqrt – корень квадратный из этого значения. 
+ Если округление sqrt по обычным математическим правилам сходится с его округлением через 
+ floor, то floor = true, а ceil = false. 
+ Если сходится с округлением через ceil - наоборот. 
+ Например, пусть у исходного массива arr[0] = 19, 
+ тогда в новом массиве newArr[0] = {initial: 19, 
+ sqrt: 4.358898943540674, floor: true, ceil: false}.*/
 function randomArr(len, min, max) {
 	let oldArr = [];
 	for(i = 0; i < len; i++) {
@@ -54,18 +64,21 @@ function calculatePalindrome() {
 //4 Напишите функцию, которая принимает строку и возвращает символ, который встречается в ней чаще всего. 
 //Если таких символов несколько, функция должна возвращать строку из этих символов.
 function findRepetition(str) {
-	let arr = [], arr2 = [];
+	let num2 = 0, strItem;
 	for(var i = 0; i < str.length; i++) {
-		for(j = 1; j < str.length; j++)  {
-			if(str[i] === str[j]) arr.push(str[i]);
+		let num = 0
+		for(j = 0; j < str.length; j++)  {
+			if(str[i] == str[j]) num += 1;
 		}
-		if(arr.length > arr2.length && arr.length == arr2.length) {
-			arr2 = arr;
-			arr.length = 0; 
+		if(num > num2) {
+			num2 = num;
+			strItem = str[i];
+		} else if(num == num2 && strItem != str[i]) {
+			strItem += str[i];
 		}
 	}
-	return arr[0];
+	return strItem;
 }
-findRepetition('сокол');
+findRepetition('тркааакк');
 //Напишите функцию, которая получает в аргументы три строки – str, search, replace. 
 //Функция ищет ВСЕ вхождения search в str, заменяет каждую подстроку search на подстроку replace и возвращает результат.
