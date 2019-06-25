@@ -5,7 +5,7 @@
 var arr = [1, 5, 2, 4, 3];
 var count = arr.length-1;
 for(var a = 0; a < count; a++) {
-	for(var i = 0; i < count-a; i++) {
+	for(var i = 0; i < count-a; i++) { // лучше соблюдайте вложенность
 		if (arr[i]> arr[i+1]) {
 			var max = arr[i];
 			arr[i] = arr[i+1];
