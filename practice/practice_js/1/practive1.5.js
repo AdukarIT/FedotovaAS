@@ -19,3 +19,4 @@ function outputNumbers(Numbers) {
 			console.log('Bye');
 	}
 }
+// хорошо
