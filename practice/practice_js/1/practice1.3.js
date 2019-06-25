@@ -35,3 +35,4 @@ function outputNumbers(first, second, third) {
 		console.log(third);
 	} 
 }
+// хорошо
