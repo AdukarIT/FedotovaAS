@@ -4,7 +4,7 @@
 */
 function getNumber() {
 	var number = prompt('insert the number', '');
-	return number;
+	return number; // лучше сюда вынести преобразование
 } 
 function createAnArray() {
 	var num1 = getNumber();
@@ -15,7 +15,7 @@ function createAnArray() {
 }
 function findGreatest(arr) {
 	for(i = 0; i < arr.length; i++) {
-		if (arr[i] >= arr[i++] && arr[i] >= arr[i--]) var max = arr[i];
+		if (arr[i] >= arr[i++] && arr[i] >= arr[i--]) var max = arr[i]; // в случае с тремя числами ваше решение работает, но это неоптимально
 		return max;
 	}
 }
