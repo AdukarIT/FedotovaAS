@@ -5,3 +5,4 @@ function getTime (day, hour, min) {
 function displaySeconds(second) {
     return console.log(second);
 }
+// хорошо
