@@ -17,3 +17,4 @@ function findTheSmallest(len) {
     } 
     return [num, num2]; 
 }
+// хорошо
