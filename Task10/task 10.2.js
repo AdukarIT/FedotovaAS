@@ -19,3 +19,4 @@ function findArithmeticAverage(len) {
     }
 
 }
+// хорошо
