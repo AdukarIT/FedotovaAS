@@ -6,3 +6,4 @@ for (i = 0; i < 15; i++) {
 	presentValue2 = previousValue; 
 	console.log(previousValue); 
 }
+// хорошо
