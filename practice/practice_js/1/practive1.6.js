@@ -19,3 +19,4 @@ function outputNumbers(Numbers) {
 	console.log(3);
 	console.log(2);
 }
+// выглядит нормально, но я не понимаю что это должно делать
