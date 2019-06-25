@@ -19,3 +19,4 @@ function outputNumbers(someNumber) {
 		someNumber--;
 	}
 }
+// хорошо
