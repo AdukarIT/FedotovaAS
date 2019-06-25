@@ -7,7 +7,7 @@
 let penguin = {
     name: 'Gunter',
     source: 'Adventure Time',
-	creator: 'Pendleton Ward'
+	creator: 'Pendleton Ward' // вложенность
 };
 penguin.canFly = false;
 penguin.sayHello = function() {
