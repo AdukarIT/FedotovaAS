@@ -4,3 +4,4 @@ function repeat(str = '', n = 2) {
 		result += str + " ";	
 	} return result;
 } 
+// хорошо
