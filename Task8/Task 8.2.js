@@ -21,3 +21,4 @@ switch (carModel) {
 	default:
 		console.log(carModel + ' -  страна происхождения неизвестна');
 } 
+// хорошо
