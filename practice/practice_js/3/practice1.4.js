@@ -20,3 +20,4 @@ var byFiveRevers = []
 for (i = 0; i < byFive.length; i++) {
     byFiveRevers[i] = byFive.pop();
 }
+// хорошо
