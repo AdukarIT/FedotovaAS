@@ -23,3 +23,5 @@ function calculatePortions(recipe) {
    return recipeOnePortions;
 }
 calculatePortions(favouriteRecipe);
+
+// хорошо
