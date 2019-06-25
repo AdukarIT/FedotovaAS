@@ -13,7 +13,7 @@ function findLess(num) {
   let randomArray = getRandomArray(15);
   for(i = 0; i < randomArray.length; i++) {
     if(randomArray[i] < num) {
-      randomArray[i] = null;
+      randomArray[i] = null; // логика с нал излишняя
     }
   }
   return randomArray;
