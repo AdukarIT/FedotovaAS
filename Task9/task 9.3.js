@@ -8,3 +8,4 @@ function getFactorial(num) {
     }
 	return result;
 }
+// хорошо
