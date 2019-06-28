@@ -64,21 +64,24 @@ function calculatePalindrome() {
 //4 Напишите функцию, которая принимает строку и возвращает символ, который встречается в ней чаще всего. 
 //Если таких символов несколько, функция должна возвращать строку из этих символов.
 function findRepetition(str) {
-	let num2 = 0, strItem;
-	for(var i = 0; i < str.length; i++) {
-		let num = 0
-		for(j = 0; j < str.length; j++)  {
-			if(str[i] == str[j]) num += 1;
+	let count2 = 0, arr = [];
+	for(i = 0; i < str.length; i++) {
+		let count = 0;
+		for (j = 1; j < str.length; j++) {
+			if(str[i] == str[j]) count += 1;
 		}
-		if(num > num2) {
-			num2 = num;
-			strItem = str[i];
-		} else if(num == num2 && strItem != str[i]) {
-			strItem += str[i];
+		if(count > count2) {
+				count2 = count;
+				arr[0] = str[i];
+		} else if (count == count2){
+			for(k = 0; k < arr.length; k++) {
+				if (str[i] == arr[k]) continue;
+			}
+			arr.push(str[i]);
 		}
 	}
-	return strItem;
+	return arr;
 }
-findRepetition('тркааакк');
+findRepetition("тркааакк");
 //Напишите функцию, которая получает в аргументы три строки – str, search, replace. 
 //Функция ищет ВСЕ вхождения search в str, заменяет каждую подстроку search на подстроку replace и возвращает результат.
