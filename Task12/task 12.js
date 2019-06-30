@@ -64,30 +64,35 @@ function calculatePalindrome() {
 //4 Напишите функцию, которая принимает строку и возвращает символ, который встречается в ней чаще всего. 
 //Если таких символов несколько, функция должна возвращать строку из этих символов.
 function findRepetition(str) {
-	let count2 = 0, arr = [];
+	let arr = [], count2 = 1;
 	for(i = 0; i < str.length; i++) {
 		let count = 0;
-		for (j = 1; j < str.length; j++) {
+		for(j = i + 1; j < str.length; j++) {
 			if(str[i] == str[j]) count += 1;
 		}
 		if(count > count2) {
-				count2 = count;
-				arr[0] = str[i];
-		} else if (count == count2){
+			arr = [];
+			count2 = count;
+			arr.push(str[i]);
+		} else if (count == count2) {
 			arr.push(str[i]);
 		}
 	}
-	let newArr = [];
-	next:
-	for(k = 0; k < arr.length - 1; k++) {
-		str = arr[k];
-		for(l = 0; l < newArr.length; l++) {
-			if(str == newArr[l]) continue next;
-		}
-		newArr.push(str);
-	}
-	return newArr.join(', ');
+	return arr.join(", ");
 }
-findRepetition("тркааакк");
+findRepetition("трркааакк");
 //Напишите функцию, которая получает в аргументы три строки – str, search, replace. 
 //Функция ищет ВСЕ вхождения search в str, заменяет каждую подстроку search на подстроку replace и возвращает результат.
+function findSearchInStrAndReplase(str, search, replace) {
+	let strNew = str.toLowerCase();
+	let searchNew = search.toLowerCase();
+	let replaceNew = replace.toLowerCase();
+	let position = 0;
+	while (true) {
+		let foundPosition = strNew.indexOf(searchNew, position);
+		if(foundPosition == -1) break;
+		position = foundPosition + 1;
+	}
+	console.log("substring occurs: " + position);
+}
+findSearchInStrAndReplase('Карл у клара украл кораллы', 'ар', '1');
