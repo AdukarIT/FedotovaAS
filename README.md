@@ -61,3 +61,7 @@
 ## 24. Объекты
 
 [Task 11](https://github.com/AdukarIT/FedotovaAS/tree/master/Task11/)
+
+## 25. Встроенные возможности
+
+[Task 12](https://github.com/AdukarIT/FedotovaAS/tree/master/Task12/)
