@@ -88,11 +88,20 @@ function findSearchInStrAndReplase(str, search, replace) {
 	let searchNew = search.toLowerCase();
 	let replaceNew = replace.toLowerCase();
 	let position = 0;
-	while (true) {
+	let count = 0;
+	let result = '';
+	while (position < strNew.length) {
 		let foundPosition = strNew.indexOf(searchNew, position);
 		if(foundPosition == -1) break;
 		position = foundPosition + 1;
+		count += 1;
+		result = strNew.replace(searchNew, replaceNew);
+		strNew = result;
 	}
-	console.log("substring occurs: " + position);
+	console.log("substring occurs: " + count);
+	return result;
 }
 findSearchInStrAndReplase('Карл у клара украл кораллы', 'ар', '1');
+findSearchInStrAndReplase('Мама мыла Мамы окно', 'ма', '2');
+//
+
