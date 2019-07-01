@@ -106,15 +106,15 @@ findSearchInStrAndReplase('Мама мыла Мамы окно', 'ма', '2');
 //Напишите функцию, которая замяняет первую букву каждого слова в строке на такую же большую.
 function replaceTheFirstLetter(str) {
 	let position = 0;
-	let count = 0;
-	let result = str;
+	let result = str.split('');
 	while(true) {
-			let foundPosition = str.indexOf(' ', position);
-			if (foundPosition == -1) break;
-			position = foundPosition + 1;
-			result[position] = str[position].toUpperCase();
+		result[position] = str[position].toUpperCase();
+		let foundPosition = str.indexOf(' ', position);
+		if (foundPosition == -1) break;
+		position = foundPosition + 1;
+			
 	}
-	return result;
+	return result.join('');
 }
 replaceTheFirstLetter('заменить первую букву каждого слова');
-
+//
