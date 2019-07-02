@@ -90,7 +90,7 @@ function findSearchInStrAndReplase(str, search, replace) {
 	let position = 0;
 	let count = 0;
 	let result = '';
-	while (position < strNew.length) {
+	while (true) {
 		let foundPosition = strNew.indexOf(searchNew, position);
 		if(foundPosition == -1) break;
 		position = foundPosition + 1;
@@ -112,9 +112,21 @@ function replaceTheFirstLetter(str) {
 		let foundPosition = str.indexOf(' ', position);
 		if (foundPosition == -1) break;
 		position = foundPosition + 1;
-			
 	}
 	return result.join('');
 }
 replaceTheFirstLetter('заменить первую букву каждого слова');
-//
+//Напишите функцию, которая заменяет все повторяющиеся символы в строке на звёздочки. 
+//Например, строка "я учусь программированию" должна преобразоваться в "я уч*сь прог*ам*и**в*н*ю".
+function replaceReps(str) {
+	let result = str.split('');
+	for(i = 0; i < str.length; i++) {
+		for(j = i + 1; j < str.length; j++) {
+			if(result[i] == result[j] && result[i] != " ") result[j] = '*';
+		}
+	}
+	return result.join('');
+}
+replaceReps('мама мыла грушу');
+//Напишите функцию, которая возвращает текущий день недели на русском языке.
+function getDay
