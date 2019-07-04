@@ -52,11 +52,11 @@ function calculatePalindrome(str) {
 	for(i = 0; i < count.toFixed(); i++) {
 		if(str[i] != str[str.length - i- 1]) {
 			return 'This String isn\'t palendrome';
-		} return 'This String is Palendrome';
-	}
+		} 
+	} return 'This String is Palendrome';
 }
-calculatePalindrome('абвба')
 calculatePalindrome('абрвба')
+calculatePalindrome('абвба')
 //4 Напишите функцию, которая принимает строку и возвращает символ, который встречается в ней чаще всего. 
 //Если таких символов несколько, функция должна возвращать строку из этих символов.
 function findRepetition(str) {
@@ -125,4 +125,16 @@ function replaceReps(str) {
 }
 replaceReps('мама мыла грушу');
 //Напишите функцию, которая возвращает текущий день недели на русском языке.
-function getDay
+function getDayInRussian() {
+	let date = new Date();
+	let day = date.getDay();
+	let arr = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+	return arr[day];
+}
+getDayInRussian();
+//Напишите функцию, которая принимает у пользователя дату в формате "ДД-ММ-ГГГГ" и, и
+//спользуя функцию из задачи 8, выдаёт в консоль день недели для этой даты.
+/*;function getDayInRussian2() {
+	let dateUser = prompt('Enter the number', 'ДД-ММ-ГГГГ');
+	let date = dateUser.split('-').reverse();
+} */
