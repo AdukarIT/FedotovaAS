@@ -47,14 +47,16 @@ function getSqrtRoundedToOneHundred() {
 }
 getSqrtRoundedToOneHundred();
 //3 Напишите функцию, которая определяет, является ли строка палиндромом.
-function calculatePalindrome() {
-	let str = prompt('enter the string', '');
-	for(i = 0; i < str.length / 2; i++) {
-		if(str[i] == str[str.length - 1 - i]) {
-			return 'This String is Palendrome';
-		} return 'This String isn\'t palendrome';
+function calculatePalindrome(str) {
+	let count = str.length / 2;
+	for(i = 0; i < count.toFixed(); i++) {
+		if(str[i] != str[str.length - i- 1]) {
+			return 'This String isn\'t palendrome';
+		} return 'This String is Palendrome';
 	}
 }
+calculatePalindrome('абвба')
+calculatePalindrome('абрвба')
 //4 Напишите функцию, которая принимает строку и возвращает символ, который встречается в ней чаще всего. 
 //Если таких символов несколько, функция должна возвращать строку из этих символов.
 function findRepetition(str) {
