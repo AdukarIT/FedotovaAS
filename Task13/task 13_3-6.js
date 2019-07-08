@@ -9004,7 +9004,26 @@ let data = [
  которые с 2000 по 2013 выросли в населении.*/
  let filterCitiesOfCalifornia = function(elem) {
     let city = parseInt(elem.growth_from_2000_to_2013);
-    return (city > 0 ? true : false); 
+    return (city > 0); 
  };
 let citiesWithPopulationGrowth = data.filter(filterCitiesOfCalifornia);
 citiesWithPopulationGrowth;
+/* Подсчитайте, сколько миллионов 
+населения живёт во всех городах на широте от 25 до 30 градусов.*/
+let filterByLatitude = function(elem) {
+    let city = parseInt(elem.latitude);
+    return (city > 25 && city < 30); 
+ };
+let citiesLatitudeFrom25To30 = data.filter(filterByLatitude);
+let sumPeople = citiesLatitudeFrom25To30.reduce(function(sum, elem) {
+    return sum + +(elem.population);
+}, 0);
+sumPeople;
+/* Создайте массив только из тех городов, которые начинаются на букву D, 
+при этом отсортируйте элементы этого массива по названию города.*/
+let getCitiesD = function(elem) {
+	let cityName = elem['city'];
+    return (cityName[0] == 'D'); 
+ };
+let citiesD = data.filter(getCitiesD);
+citiesD;
