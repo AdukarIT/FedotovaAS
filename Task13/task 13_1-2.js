@@ -9,7 +9,7 @@ function getSymbolInUnicode(numUnic, arr) {
     }
 	return numberOfCharacters;
 }
-let arrSymbol = ['ра', 'а' , 'п' , 'р', 'д'];
+let arrSymbol = ['рапира', 'арбат' , 'привет' , 'ра', 'дом'];
 getSymbolInUnicode(1088, arrSymbol); // 1088 - 'р'
 /*Напишите функцию, которая будет возвращать частичную функцию от функции из задачи 1,
  фиксируя искомый символ. Например:
@@ -21,11 +21,11 @@ function getSymbolInUnicode2(numUnic) {
 	function colculate(arr){
 		let str = arr.join('');
 		for(i = 0; i < str.length; i++) {
-			if(str[i] == num) numberOfCharacters += 1;
+			if(str[i] == num) numberOfCharacters++;
 		}
 		return numberOfCharacters;
 	}
 	return colculate;
 }
 let count = getSymbolInUnicode2(1088);
-console.log(count(['ра', 'а' , 'п' , 'р', 'д']));
+count(['ра', 'а' , 'п' , 'р', 'д']);

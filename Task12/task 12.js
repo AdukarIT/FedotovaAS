@@ -77,7 +77,7 @@ function findRepetition(str) {
 	return arr.join(", ");
 }
 findRepetition("трркааакк");
-//Напишите функцию, которая получает в аргументы три строки – str, search, replace. 
+//5 Напишите функцию, которая получает в аргументы три строки – str, search, replace. 
 //Функция ищет ВСЕ вхождения search в str, заменяет каждую подстроку search на подстроку replace и возвращает результат.
 function findSearchInStrAndReplase(str, search, replace) {
 	let strNew = str.toLowerCase();
@@ -99,7 +99,7 @@ function findSearchInStrAndReplase(str, search, replace) {
 }
 findSearchInStrAndReplase('Карл у клара украл кораллы', 'ар', '1');
 findSearchInStrAndReplase('Мама мыла Мамы окно', 'ма', '2');
-//Напишите функцию, которая замяняет первую букву каждого слова в строке на такую же большую.
+//6 Напишите функцию, которая замяняет первую букву каждого слова в строке на такую же большую.
 function replaceTheFirstLetter(str) {
 	let position = 0;
 	let result = str.split('');
@@ -112,7 +112,7 @@ function replaceTheFirstLetter(str) {
 	return result.join('');
 }
 replaceTheFirstLetter('заменить первую букву каждого слова');
-//Напишите функцию, которая заменяет все повторяющиеся символы в строке на звёздочки. 
+//7 Напишите функцию, которая заменяет все повторяющиеся символы в строке на звёздочки. 
 //Например, строка "я учусь программированию" должна преобразоваться в "я уч*сь прог*ам*и**в*н*ю".
 function replaceReps(str) {
 	let result = str.split('');
@@ -124,17 +124,19 @@ function replaceReps(str) {
 	return result.join('');
 }
 replaceReps('мама мыла грушу');
-//Напишите функцию, которая возвращает текущий день недели на русском языке.
-function getDayInRussian() {
-	let date = new Date();
+//8 Напишите функцию, которая возвращает текущий день недели на русском языке.
+let date = new Date();
+function getDayInRussian(date) {
 	let day = date.getDay();
 	let arr = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
 	return arr[day];
 }
-getDayInRussian();
-//Напишите функцию, которая принимает у пользователя дату в формате "ДД-ММ-ГГГГ" и, и
+getDayInRussian(date);
+// 9 Напишите функцию, которая принимает у пользователя дату в формате "ДД-ММ-ГГГГ" и, и
 //спользуя функцию из задачи 8, выдаёт в консоль день недели для этой даты.
-/*;function getDayInRussian2() {
-	let dateUser = prompt('Enter the number', 'ДД-ММ-ГГГГ');
-	let date = dateUser.split('-').reverse();
-} */
+function getDayInRussian2() {
+	let dateUser = prompt('Enter the DATE', 'ДД-ММ-ГГГГ');
+	dateUser = dateUser.split('-').reverse().join('-');
+	console.log(getDayInRussian(new Date(dateUser)));
+}
+getDayInRussian2();
