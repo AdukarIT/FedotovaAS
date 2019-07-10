@@ -1,7 +1,7 @@
 /*Напишите функцию, которая принимает в качестве параметра номер символа в таблице Unicode. 
 Подсчитайте количество таких символов во всех элементах массива, как в задаче 3 из первой части практики. */
 function getSymbolInUnicode(numUnic, arr) {
-    let str = arr.join('');
+	let str = arr.join('');
 	let num = String.fromCharCode(numUnic);
 	let numberOfCharacters = 0;
     for(i = 0; i < str.length; i++) {
