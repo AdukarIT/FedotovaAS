@@ -65,3 +65,7 @@
 ## 25. Встроенные возможности
 
 [Task 12](https://github.com/AdukarIT/FedotovaAS/tree/master/Task12/)
+
+## 26. Продвинутый JS
+
+[Task 13](https://github.com/AdukarIT/FedotovaAS/tree/master/Task13/)
