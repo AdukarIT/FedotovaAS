@@ -4,9 +4,9 @@ function getSymbolInUnicode(numUnic, arr) {
 	let str = arr.join('');
 	let num = String.fromCharCode(numUnic);
 	let numberOfCharacters = 0;
-    for(i = 0; i < str.length; i++) {
-        if(str[i] == num) numberOfCharacters++;
-    }
+	for(i = 0; i < str.length; i++) {
+		if(str[i] == num) numberOfCharacters++;
+    	}
 	return numberOfCharacters;
 }
 let arrSymbol = ['рапира', 'арбат' , 'привет' , 'ра', 'дом'];
