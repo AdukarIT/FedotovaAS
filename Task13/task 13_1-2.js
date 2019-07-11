@@ -10,7 +10,7 @@ function countСharacters(numUnic, arr) {
 	return count;
 }
 let arrSymbol = ['рапира', 'арбат' , 'привет' , 'ра', 'дом'];
-getSymbolInUnicode(1088, arrSymbol); // 1088 - 'р'
+countСharacters(1088, arrSymbol); // 1088 - 'р'
 /*Напишите функцию, которая будет возвращать частичную функцию от функции из задачи 1,
  фиксируя искомый символ. Например:
  let countOfD = letterCounter(100);	// 100 = 'd' в Unicode
