@@ -11,14 +11,17 @@
  sqrt: 4.358898943540674, floor: true, ceil: false}.*/
  function randomArr(len, min, max) {
 	let oldArr = [];
+	
 	for(i = 0; i < len; i++) {
 		oldArr[i] = Math.random() * (max - min) + min;
 	}
+
 	return oldArr;
 }
 function getNewArr() {
 	let oldArr = randomArr(5, 1, 30);
 	let newArr = [];
+
 	for(i = 0; i < oldArr.length; i++) {
 		let obj = {}; 
 		obj['initial'] = oldArr[i];
@@ -32,6 +35,7 @@ function getNewArr() {
 		}
 		newArr[i] = obj;
 	}
+
 	console.log(oldArr);
 	return newArr;
 }
@@ -39,21 +43,24 @@ getNewArr();
 //2 Добавьте в каждый элемент массива из задачи 1 ещё одно свойство: значение sqrt, округлённое до сотых.
 function getSqrtRoundedToOneHundred() {
 	let newArr = getNewArr();
+
 	for(i = 0; i < newArr.length; i++) {
 		let sqrt = newArr[i]['sqrt'];
 		newArr[i]['sqrtRoundedToOneHundred'] = +(sqrt.toFixed(2));
 	}
+
 	return newArr;
 }
 getSqrtRoundedToOneHundred();
 //3 Напишите функцию, которая определяет, является ли строка палиндромом.
 function calculatePalindrome(str) {
 	let count = str.length / 2;
+
 	for(i = 0; i < count.toFixed(); i++) {
 		if(str[i] != str[str.length - i- 1]) {
-			return 'This String isn\'t palendrome';
+			return false;
 		} 
-	} return 'This String is Palendrome';
+	} return true;
 }
 calculatePalindrome('абрвба')
 calculatePalindrome('абвба')
@@ -61,6 +68,7 @@ calculatePalindrome('абвба')
 //Если таких символов несколько, функция должна возвращать строку из этих символов.
 function findRepetition(str) {
 	let arr = [], count2 = 1;
+
 	for(i = 0; i < str.length; i++) {
 		let count = 0;
 		for(j = i + 1; j < str.length; j++) {
@@ -74,6 +82,7 @@ function findRepetition(str) {
 			arr.push(str[i]);
 		}
 	}
+
 	return arr.join(", ");
 }
 findRepetition("трркааакк");
@@ -86,6 +95,7 @@ function findSearchInStrAndReplase(str, search, replace) {
 	let position = 0;
 	let count = 0;
 	let result = '';
+
 	while (true) {
 		let foundPosition = strNew.indexOf(searchNew, position);
 		if(foundPosition == -1) break;
@@ -94,6 +104,7 @@ function findSearchInStrAndReplase(str, search, replace) {
 		result = strNew.replace(searchNew, replaceNew);
 		strNew = result;
 	}
+
 	console.log("substring occurs: " + count);
 	return result;
 }
@@ -103,12 +114,14 @@ findSearchInStrAndReplase('Мама мыла Мамы окно', 'ма', '2');
 function replaceTheFirstLetter(str) {
 	let position = 0;
 	let result = str.split('');
+
 	while(true) {
 		result[position] = str[position].toUpperCase();
 		let foundPosition = str.indexOf(' ', position);
 		if (foundPosition == -1) break;
 		position = foundPosition + 1;
 	}
+
 	return result.join('');
 }
 replaceTheFirstLetter('заменить первую букву каждого слова');
@@ -116,11 +129,13 @@ replaceTheFirstLetter('заменить первую букву каждого �
 //Например, строка "я учусь программированию" должна преобразоваться в "я уч*сь прог*ам*и**в*н*ю".
 function replaceReps(str) {
 	let result = str.split('');
+
 	for(i = 0; i < str.length; i++) {
 		for(j = i + 1; j < str.length; j++) {
 			if(result[i] == result[j] && result[i] != " ") result[j] = '*';
 		}
 	}
+
 	return result.join('');
 }
 replaceReps('мама мыла грушу');
@@ -129,6 +144,7 @@ let date = new Date();
 function getDayInRussian(date) {
 	let day = date.getDay();
 	let arr = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+
 	return arr[day];
 }
 getDayInRussian(date);
