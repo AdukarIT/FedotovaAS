@@ -9,7 +9,16 @@ function recursiveSearchTags(document, tag) {
 }
 //4 Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так, чтобы каждый элемент стоял в своем li. 
 //Сделайте так, чтобы четные позиции имели красный фон.
-
+let ul = document.getElementsByTagName('ul')[0];
+let arr = ['1','2','3','4','5'];
+for(i = 0; i < arr.length; i++) {
+	ul.appendChild(document.createElement('li'));
+}
+let li = document.getElementsByTagName('li');
+for(i = 0; i < arr.length; i++){
+	if(i % 2 != 0)li[i].innerHTML = arr[i];
+	else 
+}
 //5 Дан элемент #elem. Найдите его соседа сверху и добавьте ему в конец текст '!'
 let textNeigbor = document.getElementById('elem').previousElementSibling.appendChild(document.createTextNode('!'));
 //6Реализуйте функцию wrapInParagraph, которая находит текст (дочерние текстовые ноды) 

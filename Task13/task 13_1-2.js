@@ -4,9 +4,11 @@ function countСharacters(numUnic, arr) {
 	let str = arr.join('');
 	let symbol = String.fromCharCode(numUnic);
 	let count = 0;
+	
 	for(i = 0; i < str.length; i++) {
 		if(str[i] == symbol) count++;
     	}
+	
 	return count;
 }
 let arrSymbol = ['рапира', 'арбат' , 'привет' , 'ра', 'дом'];
@@ -18,6 +20,7 @@ console.log(countOfD(["dad", "rod", "doctor"])); // 4*/
 function countСharacters2(numUnic) {    
 	let symbol = String.fromCharCode(numUnic);
 	let count = 0;
+	
 	function colculate(arr){
 		let str = arr.join('');
 		for(i = 0; i < str.length; i++) {
@@ -25,7 +28,20 @@ function countСharacters2(numUnic) {
 		}
 		return count;
 	}
+	
 	return colculate;
 }
 let countSymbol = countСharacters2(1088);
 countSymbol(['ра', 'а' , 'п' , 'р', 'д']);
+
+function count(str, func) {
+	let count = 0;
+	for(i = 0; i < str.length; i++) {
+		if(func(str[i])) count++;
+	}
+	return count;
+}
+count('дача.дом.детсад', function(elem) {
+	return elem == 'д';
+});
+
