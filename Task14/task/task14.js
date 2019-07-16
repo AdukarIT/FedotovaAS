@@ -38,10 +38,17 @@ let textNeigbor = document.getElementById('elem').previousElementSibling.appendC
 //внутри элемента div и оборачивает текст в параграф
 function wrapInParagp() {
 	let divs = document.getElementsByTagName('div');
+	
 	for(i = 0; i < divs.length; i++) {
-		childNodes;
+		for(j = 0; j < divs[i].childNodes.length; j++) {
+			if(divs[i].childNodes[j].nodeType != 3) continue;
+			divs[i].childNodes[j].data  =  divs[i].childNodes[j].data;
+		}
 	}
+	
+	return divs;
 }
+wrapInParagp();
 //7 Реализуйте функцию normalizeClassNames, которая нормализует имена классов для всех элементов на странице. 
 //В данном случае это означает что происходит преобразование всех классов написанных используя kebab нотацию 
 //в camelCase нотацию: text-center => textCenter
