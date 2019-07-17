@@ -42,7 +42,7 @@ function wrapInParagp() {
 	for(i = 0; i < divs.length; i++) {
 		for(j = 0; j < divs[i].childNodes.length; j++) {
 			if(divs[i].childNodes[j].nodeType != 3) continue;
-			divs[i].childNodes[j].data  =  divs[i].childNodes[j].data;
+			divs[i].childNodes[j].data  =  ;
 		}
 	}
 	

@@ -2,13 +2,12 @@
  которые с 2000 по 2013 выросли в населении.*/
  let filterCitiesOfCalifornia = function(elem) {
     if(elem['state'] != "California") return false;
-    let city = parseInt(elem.growth_from_2000_to_2013);
-	
-    return (city > 0); 
+   
+    return (parseInt(elem.growth_from_2000_to_2013) > 0); 
  };
  
-let citiesWithPopulationGrowth = data.filter(filterCitiesOfCalifornia);
-citiesWithPopulationGrowth;
+let populationGrowth = data.filter(filterCitiesOfCalifornia);
+populationGrowth;
 /* Подсчитайте, сколько миллионов 
 населения живёт во всех городах на широте от 25 до 30 градусов.*/
 let filterByLatitude = function(elem) {
@@ -25,10 +24,8 @@ sumPeople;
 /* Создайте массив только из тех городов, которые начинаются на букву D, 
 при этом отсортируйте элементы этого массива по названию города.*/
 let citiesD = data.filter(function(elem) {
-    let cityName = elem['city'];
-	
-	return (cityName[0] == 'D'); 
-    }
+	return (elem['city'] == 'D'); 
+ }
 );
 
 let sortedCitiesD = citiesD.sort(function(elem1, elem2){
