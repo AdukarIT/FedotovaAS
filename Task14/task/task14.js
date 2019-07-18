@@ -2,18 +2,21 @@
 let elem = document.getElementById('elem');
 elem.classList.add('www');
 //2 Дан элемент #elem. Проверьте наличие у него класса "www", если есть - удалите класс
-if(elem.classList.contains('www')) elem.classList.removeClass('www');
+if(elem.classList.contains('www')) elem.classList.remove('www');
 //3 Напишите функцию поиска recursiveSearchTags, которая принимает на вход document и имя тега, 
 //а возвращает массив из всех элементов соответствующих этому тегу. Поиск идет в теге body
 function recursiveSearchTags(document, tag) {
 	let arr = [];
-	if(document.children.length >= 0){
-		recursiveSearchTags(document.children[document.children.length - 1], tag) 
-		if()return arr.push();
+	for(let i = 0; i < document.children.length; i++) {
+		if(document.children[i].tagName == tag.toUpperCase()) arr.push(document.children[i]);
+	}
+	for(let j = 0; j < document.children.length; j++) {
+		arr.concat(recursiveSearchTags(document.children[j], tag));
 	}
 	return arr;
 }
-recursiveSearchTags(document, div);
+let arrDiv = recursiveSearchTags(document.body, 'div');
+arrDiv;
 //4 Дан ul. Дан массив. Вставьте элементы этого массива в конец ul так, чтобы каждый элемент стоял в своем li. 
 //Сделайте так, чтобы четные позиции имели красный фон.
 let ul = document.getElementsByTagName('ul')[0];
@@ -25,10 +28,10 @@ function getArrLi(arr, ul){
 			ul.appendChild(document.createElement('li'));
 			ul.children[i].style.backgroundColor = 'red'
 		}
-		li[i].innerHTML = arr[i];
+		document.getElementsByTagName('li')[i].innerHTML = arr[i];
 	}
 	
-	return document.getElementsByTagName('li');
+	return ul;
 }
 getArrLi(arr, ul);
 //5 Дан элемент #elem. Найдите его соседа сверху и добавьте ему в конец текст '!'
@@ -41,7 +44,9 @@ function wrapInParagp() {
 	for(i = 0; i < divs.length; i++) {
 		for(j = 0; j < divs[i].childNodes.length; j++) {
 			if(divs[i].childNodes[j].nodeType != 3) continue;
-			divs[i].childNodes[j].data  =  0;
+			divs[i].appendChild(document.createElement('p'));
+			divs[i].getElementsByTagName('p')[j].innerHTML = divs[i].childNodes[j].data;
+			divs[i].childNodes[j].data  =  null;
 		}
 	}
 	
