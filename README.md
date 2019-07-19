@@ -69,3 +69,7 @@
 ## 26. Продвинутый JS
 
 [Task 13](https://github.com/AdukarIT/FedotovaAS/tree/master/Task13/)
+
+## 27. DOM. Работа со страницей
+
+[Task 14](https://github.com/AdukarIT/FedotovaAS/tree/master/Task14/)
