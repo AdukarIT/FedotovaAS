@@ -73,3 +73,13 @@
 ## 27. DOM. Работа со страницей
 
 [Task 14](https://github.com/AdukarIT/FedotovaAS/tree/master/Task14/)
+
+
+## 28. События. Координаты на странице
+
+[Task 15](https://github.com/AdukarIT/FedotovaAS/tree/master/Task15/)
+
+
+## 30. ООП в Javascript
+
+[Task 17](https://github.com/AdukarIT/FedotovaAS/tree/master/Task17/)
