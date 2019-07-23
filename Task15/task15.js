@@ -82,11 +82,12 @@ img.addEventListener('mouseout', function(e) {
 //Остальной контент затемняется. Для «всплывания» изображения используйте position:absolute.
 let imgBig = document.getElementById('img_big');
 imgBig.onclick = function() {
-	document.body.style.background = '#696969';
-	document.body.style.background = '#B6B6B7';
-	for(let i = 0; i < document.body.childNodes.length; i++) {
-		document.body.childNodes.style[i].opacyty = '0.1';
-	}
 	imgBig.style.position = 'absolute';
 	imgBig.style.transform = 'scale(1.5)';
+	
+	document.body.style.background = '#B6B6B7';
+	for(let i = 0; i < document.body.childNodes.length; i++) {
+		if(document.body.children[i] != imgBig)document.body.children[i].style.opacity = '0.3';
+	}
+	
 }

@@ -79,3 +79,19 @@ let hamburger = new Burger('hamburger', [roll, cutlet, sauce, cucumber]);
 Как она должна работать: вы записываете в специальное поле какие-то события, 
 о которых вам нужно напомнить и в нужное время вкладка браузера 
 с этой программой должна напомнить об этом событии звуком (погуглите работу с аудио на js).*/
+
+let Diary = function(text, time) {
+	this.text = text;
+	this.time = time;
+}
+
+let butRemind = document.getElementById('enterEvent');
+let arrEvent = [];
+butRemind.addEventListener('click', function() {
+	let time = document.getElementById('timeEvent').value.split('^')
+	arrEvent.push(new Diary(document.getElementById('textEvent').value, ));
+	
+	alert('OK');
+	document.getElementById('textEvent').value = '';
+	document.getElementById('timeEvent').value = '';
+});
