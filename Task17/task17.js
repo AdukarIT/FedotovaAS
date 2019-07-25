@@ -90,22 +90,21 @@ let arrEvent = [];
 let butRemind = document.getElementById('enterEvent');
 
 function verifyTime(hour, min) {
-	
-	while (hour.value < 0 && hour.value > 23 && min.value < 0 && min.value > 59 && !isNaN(hour.value) && !isNaN(min.value){
+	while (hour < 0 || hour > 23 || min < 0 || min > 59 || isNaN(hour) || isNaN(min)){
 		alert('Ошибка');
-		
+		return true;
 	}
-	return;
 }
 
-butRemind.addEventListener('click', function() {
-	verifyTime(document.getElementById('hourEvent'), document.getElementById('minEvent'));
-	
-	arrEvent.push(new Events(document.getElementById('textEvent').value, document.getElementById('hourEvent').value),  document.getElementById('minEvent').value));
-	
-	alert('OK');
-	document.getElementById('textEvent').value = '';
-	document.getElementById('timeEvent').value = '';
+butRemind.addEventListener('click', function(e) {
+	if(verifyTime(document.getElementById('hourEvent').value, document.getElementById('minEvent').value)) e.preventDefault();
+	else {
+		arrEvent.push(new Events(document.getElementById('textEvent').value, document.getElementById('hourEvent').value,  document.getElementById('minEvent').value));
+		alert('OK');
+	}
+		document.getElementById('textEvent').value = '';
+		document.getElementById('hourEvent').value = '';
+		document.getElementById('minEvent').value = '';
 });
 
 let Notification = function(arrEvent) {
