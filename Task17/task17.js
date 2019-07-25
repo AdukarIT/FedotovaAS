@@ -80,36 +80,32 @@ let hamburger = new Burger('hamburger', [roll, cutlet, sauce, cucumber]);
 о которых вам нужно напомнить и в нужное время вкладка браузера 
 с этой программой должна напомнить об этом событии звуком (погуглите работу с аудио на js).*/
 
-let Events = function(text, hour, min) {
+let Events = function(text, date) {
 	this.text = text;
-	this.hour = hour;
-	this.min = min;
+	this.date = date;
 }
 
 let arrEvent = [];
 let butRemind = document.getElementById('enterEvent');
 
-function verifyTime(hour, min) {
-	while (hour < 0 || hour > 23 || min < 0 || min > 59 || isNaN(hour) || isNaN(min)){
-		alert('Ошибка');
-		return true;
-	}
-}
-
 butRemind.addEventListener('click', function(e) {
-	if(verifyTime(document.getElementById('hourEvent').value, document.getElementById('minEvent').value)) e.preventDefault();
-	else {
-		arrEvent.push(new Events(document.getElementById('textEvent').value, document.getElementById('hourEvent').value,  document.getElementById('minEvent').value));
-		alert('OK');
-	}
+	arrEvent.push(new Events(document.getElementById('textEvent').value, document.getElementById('dateEvent').value));
+	alert('OK');
 		document.getElementById('textEvent').value = '';
-		document.getElementById('hourEvent').value = '';
-		document.getElementById('minEvent').value = '';
+		document.getElementById('dateEvent').value = '';
 });
 
 let Notification = function(arrEvent) {
-	sound();
+	this.events = arrEvent;
+	
+	let remind = function() {
+		for(i = 0; i < events.length; i++){
+			setTimeout(sound(), (new Data() - new Date(events[i].date)));
+		}
+	}
 }
+let events = new Notification(arrEvent);
+
 function sound() {
 	 var audio = new Audio();
 	 audio.src = 'audio.mp3';
