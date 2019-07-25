@@ -80,18 +80,39 @@ let hamburger = new Burger('hamburger', [roll, cutlet, sauce, cucumber]);
 о которых вам нужно напомнить и в нужное время вкладка браузера 
 с этой программой должна напомнить об этом событии звуком (погуглите работу с аудио на js).*/
 
-let Diary = function(text, time) {
+let Events = function(text, hour, min) {
 	this.text = text;
-	this.time = time;
+	this.hour = hour;
+	this.min = min;
 }
 
-let butRemind = document.getElementById('enterEvent');
 let arrEvent = [];
+let butRemind = document.getElementById('enterEvent');
+
+function verifyTime(hour, min) {
+	
+	while (hour.value < 0 && hour.value > 23 && min.value < 0 && min.value > 59 && !isNaN(hour.value) && !isNaN(min.value){
+		alert('Ошибка');
+		
+	}
+	return;
+}
+
 butRemind.addEventListener('click', function() {
-	let time = document.getElementById('timeEvent').value.split('^')
-	arrEvent.push(new Diary(document.getElementById('textEvent').value, ));
+	verifyTime(document.getElementById('hourEvent'), document.getElementById('minEvent'));
+	
+	arrEvent.push(new Events(document.getElementById('textEvent').value, document.getElementById('hourEvent').value),  document.getElementById('minEvent').value));
 	
 	alert('OK');
 	document.getElementById('textEvent').value = '';
 	document.getElementById('timeEvent').value = '';
 });
+
+let Notification = function(arrEvent) {
+	sound();
+}
+function sound() {
+	 var audio = new Audio();
+	 audio.src = 'audio.mp3';
+	 audio.autoplay = true;
+}

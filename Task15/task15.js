@@ -66,16 +66,13 @@ divTarget.addEventListener('click', function(e){
 // при наведении мыши на картинку, изображение будет заменяться другим изображением. 
 //При выходе мыши за пределы изображения, будет восстанавливаться первоначальное изображение.
 let img = document.getElementById('img');
-let imgHidden = document.getElementById('img_hidden');
 
 img.addEventListener('mouseover', function(e) {
-	img.style.display = 'none';
-	imgHidden.style.display = '';
+	this.src = '1.jpg';
 })
 
 img.addEventListener('mouseout', function(e) {
-	img.style.display = '';
-	imgHidden.style.display = 'none';
+	this.src = '2.png';
 })
 //7 Используя событие onclick реализовать аналог fancybox. 
 //При клике – картинка увеличивается в размерах и всплывает над контентом. 
