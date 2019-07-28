@@ -98,7 +98,7 @@ butRemind.addEventListener('click', function(e) {
 let Notification = function(arrEvent) {
 	this.events = arrEvent;
 	
-	let remind = function() {
+	this.remind = function() {
 		for(i = 0; i < events.length; i++){
 			setTimeout(sound(), (new Data() - new Date(events[i].date)));
 		}
@@ -106,6 +106,9 @@ let Notification = function(arrEvent) {
 }
 let events = new Notification(arrEvent);
 
+butRemind.addEventListener('click', function(e) {
+	events.remind();
+});
 function sound() {
 	 var audio = new Audio();
 	 audio.src = 'audio.mp3';
