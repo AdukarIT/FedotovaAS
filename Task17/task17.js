@@ -88,12 +88,7 @@ let Events = function(text, date) {
 let arrEvent = [];
 let butRemind = document.getElementById('enterEvent');
 
-butRemind.addEventListener('click', function(e) {
-	arrEvent.push(new Events(document.getElementById('textEvent').value, document.getElementById('dateEvent').value));
-	alert('OK');
-		document.getElementById('textEvent').value = '';
-		document.getElementById('dateEvent').value = '';
-});
+
 
 let Notification = function(arrEvent) {
 	this.events = arrEvent;
@@ -106,11 +101,18 @@ let Notification = function(arrEvent) {
 }
 let events = new Notification(arrEvent);
 
-butRemind.addEventListener('click', function(e) {
-	events.remind();
-});
 function sound() {
 	 var audio = new Audio();
 	 audio.src = 'audio.mp3';
 	 audio.autoplay = true;
 }
+
+butRemind.addEventListener('click', function(e) {
+	arrEvent.push(new Events(document.getElementById('textEvent').value, document.getElementById('dateEvent').value));
+	alert('OK');
+
+	events.remind();
+
+	document.getElementById('textEvent').value = '';
+	document.getElementById('dateEvent').value = '';
+});
