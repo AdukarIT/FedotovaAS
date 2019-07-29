@@ -21,9 +21,7 @@ function countClick() {
 };
 
 let counter = countClick();
-table.addEventListener('click', function(e) {
-		counter();
-});
+table.addEventListener('click',  counter());
 //3 Модифицируйте задачу 7. Добавьте три radiobutton. 
 //При выборе первого включается класс bordered, 
 //при выборе второго отключается bordered и включается striped, 

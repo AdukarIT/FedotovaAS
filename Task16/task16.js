@@ -47,7 +47,7 @@ sub.addEventListener('click', function(e) {
 let mailForm = document.forms.mailForm;
 let text = document.getElementById('sms');
 let enter = document.getElementById('smsEnter');
-let reset= document.getElementById('reset');
+let reset = document.getElementById('reset');
 
 enter.addEventListener('click', function() {
 		form.setAttribute('action', 'mailto:address@domen.domen');
@@ -65,10 +65,50 @@ reset.addEventListener('click', function() {
 /*Напишите универсальную функцию для прохождения по полям формы 
 с возможностью проверки введенных данных, для тектовых полей - на текст, для имейла - на имейл и тд.*/
 
-
+function testForm(form) {
+	let elem = form.elements;
+	let ret = function(){
+		alert('Error'); 
+		return false;
+	}
+	
+	for(i = 0; i < elem.length; i++) {
+		if(!form.elements[i].value) {
+			return ret();
+		}
+		
+		if(elem[i].type == 'text' && elem[i].value.search(/[0-9]/) != -1) {
+			return ret();
+		}
+		
+		if(elem[i].type == 'mail' && !/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i.test(elem[i].value)) {
+			return ret();
+		}
+		
+		if(elem[i].type == 'number' && elem[i].value.search(/[a-z]/) != -1) {
+			return ret();
+		}
+		
+		if(elem[i].type == 'date' && !/^[\d{2}]+\.[\d{2}]+\.[\d{4}]$/g.test(elem[i].value)) {
+			return ret();
+		}
+	}
+	
+	return true;
+		
+}
 
 /*Поверьте написанную ранее функция на обработку форы регистрации, 
 если поле не проходит валидацию - подсветите его, если все поля валидные - выведите приветственное сообщение.*/
+
+let registr = document.forms.registration;
+let butnRegister = document.getElementById('register');
+let user = document.getElementById('userName');
+
+register.addEventListener('change', function(e) {
+		if(testForm(registr)) alert('Hello ' + user);
+	}
+);
 
 /*Написать скрипт, которые заменяет слово «функция» в тексте на «функция», используя регулярные вырожения.*/
 
