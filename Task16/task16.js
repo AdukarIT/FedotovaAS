@@ -67,34 +67,31 @@ reset.addEventListener('click', function() {
 
 function testForm(form) {
 	let elem = form.elements;
-	let ret = function(){
-		alert('Error'); 
-		return false;
-	}
-	
+	let arrNotValid = [];
+
 	for(i = 0; i < elem.length; i++) {
 		if(!form.elements[i].value) {
-			return ret();
+			arrNotValid.push(form.elements[i]);
 		}
 		
 		if(elem[i].type == 'text' && elem[i].value.search(/[0-9]/) != -1) {
-			return ret();
+			arrNotValid.push(form.elements[i]);
 		}
 		
 		if(elem[i].type == 'mail' && !/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i.test(elem[i].value)) {
-			return ret();
+			arrNotValid.push(form.elements[i]);
 		}
 		
 		if(elem[i].type == 'number' && elem[i].value.search(/[a-z]/) != -1) {
-			return ret();
+			arrNotValid.push(form.elements[i]);
 		}
 		
 		if(elem[i].type == 'date' && !/^[\d{2}]+\.[\d{2}]+\.[\d{4}]$/g.test(elem[i].value)) {
-			return ret();
+			arrNotValid.push(form.elements[i]);
 		}
 	}
 	
-	return true;
+	return arrNotValid;
 		
 }
 
@@ -102,11 +99,20 @@ function testForm(form) {
 если поле не проходит валидацию - подсветите его, если все поля валидные - выведите приветственное сообщение.*/
 
 let registr = document.forms.registration;
-let butnRegister = document.getElementById('register');
-let user = document.getElementById('userName');
+let butnRegister = registr.elements.register;
+let user = registr.elements.userName;
 
-register.addEventListener('change', function(e) {
-		if(testForm(registr)) alert('Hello ' + user);
+butnRegister.addEventListener('click', function(e) {
+		let arrNotValid = testForm(registr);
+
+		if(arrNotValid.length == 0) {
+			alert('Hello ' + user.value);
+			return true;
+		} else {
+			for(i = 0; i < arrNotValid.length; i++) {
+				arrNotValid[i].style.backgroundColor = 'red';
+			}
+		}
 	}
 );
 
