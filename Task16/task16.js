@@ -70,7 +70,7 @@ function testForm(form) {
 	let arrNotValid = [];
 
 	for(i = 0; i < elem.length; i++) {
-		if(!form.elements[i].value) {
+		if(!elem[i].value) {
 			arrNotValid.push(form.elements[i]);
 		}
 		
@@ -86,7 +86,7 @@ function testForm(form) {
 			arrNotValid.push(form.elements[i]);
 		}
 		
-		if(elem[i].type == 'date' && !/^[\d{2}]+\.[\d{2}]+\.[\d{4}]$/g.test(elem[i].value)) {
+		if(elem[i].type == 'date' && !/^\d{2}\.\d{2}\.\d{4}$/.test(elem[i].value)) {
 			arrNotValid.push(form.elements[i]);
 		}
 	}
@@ -116,9 +116,14 @@ butnRegister.addEventListener('click', function(e) {
 	}
 );
 
-/*Написать скрипт, которые заменяет слово «функция» в тексте на «функция», используя регулярные вырожения.*/
+/*Написать скрипт, которые заменяет слово «функция» в тексте на «фунция», используя регулярные вырожения.*/
+let str = 'Убрать функция. вапвапав пФункция. прв пк впквпвкпкв  ФУНКЦИЯ функция функция прфункция';
+str.replace(/функция/gi, 'фунция');
 
 /*С помощью test определите, что переданная строка является корректным временем вида '9.59 am', '12.30 pm'.*/
+let regTime = /\d{1,2}\.\d{2} [ap]m/;
+regTime.test('1.33 am');
+regTime.test('11.27 pm');
 
 /*Удалите одной регуляркой все повторяющиеся слова из строки,
 например для 'dsf xxx xxx sd' должно вернуть 'dsf xxx sd'.*/
