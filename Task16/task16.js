@@ -71,23 +71,23 @@ function testForm(form) {
 
 	for(i = 0; i < elem.length; i++) {
 		if(!elem[i].value) {
-			arrNotValid.push(form.elements[i]);
+			arrNotValid.push(elem[i]);
 		}
 		
 		if(elem[i].type == 'text' && elem[i].value.search(/[0-9]/) != -1) {
-			arrNotValid.push(form.elements[i]);
+			arrNotValid.push(elem[i]);
 		}
 		
 		if(elem[i].type == 'mail' && !/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i.test(elem[i].value)) {
-			arrNotValid.push(form.elements[i]);
+			arrNotValid.push(elem[i]);
 		}
 		
 		if(elem[i].type == 'number' && elem[i].value.search(/[a-z]/) != -1) {
-			arrNotValid.push(form.elements[i]);
+			arrNotValid.push(elem[i]);
 		}
 		
 		if(elem[i].type == 'date' && !/^\d{2}\.\d{2}\.\d{4}$/.test(elem[i].value)) {
-			arrNotValid.push(form.elements[i]);
+			arrNotValid.push(elem[i]);
 		}
 	}
 	
