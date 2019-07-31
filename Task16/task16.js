@@ -70,29 +70,31 @@ function testForm(form) {
 	let arrNotValid = [];
 
 	for(i = 0; i < elem.length; i++) {
-		if(!elem[i].value) {
-			arrNotValid.push(elem[i]);
-		}
+		if(elem[i].type != 'submit' && elem[i].type != 'button') {
+			
+			if(!elem[i].value) {
+				arrNotValid.push(elem[i]);
+			}
 		
-		if(elem[i].type == 'text' && elem[i].value.search(/[0-9]/) != -1) {
-			arrNotValid.push(elem[i]);
+			if(elem[i].type == 'text' && elem[i].value.search(/[0-9]/) != -1) {
+				arrNotValid.push(elem[i]);
+			}
+			
+			if(elem[i].type == 'mail' && !/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i.test(elem[i].value)) {
+				arrNotValid.push(elem[i]);
+			}
+			
+			if(elem[i].type == 'number' && elem[i].value.search(/[a-z]/) != -1) {
+				arrNotValid.push(elem[i]);
+			}
+			
+			if(elem[i].type == 'date' && !/^\d{2}\.\d{2}\.\d{4}$/.test(elem[i].value)) {
+				arrNotValid.push(elem[i]);
+			}
 		}
-		
-		if(elem[i].type == 'mail' && !/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i.test(elem[i].value)) {
-			arrNotValid.push(elem[i]);
-		}
-		
-		if(elem[i].type == 'number' && elem[i].value.search(/[a-z]/) != -1) {
-			arrNotValid.push(elem[i]);
-		}
-		
-		if(elem[i].type == 'date' && !/^\d{2}\.\d{2}\.\d{4}$/.test(elem[i].value)) {
-			arrNotValid.push(elem[i]);
-		}
+
 	}
-	
 	return arrNotValid;
-		
 }
 
 /*Поверьте написанную ранее функция на обработку форы регистрации, 
@@ -107,7 +109,6 @@ butnRegister.addEventListener('click', function(e) {
 
 		if(arrNotValid.length == 0) {
 			alert('Hello ' + user.value);
-			return true;
 		} else {
 			for(i = 0; i < arrNotValid.length; i++) {
 				arrNotValid[i].style.backgroundColor = 'red';
