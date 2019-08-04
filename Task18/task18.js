@@ -4,7 +4,16 @@
 этого файла используя синхронный/асинхронный подходы. Напишите обработчики события 
 на каждый тип события. Посмотрите в отладчике, 
 что происходит на каждом шагу выполнения запроса.*/
+let xhr = new XMLHttpRequest;
 
+xhr.open('GET', 'practice.js', true);
+xhr.send();
+
+if(xhr.status === 200) {
+	alert(xhr.status + ': ' + xhr.statusText);
+} else {
+	alert(xhr.responseText);
+}
 /*Превратите простой объект в JSON*/
 let obj = {
 	name: Nastya,
@@ -32,8 +41,4 @@ xhr.send();
 
 let response = JSON.parse(xhr1.response);
 
-function getIMG(arr) {
-	
-}
-
-let arrImg = getIMG(response);
+let arrImg = response.filter(item => item.img);

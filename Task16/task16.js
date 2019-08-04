@@ -131,4 +131,4 @@ regTime.test('11.27 pm');
 
 let str1 = 'dsf xxx xxx sd';
 
-let repl = srr1.replace()
+let repl = str1.replace(/(\w+?\d+?\s){1}/ig, '');

@@ -29,8 +29,8 @@ let citiesD = data.filter(function(elem) {
 );
 
 let sortedCitiesD = citiesD.sort(function(elem1, elem2){
-    if(elem1['city'] > elem2['city']) return 1;
-    else if(elem1['city'] < elem2['city']) return -1;
+   if(elem1['city'] > elem2['city']) return 1;
+   else if(elem1['city'] < elem2['city']) return -1;
     
 	return 0;
 	}
