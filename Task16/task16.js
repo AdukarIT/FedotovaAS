@@ -80,7 +80,7 @@ function testForm(form) {
 				arrNotValid.push(elem[i]);
 			}
 			
-			if(elem[i].type == 'mail' && !/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i.test(elem[i].value)) {
+			if(elem[i].type == 'mail' && !/^[\w]+@[\w]+\.[a-z]{2,4}$/i.test(elem[i].value)) {
 				arrNotValid.push(elem[i]);
 			}
 			
