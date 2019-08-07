@@ -32,7 +32,7 @@ $(function() {
 	let buttonEnter = $('form > button')[0];
 	let buttonCancel = $('form > button')[1];
 	
-	input = $('form > input').focusout(function(e){
+	input.focusout(function(e){
 		
 	}) ;
 	/*buttonEnter.click(function() {
