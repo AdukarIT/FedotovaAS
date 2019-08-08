@@ -86,3 +86,7 @@
 ## 30. ООП в Javascript
 
 [Task 17](https://github.com/AdukarIT/FedotovaAS/tree/master/Task17/)
+
+## 31. Взаимодействие с сервером
+
+[Task 18](https://github.com/AdukarIT/FedotovaAS/tree/master/Task18/)
