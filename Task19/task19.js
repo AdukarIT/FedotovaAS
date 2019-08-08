@@ -33,7 +33,9 @@ $(function() {
 	let buttonCancel = $('form > button')[1];
 	
 	input.focusout(function(e){
-		
+		if(e.target.type == text) {
+			target == $('#message') ? target.value >=10 && target.value <= 1000 ? 
+		}
 	}) ;
 	/*buttonEnter.click(function() {
 		
