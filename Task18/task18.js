@@ -16,7 +16,7 @@ if(xhr.status === 200) {
 }
 /*Превратите простой объект в JSON*/
 let obj = {
-	name: Nastya,
+	name: 'Nastya',
 	number: '123 45 67'
 }
 let objJson = JSON.stringify(obj);
@@ -35,10 +35,10 @@ JSON.parse(objInObjJson);
 в документ, также оберните их в ссылки, используя свойства link.*/
 
 let xhr1 = new XMLHttpRequest;
-xhr1.open('GET', 'https://api.instagram.com/v1/users/2093101329/media/recent/?access_token=2093101329.0e4abd3.d017a21b3e6e45408126e42cf0940d79', false)
-xhr1.responseType = 'json';
-xhr.send();
+xhr1.open('GET', 'https://api.instagram.com/v1/users/2093101329/media/recent/?access_token=2093101329.0e4abd3.d017a21b3e6e45408126e42cf0940d79', true);
+//xhr1.responseType = 'json';
+xhr1.send();
 
-let response = JSON.parse(xhr1.response);
+let response = xhr1.responseText;
 
 let arrImg = response.filter(item => item.img);

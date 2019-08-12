@@ -25,18 +25,22 @@ $(function() {
 Все поля обязательны для заполнения. Сообщение должно быть от 10 до 1000 знаков. 
 После заполнения каждого из полей рядом с ним должна загораться галочка. 
 При отправке формы выведите сообщение, если какие-то поля не заполнены, а также отмените отправку. */
-	let mark = $('span.mark');
-	mark.hide();
-	
 	let input = $('form > input');
 	let buttonEnter = $('form > button')[0];
 	let buttonCancel = $('form > button')[1];
 	
 	input.focusout(function(e){
-		if(e.target.type == text) {
-			target == $('#message') ? target.value >=10 && target.value <= 1000 ? 
+		if(e.target.type == 'text') {
+			if(e.target == $('#message')[0] && e.target.value.length >=10 && e.target.value.length <= 1000) {
+				e.target.after("☑");
+			} else if(e.target.value.search(/[0-9]/) == -1 && e.target.value.lengt > 4){
+				e.target.after("☑");
+			}
 		}
-	}) ;
+		if(e.target.value.lengt < 5) {
+			e.target.after("☑");
+		}
+	});
 	/*buttonEnter.click(function() {
 		
 	});*/
