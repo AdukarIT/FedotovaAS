@@ -28,25 +28,30 @@ $(function() {
 	let input = $('form > input');
 	let buttonEnter = $('form > button')[0];
 	let buttonCancel = $('form > button')[1];
+	let span = $('span')[0];
+
 	
 	input.focusout(function(e){
 		if(e.target.type == 'text') {
 			if(e.target == $('#message')[0] && e.target.value.length >=10 && e.target.value.length <= 1000) {
-				e.target.after($(document.createElement('span'));
-				span.text(.html('☑'));
-			} else if(e.target.value.search(/[0-9]/) == -1 && e.target.value.lengt > 4){
-				e.target.after($(document.createElement('span').text('☑')));
+				e.target.after('<span>☑</span>');
+			} else if(e.target.value.search(/[0-9]/) == -1){
+				e.target.after('<span>☑</span>');
 			}
 		}
-		if(e.target.value.lengt < 5) {
-			e.target.after($(document.createElement('span').text('☑')));
+		if(e.target.type == 'number' && e.target.value.search(/[a-z]/) == -1) {
+			e.target.after('<span>☑</span>');
 		}
 	});
+
 	input.focus(function(e) {
-		$(e.target > span).remove();
+		$('e.target span').remove();
 	});
-	/*buttonEnter.click(function() {
-		
-	});*/
+
+	buttonEnter.click(function(e) {
+		for(let i = 0; i < input.length; i++) {
+			if(input[i].length == 0) e.preventDefault();
+		}
+	});
 	
 });
