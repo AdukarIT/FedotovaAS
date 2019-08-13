@@ -36,7 +36,6 @@ JSON.parse(objInObjJson);
 
 let xhr1 = new XMLHttpRequest;
 xhr1.open('GET', 'https://api.instagram.com/v1/users/2093101329/media/recent/?access_token=2093101329.0e4abd3.d017a21b3e6e45408126e42cf0940d79', true);
-//xhr1.responseType = 'json';
 xhr1.send();
 
 let response = xhr1.responseText;
