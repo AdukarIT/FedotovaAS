@@ -29,13 +29,16 @@ $(function() {
 	let buttonEnter = $('form > button')[0];
 	let buttonCancel = $('form > button')[1];
 	let span = $('span')[0];
-
+	let messageText = $('#message');
+	
+	messageText.attr('minlenght', '10');
+	messageText.attr('maxlenght', '1000');
 	
 	input.focusout(function(e){
 		if(e.target.type == 'text') {
 			if(e.target == $('#message')[0] && e.target.value.length >=10 && e.target.value.length <= 1000) {
 				e.target.after('<span>☑</span>');
-			} else if(e.target.value.search(/[0-9]/) == -1){
+			} else if(e.target.value.search(/[0-9]/) == -1 && e.target != $('#message')[0]){
 				e.target.after('<span>☑</span>');
 			}
 		}
@@ -45,12 +48,22 @@ $(function() {
 	});
 
 	input.focus(function(e) {
-		$('e.target span').remove();
+		$('span').remove();
 	});
 
-	buttonEnter.click(function(e) {
+	buttonEnter.addEventListener('click', function(e) {
 		for(let i = 0; i < input.length; i++) {
-			if(input[i].length == 0) e.preventDefault();
+			if(input[i].value.length == 0) {
+				alert('not all fields are filled');
+				e.preventDefault();
+				break;
+			}
+		}
+	});
+	
+	buttonCancel.addEventListener('click', function(e) {
+		for(let i = 0; i < input.length; i++) {
+			input[i].value = '';
 		}
 	});
 	
