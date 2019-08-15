@@ -3,7 +3,19 @@
 получите данные о пользователях. Элемент select заполните именами пользователей. По нажатию на кнопку “Получить досье” 
 выведите ниже всю доступную информацию о выбранном в данный момент пользователе.
 */
-
+$.ajax(`https://jsonplaceholder.typicode.com/users`, {
+	method: `GET`,
+	dataType: `json`,
+	error: function(jqXHR, textStatus, errorThrown){
+	},
+		
+	success: function(data) {
+		for(let i = 0; i < data.length; i++) {	
+			$('select')[0].append('<option>' + data[i].name + '</option>');
+			
+		}
+	}
+}); 
 
 /*Задан код красного, зелёного, синего и оранжевого шаров. 
 https://jsfiddle.net/kve8o30x/1/ 
