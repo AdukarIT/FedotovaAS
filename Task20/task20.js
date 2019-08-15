@@ -11,9 +11,15 @@ $.ajax(`https://jsonplaceholder.typicode.com/users`, {
 		
 	success: function(data) {
 		for(let i = 0; i < data.length; i++) {	
-			$('select')[0].append('<option>' + data[i].name + '</option>');
-			
+			$('#users')[0].append(new Option(data[i].name, `${data[i].username}, ${data[i].phone}`));
 		}
+
+		let dossier = $('#show-dossier');
+
+		$('#dossier').click(function(e) {
+			dossier.empty();
+			dossier.append(`<p> dossier: ${$('#users option:selected')[0].value}</p>`);
+		});
 	}
 }); 
 
