@@ -11,7 +11,9 @@ E-mail (корректный email, обязательное поле)
 Кнопка "Подтвердить заказ"
 */
 $(function() {
+	
 	$('#order').validate({
+		
 		rules: {
 			name: {
 				required: true,
@@ -82,71 +84,78 @@ $(function() {
 По нажатию на кнопку Добавить если все поля заполнены корректно, 
 в таблицу добавляется соответствующая запись, окно закрывается и форма очищается.
 	*/
+	$('#dialogForm').validate({
+		
+		onsubmit: false,
+		
+		rules: {
+			form_name_сlient: {
+				required: true,
+				minlength: 3
+			},
+
+			form_number_сlient: {
+				number: true,
+				required: true
+			},
+
+			form_data: {
+				required: true,
+				date: true
+			},
+
+			type_appeal: {
+				required: true,
+			}
+		},
+
+		messages: {
+			form_name_сlient: {
+				required: 'Поле обязательно для заполнения',
+				minlength: 'Имя не короче 3х символов'
+			},
+
+			form_number_сlient: {
+				number: 'Поле заполнено некооректно',
+				required: 'Поле обязательно для заполнения'
+			},
+
+			form_data: {
+				required: 'Поле обязательно для заполнения',
+				date: 'Поле заполнено некооректно'
+			},
+
+			type_appeal: {
+				required: 'Поле обязательно для заполнения'
+			}
+		},
+		
+	});
+	
 	
 	let appealDialog = $('#dialog_window').dialog({
 		autoOpen: false,
 		modal: true,
 		buttons: {
-			'Добавить': function() {
-				jQuery.validator.setDefaults({
-					debug: true,
-					success: "valid"
-				  });
-				$('#dialog_form').validate({
-					rules: {
-						form_name_сlient: {
-							required: true,
-							minlength: 3
-						},
-			
-						form_number_сlient: {
-							number: true,
-							required: true
-						},
-			
-						form_data: {
-							required: true,
-							date: true
-						},
-			
-						type_appeal: {
-							required: true,
-						}
-					},
-			
-					messages: {
-						form_name_сlient: {
-							required: 'Поле обязательно для заполнения',
-							minlength: 'Имя не короче 3х символов'
-						},
-			
-						form_number_сlient: {
-							number: 'Поле заполнено некооректно',
-							required: 'Поле обязательно для заполнения'
-						},
-			
-						form_data: {
-							required: 'Поле обязательно для заполнения',
-							date: 'Поле заполнено некооректно'
-						},
-			
-						type_appeal: {
-							required: 'Поле обязательно для заполнения'
-						}
-					},
-				});
-				
+		
+			'Добавить': function() {  
+				if()
+				$(this).dialog( "close" );
 			},
 
 			'Удалить': function() {
 				$(this).dialog( "close" );
 			},
 		}
-	})
+		
+	});
 	
 	$('#appeal').click(function(e) {
 		appealDialog.dialog('open');
-	})
+	});
+	
+	
+	
 
 
 /*
