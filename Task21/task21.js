@@ -148,7 +148,7 @@ $(function() {
 				<td>${$("[name='type_appeal']").val()}</td>
 				</tr>`).appendTo(table);
 				
-				$('#dialogForm')[0].reset();
+				$('#dialogForm')[0].reset(); //тоже
 				$(this).dialog( "close" );
 			},
 
@@ -156,6 +156,7 @@ $(function() {
 				$('#dialogForm')[0].reset();
 				$(this).dialog( "close" );
 			},
+
 		}
 		
 	});
