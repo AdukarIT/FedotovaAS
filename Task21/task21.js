@@ -132,6 +132,8 @@ $(function() {
 		
 	});
 	
+	let table = $('table')[0];
+	let mesh = $('#dialog_window input');
 	
 	let appealDialog = $('#dialog_window').dialog({
 		autoOpen: false,
@@ -139,11 +141,19 @@ $(function() {
 		buttons: {
 		
 			'Добавить': function() {  
-				if()
+				//if($('#dialogForm').valid()){} не работает
+				$(`<tr><td>${mesh[0].value}</td>
+				<td>${mesh[1].value}</td>
+				<td>${mesh[2].value}</td>
+				<td>${$("[name='type_appeal']").val()}</td>
+				</tr>`).appendTo(table);
+				
+				$('#dialogForm')[0].reset();
 				$(this).dialog( "close" );
 			},
 
 			'Удалить': function() {
+				$('#dialogForm')[0].reset();
 				$(this).dialog( "close" );
 			},
 		}
