@@ -5,31 +5,6 @@
 		<link rel="stylesheet" href="../../jquery-ui-1.12.1/jquery-ui.css">
 	</head>
 	<body>
-		<form id='order'>
-			<input type='text' placeholder='enter your name' name='name'><br>
-			<label for='number'>
-				+375
-			</label>
-			<input type='text' placeholder='enter youre number' id='number' name='number'>
-			<br>
-			<input type='' placeholder='enter your mail' name='mail'>
-			<br>
-			<input type='radio' name='delivery_method'>
-				Самовывоз со склада
-			<input type='radio' name='delivery_method'>
-				Курьером по Минску
-			<input type='radio' name='delivery_method'>
-				Почтой
-				<br>
-			<textarea placeholder='comment...'>
-			</textarea>
-			<br>
-			<input type='checkbox' name='insight'>
-				Я прочитал и согласен с условиями доставки<br>
-			<button type='submit'>
-				Подтвердить заказ
-			</button>	
-		</form>
 		<table border="1" width="100%" cellpadding="10">
 			<h2>Написать обращение</h2>
 			<tr>
@@ -48,7 +23,7 @@
 			</tr>
 		</table>
 		<div id='dialog_window' title='Новое обращение'>
-			<form name='dialogForm'>
+			<form name='dialogForm' id='dialogForm'>
 				<input type='text' name='form_name_сlient' placeholder="Введите имя">
 				<input type='number' name='form_number_сlient' placeholder='Введите номер телефона'>
 				<input type='data' name='form_data' placeholder="дата">
@@ -70,9 +45,7 @@
 		</button>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js" defer></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js" defer></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.min.js" defer></script>
 		<script src="../../jquery-ui-1.12.1/jquery-ui.js" defer></script>
 		<script src='task21.js' defer></script>
 	</body>	
