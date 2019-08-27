@@ -11,7 +11,6 @@ E-mail (корректный email, обязательное поле)
 Кнопка "Подтвердить заказ"
 */
 $(function() {
-	
 	$('#order').validate({
 		
 		rules: {
@@ -141,15 +140,16 @@ $(function() {
 		buttons: {
 		
 			'Добавить': function() {  
-				//if($('#dialogForm').valid()){} не работает
-				$(`<tr><td>${mesh[0].value}</td>
-				<td>${mesh[1].value}</td>
-				<td>${mesh[2].value}</td>
-				<td>${$("[name='type_appeal']").val()}</td>
-				</tr>`).appendTo(table);
-				
-				$('#dialogForm')[0].reset(); //тоже
-				$(this).dialog( "close" );
+				if($('#dialogForm').valid()){ 
+					$(`<tr><td>${mesh[0].value}</td>
+					<td>${mesh[1].value}</td>
+					<td>${mesh[2].value}</td>
+					<td>${$("[name='type_appeal']").val()}</td>
+					</tr>`).appendTo(table);
+					
+					$('#dialogForm')[0].reset();
+					$(this).dialog( "close" );
+				}
 			},
 
 			'Удалить': function() {
@@ -165,9 +165,6 @@ $(function() {
 		appealDialog.dialog('open');
 	});
 	
-	
-	
-
 
 /*
 Задание 2
@@ -178,7 +175,7 @@ $(function() {
 и кнопками ОК и Отмена. В случае нажатия на Отмена окно закрывается. 
 При нажатии на ОК выбранные строки-обращения удаляются.
 */
-	
+$('#tbselect').selectable();
 	
 	
 });
