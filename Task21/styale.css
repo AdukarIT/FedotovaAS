@@ -1,4 +1,22 @@
-.ui-selected {
-    background-color: brown;
-    border-color: aquamarine;
+
+body {
+    font:9pt Arial,sans-serif;
+}
+#tbselect .ui-selecting {
+    background:#FECA40;
+}
+#tbselect .ui-selected {
+    background:#F39814; 
+    color:white;
+}
+#tbselect { 
+    margin:0;
+    padding:0; 
+    width:60%;}
+#tbselect td { 
+    margin:3px;
+    padding:0.4em;
+    font-size:1.4em; 
+    height:18px; 
+    border:1px solid #888
 }

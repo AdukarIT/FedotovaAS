@@ -176,6 +176,6 @@ $(function() {
 При нажатии на ОК выбранные строки-обращения удаляются.
 */
 $('#tbselect').selectable();
-	
+$("#selectable").selectable();	
 	
 });
