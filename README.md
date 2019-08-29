@@ -90,3 +90,16 @@
 ## 31. Взаимодействие с сервером
 
 [Task 18](https://github.com/AdukarIT/FedotovaAS/tree/master/Task18/)
+
+## 33. Библиотека jQuery
+
+[Task 19](https://github.com/AdukarIT/FedotovaAS/tree/master/Task19/)
+
+## 34. Библиотека jQuery. AJAX и анимации
+[Task 20](https://github.com/AdukarIT/FedotovaAS/tree/master/Task20/)
+
+## 35. Библиотека jQuery. Плагины
+[Task 21](https://github.com/AdukarIT/FedotovaAS/tree/master/Task21/)
+
+## Календарь
+[Task 22](https://github.com/AdukarIT/FedotovaAS/tree/master/Task22/)
