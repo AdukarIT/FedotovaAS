@@ -2,8 +2,23 @@
 	border-radius: 10%;
 	background-color: lightblue;
 	color: whitesmoke;
-	:hover {
-		font: 16px;
-		border: 1px #646464; 
-	}
+}
+
+#date_picker:focus {
+	background-color: whitesmoke;
+	color: lightblue;
+}
+
+#date_conclusion {
+	background-color: whitesmoke;
+	
+	/*:focus {
+		border: 1px solid;
+		padding: 100px;
+		НЕ РАБОТАЕТ
+	}*/
+}
+
+#date_conclusion:focus {
+		border: 1px solid lightblue;
 }
