@@ -1,16 +1,16 @@
-#date_picker {
+.date_picker_unchecked {
 	border-radius: 10%;
-	background-color: lightblue;
-	color: whitesmoke;
+	background-color: $color_base;
+	color: $color_base_wight;
 }
 
-#date_picker:focus {
-	background-color: whitesmoke;
-	color: lightblue;
+.date_picker_checked {
+	background-color: $color_base_wight;
+	color: $color_base;
 }
 
 #date_conclusion {
-	background-color: whitesmoke;
+	background-color: $color_base_wight;
 	
 	/*:focus {
 		border: 1px solid;
@@ -20,5 +20,10 @@
 }
 
 #date_conclusion:focus {
-		border: 1px solid lightblue;
+		border: 1px solid $color_base;
+}
+
+#calendar_month_year {
+	padding: 29px;
+	font: 16pt Arial,sans-serif;
 }

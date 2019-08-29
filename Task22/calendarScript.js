@@ -1,16 +1,30 @@
-let count = countClick();
+let clicked = clickGetDate();
+
 $('#date_picker').click(function() {
-	count();
+	clicked();
 });
 
-function countClick() {
-	let count = 0;
+function clickGetDate() {
+	let open = false;
+
 	return function() {
-		count++;
-		if(count > 2) count = 1;
-		
-		if(count == 1) $('#calendar').css('display', 'grid');
-		else if(count == 2) $('#calendar').css('display', 'none');
-		
+		if(open == false) {
+			open = true;
+
+			$('#calendar').css('display', 'grid');
+			$('#date_picker').removeClass().addClass('date_picker_checked');
+			$('calendar_month_year').text(`<span>${new Date().getMonth()}</span>`);
+		} else if(open == true) {
+			open = false;
+
+			$('#calendar').css('display', 'none');
+			$('#date_picker').removeClass().addClass('date_picker_unchecked');
+		}
 	}
 }
+
+class Data {
+	
+}
+
+//
