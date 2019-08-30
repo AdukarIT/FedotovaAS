@@ -26,4 +26,10 @@
 #calendar_month_year {
 	padding: 29px;
 	font: 16pt Arial,sans-serif;
+	grid-column: 2/7;
+}
+
+.calendar button {
+	background-color: $color_base;
+	color: $color_base;
 }

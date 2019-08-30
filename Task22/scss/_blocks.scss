@@ -11,4 +11,9 @@ body {
 }
 #calendar {
     display: none;
+	padding: 3%;
+	grid-template-columns: repeat(7, 1fr);
+	grid-auto-rows: minmax(auto, auto);
+	justify-items: center;
+	background-color: $color_base_wight;
 }

@@ -1,10 +1,14 @@
-let clicked = clickGetDate();
+var options = {
+  month: 'long',
+};
+
+let clicked = clickGetMonth();
 
 $('#date_picker').click(function() {
 	clicked();
 });
 
-function clickGetDate() {
+function clickGetMonth() {
 	let open = false;
 
 	return function() {
@@ -13,10 +17,10 @@ function clickGetDate() {
 
 			$('#calendar').css('display', 'grid');
 			$('#date_picker').removeClass().addClass('date_picker_checked');
-			$('calendar_month_year').text(`<span>${new Date().getMonth()}</span>`);
+			$('#calendar_month_year').text(`${new Date().toLocaleString("ru", options)} ${new Date().getFullYear()}`);
 		} else if(open == true) {
 			open = false;
-
+			
 			$('#calendar').css('display', 'none');
 			$('#date_picker').removeClass().addClass('date_picker_unchecked');
 		}
