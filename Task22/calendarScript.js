@@ -1,13 +1,17 @@
 $(function() {
 	
 	var options = {
-	month: 'long',
-	year: 'numeric'
+		month: 'long',
+		year: 'numeric'
 	};
 
 	let currentDate = new Date();
 	let year = currentDate.getFullYear();
 	let month = currentDate.getMonth();
+
+	let calendarDate = new Date();
+	let calendarYear = calendarDate.getFullYear();
+	let calendarMonth = calendarDate.getMonth();
 
 	let clicked = clickGetMonth();
 
@@ -33,6 +37,8 @@ $(function() {
 				let lastDay = new Date(year, month + 1, 0).getDate();
 				let table = new tableDate(date, firstDay, lastDay);
 				table.getTable();
+
+				calendarDate = new Date(year, month, 1);
 			} else if(open == true) {
 				open = false;
 				
@@ -50,9 +56,9 @@ $(function() {
 		}
 		getTable() {
 			
+			$('#calendar_table').empty();			
+			
 			let dayWeek = this.date.getDay();
-
-			$('#calendar_table').empty();
 
 			dayWeek == 0? dayWeek = 7 : false;
 
@@ -74,6 +80,8 @@ $(function() {
 		let lastDay = new Date(year, month + 1, 0).getDate();
 		let table = new tableDate(date, firstDay, lastDay);
 		table.getTable();
+
+		calendarDate = new Date(year, month, 1);
 	});
 
 	$('#calendar_back').click(function() {
@@ -84,7 +92,25 @@ $(function() {
 		let lastDay = new Date(year, month + 1, 0).getDate();
 		let table = new tableDate(date, firstDay, lastDay);
 		table.getTable();
+
+		calendarDate = new Date(year, month, 1);
+	});
+
+	$('#calendar_table').click(function(e) {
+		let options = {
+			year: 'numeric',
+			day: 'numeric',
+			month: 'numeric'
+		}
+
+		let year = calendarDate.getFullYear();
+		let month = calendarDate.getMonth();
+		let day = e.target.textContent;
+		let date = new Date(year, month, +day).toLocaleString("ru", options);
+
+		$('#date_conclusion')[0].value = date;
+
+		$('#calendar').css('display', 'none');
+		$('#date_picker').removeClass().addClass('date_picker_unchecked');
 	});
 });
-		
-	
