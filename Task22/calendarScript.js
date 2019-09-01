@@ -54,6 +54,11 @@ $(function() {
 
 			$('#calendar_table').empty();
 
+			dayWeek == 0? dayWeek = 7 : false;
+
+			for(let j = 1; j < dayWeek; j++) {
+				$('#calendar_table').append(`<p></p>`);
+			}
 			for(let i = 1; i <= this.lastDay; i ++) {	
 				$('#calendar_table').append(`<p>${i}</p>`);
 			}
