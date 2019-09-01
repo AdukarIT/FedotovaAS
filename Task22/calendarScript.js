@@ -54,8 +54,8 @@ $(function() {
 
 			$('#calendar_table').empty();
 
-			for(let i = 1; i <= this.lastDay; i ++) {
-				$('#calendar_table').append(`<td>${i}</td>`);
+			for(let i = 1; i <= this.lastDay; i ++) {	
+				$('#calendar_table').append(`<p>${i}</p>`);
 			}
 
 		}

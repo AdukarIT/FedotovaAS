@@ -16,10 +16,17 @@ body {
 	grid-template-columns: repeat(7, 1fr);
 	grid-template-rows: repeat(7, 1fr);
 	grid-auto-rows: minmax(auto, auto);
-	justify-items: center;
+	justify-items: stretch;
 	background-color: #FFFAFA;
 }
 #calendar_table {
-	grid-column: 1/8;
+	grid-column: 1 / -1;
 	grid-row: 3/8;
+
+	display: grid;;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-auto-rows: auto;
+	grid-auto-columns: auto;
+	justify-items: stretch;
 }
