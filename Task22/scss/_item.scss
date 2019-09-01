@@ -24,12 +24,16 @@
 }
 
 #calendar_month_year {
-	padding: 29px;
-	font: 16pt Arial,sans-serif;
+	padding: 3%;
 	grid-column: 2/7;
+	font: 14pt Arial,sans-serif;
+	color: maroon;
+	text-align: center;
 }
-
-.calendar button {
-	background-color: $color_base;
-	color: $color_base;
+.calendar_nav_button {
+		background-color: $color_base;
+		color: $color_base_wight;
+}
+.calendar_day {
+	color: maroon;
 }
