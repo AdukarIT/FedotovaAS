@@ -33,9 +33,8 @@ $(function() {
 				month = currentDate.getMonth();
 
 				let date = new Date(year, month, 1);
-				let firstDay = date.getDate();
 				let lastDay = new Date(year, month + 1, 0).getDate();
-				let table = new tableDate(date, firstDay, lastDay);
+				let table = new tableDate(date, lastDay);
 				table.getTable();
 
 				calendarDate = new Date(year, month, 1);
@@ -49,10 +48,10 @@ $(function() {
 	}
 
 	class tableDate {
-		constructor(date, firstDay, lastDay) {
-			this.firstDay = firstDay;
-			this.lastDay = lastDay;
+		constructor(date, lastDay) {
 			this.date = date;
+			this.lastDay = lastDay;
+			let firstDay = this.date.getDate();
 		}
 		getTable() {
 			
@@ -76,9 +75,8 @@ $(function() {
 		$('#calendar_month_year').text(`${new Date(year, month += 1, 1).toLocaleString("ru", options)}`);
 		
 		let date = new Date(year, month, 1);
-		let firstDay = date.getDate();
 		let lastDay = new Date(year, month + 1, 0).getDate();
-		let table = new tableDate(date, firstDay, lastDay);
+		let table = new tableDate(date, lastDay);
 		table.getTable();
 
 		calendarDate = new Date(year, month, 1);
@@ -88,9 +86,8 @@ $(function() {
 		$('#calendar_month_year').text(`${new Date(year, month -= 1, 1).toLocaleString("ru", options)}`);
 		
 		let date = new Date(year, month, 1);
-		let firstDay = date.getDate();
 		let lastDay = new Date(year, month + 1, 0).getDate();
-		let table = new tableDate(date, firstDay, lastDay);
+		let table = new tableDate(date, lastDay);
 		table.getTable();
 
 		calendarDate = new Date(year, month, 1);
