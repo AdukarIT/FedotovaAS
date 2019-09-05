@@ -2,16 +2,14 @@ $(function() {
 	let currentDate = new Date();
 	let year = currentDate.getFullYear();
 	let month = currentDate.getMonth();
-
+	
+	let open = false;
 	let clicked = clickGetMonth();
-
 	$('#date_picker').click(function() {
 		clicked();
 	});
 
 	function clickGetMonth() {
-		let open = false;
-
 		return function() {
 			if(open == false) {
 				open = true;
@@ -25,12 +23,9 @@ $(function() {
 				$('#date_picker').removeClass().addClass('date_picker_checked');
 				$('#calendar_month_year').text(`${currentDate.toLocaleString("ru", options)}`);
 
-				month = currentDate.getMonth();
-
 				let date = new Date(year, month, 1);
 				let lastDay = new Date(year, month + 1, 0).getDate();
-				let table = new tableDate(date, lastDay);
-				table.getTable();
+				new tableDate(date, lastDay).getTable();
 
 			} else if(open == true) {
 				open = false;
@@ -72,8 +67,7 @@ $(function() {
 		
 		let date = new Date(year, month, 1);
 		let lastDay = new Date(year, month + 1, 0).getDate();
-		let table = new tableDate(date, lastDay);
-		table.getTable();
+		new tableDate(date, lastDay).getTable();
 	});
 
 	$('#calendar_back').click(function() {
@@ -86,8 +80,7 @@ $(function() {
 		
 		let date = new Date(year, month, 1);
 		let lastDay = new Date(year, month + 1, 0).getDate();
-		let table = new tableDate(date, lastDay);
-		table.getTable();
+		new tableDate(date, lastDay).getTable();
 	});
 
 	$('#calendar_table').click(function(e) {
@@ -96,6 +89,8 @@ $(function() {
 			day: 'numeric',
 			month: 'numeric'
 		}
+		
+		open = false;
 
 		let year = e.target.dataset.year;
 		let month = e.target.dataset.month;
