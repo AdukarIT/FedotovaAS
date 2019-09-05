@@ -5,7 +5,7 @@ $(function() {
 	
 	let open = false;
 	let clicked = clickGetMonth();
-	$('#date_picker').click(function() {
+	$('#datePicker_button-open').click(function() {
 		clicked();
 	});
 
@@ -20,7 +20,7 @@ $(function() {
 				};
 
 				$('#calendar').css('display', 'grid');
-				$('#date_picker').removeClass().addClass('date_picker_checked');
+				$('#datePicker_button-open').removeClass().addClass('date_picker_checked');
 				$('#calendar_month_year').text(`${currentDate.toLocaleString("ru", options)}`);
 
 				let date = new Date(year, month, 1);
@@ -31,7 +31,7 @@ $(function() {
 				open = false;
 				
 				$('#calendar').css('display', 'none');
-				$('#date_picker').removeClass().addClass('date_picker_unchecked');
+				$('#datePicker_button-open').removeClass().addClass('date_picker_unchecked');
 			}
 		}
 	}
@@ -57,7 +57,7 @@ $(function() {
 		}
 	}
 
-	$('#calendar_forward').click(function() {
+	$('#calendar_next').click(function() {
 		var options = {
 			month: 'long',
 			year: 'numeric'
@@ -95,11 +95,10 @@ $(function() {
 		let year = e.target.dataset.year;
 		let month = e.target.dataset.month;
 		let day = e.target.dataset.day;
-		let date = new Date(year, month, +day).toLocaleString("ru", options);
 
-		$('#date')[0].value = date;
+		$('#datePicker_date')[0].value = new Date(year, month, +day).toLocaleString("ru", options);
 
 		$('#calendar').css('display', 'none');
-		$('#date_picker').removeClass().addClass('date_picker_unchecked');
+		$('#datePicker_button-open').removeClass().addClass('date_picker_unchecked');
 	});
 });
