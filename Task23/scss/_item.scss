@@ -1,0 +1,19 @@
+.color__recipient__color {
+		padding: 2%;
+		width: 400px;
+		border: solid 2px;
+		border-color: $color_base $color_base $color_base2 $color_base2;
+	&:focus {
+		border-color: #DDA0DD #DDA0DD #87CEEB #87CEEB;
+	}
+}
+.color__recipient__list {
+	display: none;
+}
+.color__recipient__list_show {
+	display: flex;
+	height: 200px;
+	li {
+		
+	}
+}

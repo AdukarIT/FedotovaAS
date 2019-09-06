@@ -1,0 +1,12 @@
+html, body {
+	padding: 10%;
+	box-sizing: border-box;
+	height: 100%;
+	font: 12pt Arial,sans-serif;
+	background: linear-gradient(45deg, $color_base, $color_base2) no-repeat;
+}
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
