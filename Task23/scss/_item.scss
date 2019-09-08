@@ -12,8 +12,12 @@
 }
 .color__recipient__list_show {
 	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
 	height: 200px;
+
 	li {
-		
+		@include border_color;
+		width: 25%;
 	}
 }
