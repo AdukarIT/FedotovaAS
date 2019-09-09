@@ -22,12 +22,13 @@ $(function() {
 
 			this.paintOver();
 			
-			this.$list.children('li').click(e => {
-				this.$input.val(`${e.target.dataset.color}`);
+			
+			$('body').click(e => {
+				if(e.target.tagName == 'LI') this.$input.val(`${e.target.dataset.color}`);
+				else if (e.target == this.$input[0]) return;
 				this.$list.empty();
 				this.$list.removeClass(this.class_list_show);
-			})
-			
+			});
 			
 		}
 
