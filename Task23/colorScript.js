@@ -22,19 +22,26 @@ $(function() {
 
 			this.paintOver();
 			
-			this.$list.children('li').click(e => {
-				this.$input.val(`${e.target.dataset.color}`);
+			
+			$('body').click(e => {
+				if(e.target.tagName == 'LI') this.$input.val(`${e.target.dataset.color}`);
+				else if (e.target == this.$input[0]) return;
 				this.$list.empty();
 				this.$list.removeClass(this.class_list_show);
-			})
+			});
 			
 		}
 
 		generateColors() {
 			let arrColors = [];
-			for(let i = 44; i <= 220; i += 44) {
-				arrColors.push(`rgb(${i}, ${i}, ${i})`);	
-			}
+				for(let l = 44; l <= 220; l += 44) {
+					arrColors.push(`rgb(${l}, ${0}, ${0})`);
+					arrColors.push(`rgb(${0}, ${l}, ${0})`);
+					arrColors.push(`rgb(${0}, ${0}, ${l})`);
+					arrColors.push(`rgb(${l}, ${l}, ${0})`);
+					arrColors.push(`rgb(${0}, ${l}, ${l})`);
+					arrColors.push(`rgb(${l}, ${0}, ${l})`);
+				}
 			return arrColors;
 		}
 

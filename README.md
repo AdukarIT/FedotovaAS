@@ -103,3 +103,6 @@
 
 ## Календарь
 [Task 22](https://github.com/AdukarIT/FedotovaAS/tree/master/Task22/)
+
+## colorPicker
+[Task 23](https://github.com/AdukarIT/FedotovaAS/tree/master/Task23/)
