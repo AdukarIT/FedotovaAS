@@ -7,5 +7,20 @@ $.ajax('https://jsonplaceholder.typicode.com/users', {
 	method: 'GET',
 	dataType: 'json',
 
-	success: 
+	success: function(users) {
+		users.forEach(function(user) {
+			$('#users_name').append(new Option(user.name, user.id));
+		})
+		
+		$('#getter_dossier').click(function() {
+			$('.dossier').empty();
+
+			users.forEach(function(user) {
+				if(user.id == users_name.value) {
+					$('.dossier').append(`<p>${JSON.stringify(user)}</p>`);
+				}
+			})
+			
+		})
+	}
 })
