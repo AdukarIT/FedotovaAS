@@ -8,9 +8,23 @@ $.ajax('https://jsonplaceholder.typicode.com/users', {
 	dataType: 'json',
 
 	success: function(users) {
-		users.forEach(function(user) {
-			$('#users_name').append(new Option(user.name, user.id));
-		})
+		new Users(users);
+	}
+})
+
+	сlass Users = {
+		constructor(users) {
+			this.select__users = '.users__name';
+			
+			this.users = users;
+		}
+		
+		getOptions() {
+			users.forEach(function(user) {
+				$('#users_name').append(new Option(user.name, user.id));
+			})
+		}
+		
 		
 		$('#getter_dossier').click(function() {
 			$('.dossier').empty();
@@ -21,6 +35,16 @@ $.ajax('https://jsonplaceholder.typicode.com/users', {
 				}
 			})
 			
+			
+			
 		})
-	}
-})
+	} 
+
+/* Есть базы:  
+альбомов https://jsonplaceholder.typicode.com/albums 
+фотографий https://jsonplaceholder.typicode.com/photos 
+
+На одной странице реализуйте возможность просмотреть любой из 100 альбомов.
+Фотографии альбома должны загружаться только после выбора соответствующего альбома.
+P.S. Отфильтровать фотографии по принадлежности к альбому можно добавив параметр albumId=идентификатор_альбома
+*/ 

@@ -3,9 +3,11 @@
 	<head>
 	</head>
 	<body>
-		<select id='users_name'></select>
-		<button type="button" id='getter_dossier'>Show dossier</button>
-		<div class='dossier'></div>
+		<form class='users'>
+			<select id='users_name' class='users__name'></select>
+			<button type="button" id='getter_dossier' class='users__getter'>Show dossier</button>
+			<div class='dossier' class='users__dossier'></div>
+		</form>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
 		<script src='ajaxScript.js' defer></script>
 	</body>

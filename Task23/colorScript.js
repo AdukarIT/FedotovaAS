@@ -1,5 +1,4 @@
-$(function() {
-	class ColorPicker {
+class ColorPicker {
 		constructor(root_elem) {
 			this.elem_input = '.color__recipient__color';
 			this.elem_list = '.color__recipient__list';
@@ -9,19 +8,13 @@ $(function() {
 			this.$list = $(root_elem).find(this.elem_list);
 			
 			this.$input.focus( () => this.getColors() );
+			this.arrColors = this.generateColors();
 		};
 		
 		getColors() {
 			this.$list.removeClass().addClass(this.class_list_show);
 			
-			let arrColors = this.generateColors();
-
-			for(let j = 0; j < arrColors.length; j++) {
-				this.$list.append(`<li data-color='${arrColors[j]}'></li>`)
-			}
-
-			this.paintOver();
-			
+			this.generateList();
 			
 			$('body').click(e => {
 				if(e.target.tagName == 'LI') this.$input.val(`${e.target.dataset.color}`);
@@ -34,24 +27,24 @@ $(function() {
 
 		generateColors() {
 			let arrColors = [];
-				for(let l = 44; l <= 220; l += 44) {
+				for(let l = 0x00; l <= 0x180; l += 0x44) {
 					arrColors.push(`rgb(${l}, ${0}, ${0})`);
 					arrColors.push(`rgb(${0}, ${l}, ${0})`);
 					arrColors.push(`rgb(${0}, ${0}, ${l})`);
-					arrColors.push(`rgb(${l}, ${l}, ${0})`);
-					arrColors.push(`rgb(${0}, ${l}, ${l})`);
-					arrColors.push(`rgb(${l}, ${0}, ${l})`);
 				}
 			return arrColors;
 		}
 
-		paintOver() {
-			for(let k = 0; k < this.$list.children('li').length; k++) {
-				$(this.$list.children('li')[k]).css('background-color', this.$list.children('li')[k].dataset.color);
+		generateList() {
+			for(let j = 0; j < this.arrColors.length; j++) {
+				this.$list.append(`<li data-color='${this.arrColors[j]}'></li>`);
+				$(this.$list.children('li')[j]).css('background-color', this.$list.children('li')[j].dataset.color);
 			}
 		}
-	}
+
+}
+
+$(function() {
 	new ColorPicker('#color__recipient');
 });
-
 
