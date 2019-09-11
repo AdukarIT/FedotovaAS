@@ -3,29 +3,18 @@
 получите данные о пользователях. Элемент select заполните именами пользователей. По нажатию на кнопку “Получить досье” 
 выведите ниже всю доступную информацию о выбранном в данный момент пользователе.
 */
+
+/*
 $.ajax('https://jsonplaceholder.typicode.com/users', {
 	method: 'GET',
 	dataType: 'json',
 
 	success: function(users) {
-		new Users(users);
-	}
-})
+		new Users(users, $('#usersInfo'))
+		/*users.forEach(function(user) {
+			$('#users_name').append(new Option(user.name, user.id));
+		})
 
-	сlass Users = {
-		constructor(users) {
-			this.select__users = '.users__name';
-			
-			this.users = users;
-		}
-		
-		getOptions() {
-			users.forEach(function(user) {
-				$('#users_name').append(new Option(user.name, user.id));
-			})
-		}
-		
-		
 		$('#getter_dossier').click(function() {
 			$('.dossier').empty();
 
@@ -34,11 +23,51 @@ $.ajax('https://jsonplaceholder.typicode.com/users', {
 					$('.dossier').append(`<p>${JSON.stringify(user)}</p>`);
 				}
 			})
-			
-			
-			
+
 		})
-	} 
+	}
+})
+*/
+
+/*
+class Users {
+	constructor(users, form) {
+		this.select__users = '.users__name';
+		this.burron_users = '.users__getter';
+		this.div_dossier = '.users__dossier';
+		
+		this.users = users;
+		this.form = form;
+
+		this.$select = this.form.find(this.select__users);
+		this.$button = this.form.find(this.burron_users);
+		this.$div = this.form.find(this.div_dossier);
+
+		let options = this.getOptions();
+
+		this.$button.click( () =>  this.getDossier()); 
+	}
+	
+	getOptions() {
+		this.users.forEach(function(user) {
+			this.$select.append(new Option(user.name, user.id));
+		})
+	}
+	
+	getDossier() {
+			this.$div.empty();
+	
+			this.users.forEach(function(user) {
+				if(user.id == users_name.value) {
+					this.$div.append(`<p>${JSON.stringify(user)}</p>`);
+				}
+			})
+			
+			
+			
+	}
+}; 
+*/
 
 /* Есть базы:  
 альбомов https://jsonplaceholder.typicode.com/albums 
@@ -48,3 +77,21 @@ $.ajax('https://jsonplaceholder.typicode.com/users', {
 Фотографии альбома должны загружаться только после выбора соответствующего альбома.
 P.S. Отфильтровать фотографии по принадлежности к альбому можно добавив параметр albumId=идентификатор_альбома
 */ 
+
+$.ajax('https://jsonplaceholder.typicode.com/albums', {
+	method: 'GET',
+	dataType: 'json',
+
+	success: function(data) {
+		console.log(data);
+	}	
+})
+
+$.ajax('https://jsonplaceholder.typicode.com/photos', {
+	method: 'GET',
+	dataType: 'json',
+
+	success: function(data) {
+		console.log(data);
+	}	
+})
