@@ -4,13 +4,12 @@
 выведите ниже всю доступную информацию о выбранном в данный момент пользователе.
 */
 
-/*
 $.ajax('https://jsonplaceholder.typicode.com/users', {
 	method: 'GET',
 	dataType: 'json',
 
 	success: function(users) {
-		new Users(users, $('#usersInfo'))
+		new Users(users, $('#usersInfo'));
 		
 		
 		/*users.forEach(function(user) {
@@ -26,12 +25,9 @@ $.ajax('https://jsonplaceholder.typicode.com/users', {
 				}
 			})
 
-		})
+		})*/
 	}
 })
-*/
-
-/*
 class Users {
 	constructor(users, form) {
 		this.select__users = '.users__name';
@@ -51,15 +47,13 @@ class Users {
 	}
 	
 	getOptions() {
-		this.users.forEach(function(user) {
-			this.$select.append(new Option(user.name, user.id));
-		})
+		this.users.forEach(user => this.$select.append(new Option(user.name, user.id)))
 	}
 	
 	getDossier() {
 			this.$div.empty();
 	
-			this.users.forEach(function(user) {
+			this.users.forEach(user => {
 				if(user.id == users_name.value) {
 					this.$div.append(`<p>${JSON.stringify(user)}</p>`);
 				}
@@ -69,7 +63,6 @@ class Users {
 			
 	}
 }; 
-*/
 
 /* Есть базы:  
 альбомов https://jsonplaceholder.typicode.com/albums 
@@ -87,10 +80,7 @@ class Albums {
 	}
 	
 	createAlbums() {
-		this.albums.forEach(function(elem) {
-			this.$div.append(`<div id='${elem.id}'>${elem.title}</div>`);
-		})
-			
+		this.albums.forEach(elem => this.$div.append(`<p id='${elem.id}'><a>${elem.title}</a></p>`))		
 	}
 }
 
@@ -114,8 +104,7 @@ $.ajax('https://jsonplaceholder.typicode.com/albums', {
 	dataType: 'json',
 
 	success: function(albums) {
-		let col = new Albums(albums);
-		col.createAlbums();
+		new Albums(albums).createAlbums();
 	}	
 })
 
