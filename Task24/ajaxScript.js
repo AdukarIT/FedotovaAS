@@ -75,20 +75,46 @@ P.S. Отфильтровать фотографии по принадлежно
 
 class Albums {
 	constructor(albums) {
-		this.$div = $('.album');
+		this.$div = $('.gallery');
 		this.albums = albums;
 	}
 	
 	createAlbums() {
-		this.albums.forEach(elem => this.$div.append(`<p id='${elem.id}'><a>${elem.title}</a></p>`))		
+		this.albums.forEach(elem => this.$div.append(`<div id='${elem.id}' class='.albom_show'>${elem.title}</div>`))		
 	}
 }
 
 class Photos {
 	constructor(photo) {
+		this.p_pfoto = '.albom_show';
+		
+		this.$divs = $('.gallery');
+		this.$div = this.$divs.find(this.p_pfoto);
+		
 		this.photo = photo;	
+		
+		
+	}
+	
+	addPhotos() {
+		this.$div.click(elem => {
+			this.photo.forEach(function(e) {
+				if(elem.target.attr('id') == e.albumId) {
+					this.$div.append(`<img src='e.url'></img>`);
+				}
+			})
+		})
 	}
 }
+
+$.ajax('https://jsonplaceholder.typicode.com/albums', {
+	method: 'GET',
+	dataType: 'json',
+
+	success: function(albums) {
+		new Albums(albums).createAlbums();
+	}	
+})
 
 $.ajax('https://jsonplaceholder.typicode.com/photos', {
 	method: 'GET',
@@ -99,13 +125,6 @@ $.ajax('https://jsonplaceholder.typicode.com/photos', {
 	}	
 })
 
-$.ajax('https://jsonplaceholder.typicode.com/albums', {
-	method: 'GET',
-	dataType: 'json',
 
-	success: function(albums) {
-		new Albums(albums).createAlbums();
-	}	
-})
 
 
