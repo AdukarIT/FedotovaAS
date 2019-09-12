@@ -11,6 +11,8 @@ $.ajax('https://jsonplaceholder.typicode.com/users', {
 
 	success: function(users) {
 		new Users(users, $('#usersInfo'))
+		
+		
 		/*users.forEach(function(user) {
 			$('#users_name').append(new Option(user.name, user.id));
 		})
@@ -78,20 +80,43 @@ class Users {
 P.S. Отфильтровать фотографии по принадлежности к альбому можно добавив параметр albumId=идентификатор_альбома
 */ 
 
-$.ajax('https://jsonplaceholder.typicode.com/albums', {
-	method: 'GET',
-	dataType: 'json',
+class Albums {
+	constructor(albums) {
+		this.$div = $('.album');
+		this.albums = albums;
+	}
+	
+	createAlbums() {
+		this.albums.forEach(function(elem) {
+			this.$div.append(`<div id='${elem.id}'>${elem.title}</div>`);
+		})
+			
+	}
+}
 
-	success: function(data) {
-		console.log(data);
-	}	
-})
+class Photos {
+	constructor(photo) {
+		this.photo = photo;	
+	}
+}
 
 $.ajax('https://jsonplaceholder.typicode.com/photos', {
 	method: 'GET',
 	dataType: 'json',
 
-	success: function(data) {
-		console.log(data);
+	success: function(photos) {
+		new Photos(photos);
 	}	
 })
+
+$.ajax('https://jsonplaceholder.typicode.com/albums', {
+	method: 'GET',
+	dataType: 'json',
+
+	success: function(albums) {
+		let col = new Albums(albums);
+		col.createAlbums();
+	}	
+})
+
+
