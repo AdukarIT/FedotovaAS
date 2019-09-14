@@ -1,16 +1,13 @@
 class Catalog {
 	constructor(modalWindow, table) {
-		this.table_item = '.catalog__header';
-		
 		this.modalWindow = modalWindow;
-		this.table = table;
-		this.books = [];
-		this.load();
-		
-		this.$tr_td = $(this.table).find(this.table_item);	
+		this.$table = $(table);
+
 		this.$remover = $('.remover');
 		this.$addition = $('.addition');
 		
+		this.books = [];
+		this.load();		
 		this.$remover.click(() => add());
 	}
 	
@@ -28,10 +25,14 @@ class Catalog {
 	}
 
 	redrow() {
-		this.books.forEach(function(item) {
-			this.$tr_td.append(`<tr class='product'><td>${item}</td><td></td><tr></td><td></td></tr>`)
+		this.books.forEach(item => {
+			this.$table.append(`<tr class='product' data-id='${item.id}'>
+				<td>${item.id}</td>
+				<td>${item.title}</td>
+				<td>${item.author}</td>
+				<td>${item.description}</td>
+			</tr>`)
 		})
-			
 	}
 	
 }
