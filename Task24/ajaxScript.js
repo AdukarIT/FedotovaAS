@@ -37,7 +37,7 @@ class Users {
 
 		this.options = this.getOptions();
 
-		this.$button.click( () =>  this.getDossier()); 
+		this.$button.click(() => this.getDossier()); 
 	}
 	
 	getUsers() {
@@ -45,7 +45,6 @@ class Users {
 			method: 'GET',
 			dataType: 'json',
 			async: false,
-
 			success: data => {
 				this.users = data
 			}
@@ -61,12 +60,9 @@ class Users {
 	
 			this.users.forEach(user => {
 				if(user.id == users_name.value) {
-					this.$div.append(`<p>${JSON.stringify(user)}</p>`);
+					this.$div.append($(`<p>${JSON.stringify(user)}</p>`));
 				}
-			})
-			
-			
-			
+			})		
 	}
 }; 
 
