@@ -3,16 +3,7 @@
 получите данные о пользователях. Элемент select заполните именами пользователей. По нажатию на кнопку “Получить досье” 
 выведите ниже всю доступную информацию о выбранном в данный момент пользователе.
 */
-
-$.ajax('https://jsonplaceholder.typicode.com/users', {
-	method: 'GET',
-	dataType: 'json',
-
-	success: function(users) {
-		new Users(users, $('#usersInfo'));
-		
-		
-		/*users.forEach(function(user) {
+/*users.forEach(function(user) {
 			$('#users_name').append(new Option(user.name, user.id));
 		})
 
@@ -26,26 +17,41 @@ $.ajax('https://jsonplaceholder.typicode.com/users', {
 			})
 
 		})*/
-	}
-})
+
+
 class Users {
-	constructor(users, form) {
+	constructor(form) {
 		this.select__users = '.users__name';
 		this.burron_users = '.users__getter';
 		this.div_dossier = '.users__dossier';
 		
-		this.users = users;
 		this.form = form;
+		
+		this.users = [];
+		this.getUsers();
+		
 
-		this.$select = this.form.find(this.select__users);
-		this.$button = this.form.find(this.burron_users);
-		this.$div = this.form.find(this.div_dossier);
+		this.$select = $(form).find(this.select__users);
+		this.$button = $(form).find(this.burron_users);
+		this.$div = $(form).find(this.div_dossier);
 
-		let options = this.getOptions();
+		this.options = this.getOptions();
 
 		this.$button.click( () =>  this.getDossier()); 
 	}
 	
+	getUsers() {
+		$.ajax('https://jsonplaceholder.typicode.com/users', {
+			method: 'GET',
+			dataType: 'json',
+			async: false,
+
+			success: data => {
+				this.users = data
+			}
+		})
+	}
+
 	getOptions() {
 		this.users.forEach(user => this.$select.append(new Option(user.name, user.id)))
 	}
@@ -64,6 +70,9 @@ class Users {
 	}
 }; 
 
+$(function() {
+	new Users('#usersInfo');
+})
 /* Есть базы:  
 альбомов https://jsonplaceholder.typicode.com/albums 
 фотографий https://jsonplaceholder.typicode.com/photos 
@@ -72,7 +81,7 @@ class Users {
 Фотографии альбома должны загружаться только после выбора соответствующего альбома.
 P.S. Отфильтровать фотографии по принадлежности к альбому можно добавив параметр albumId=идентификатор_альбома
 */ 
-
+/*
 class Albums {
 	constructor(albums) {
 		this.$div = $('.gallery');
@@ -124,7 +133,7 @@ $.ajax('https://jsonplaceholder.typicode.com/photos', {
 		new Photos(photos);
 	}	
 })
-
+*/
 
 
 
