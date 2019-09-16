@@ -4,28 +4,30 @@ class Catalog {
 		
 		this.modalWindow = modalWindow;
 		this.$table = $(table);
+		this.$tr = this.$table.find('.catalog__header')
 		this.$appender = $('.appender');
 		
 		this.books = [];
-		this.load();
+		this.load(() => this.redrow());
 		this.$remover = $('.remover');
 		
 		this.$remover.click((event) => this.deleted(event))
 		this.$appender.click(() => this.create());
-		this.$table.click((event) => this.edit(event));
+		this.$tr.click(() => this.edit());
 	}
 	
-	load() {
+	load(callback) {
 		$.ajax('https://raw.githubusercontent.com/AdukarIT/FedotovaAS/master/Task25/catalogBooks.json', {
 			method: 'GET',
 			dataType: 'json',
 			async: false,
 			success: data => {
-				this.books = data
-			}
+				this.books = data;
+				callback();
+			}		
 		})
 
-		this.redrow();
+		
 	}
 
 	redrow() {
@@ -61,7 +63,7 @@ class Catalog {
     }
     
     edit(event) {
-		if(event.target.parentElement.tagName != 'TR' || $(event.target.parentElement).hasClass(this.table_tr)) return;
+		if($(event.target.parentElement).hasClass(this.table_tr)) return;
 		
 		let tr = event.target.parentElement;
 		this.modalWindow.show(tr);
@@ -69,7 +71,7 @@ class Catalog {
     
     deleted(event) {
     	this.books[event.target.parentElement.dataset.id].remove();
-		this.redrow();
+			this.redrow();
     }
 
 
