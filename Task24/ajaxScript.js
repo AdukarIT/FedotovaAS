@@ -3,8 +3,6 @@
 получите данные о пользователях. Элемент select заполните именами пользователей. По нажатию на кнопку “Получить досье” 
 выведите ниже всю доступную информацию о выбранном в данный момент пользователе.
 */
-
-		/*users.forEach(function(user) {
 /*users.forEach(function(user) {
 			$('#users_name').append(new Option(user.name, user.id));
 		})
@@ -20,20 +18,26 @@
 
 		})*/
 
+
 class Users {
 	constructor(form) {
 		this.select__users = '.users__name';
-		this.button_users = '.users__getter';
-		this.div_dossier = '.users__dossier';		
+		this.burron_users = '.users__getter';
+		this.div_dossier = '.users__dossier';
+		
+		this.form = form;
+		
+		this.users = [];
+		this.getUsers();
+		
 
 		this.$select = $(form).find(this.select__users);
-		this.$button = $(form).find(this.button_users);
+		this.$button = $(form).find(this.burron_users);
 		this.$div = $(form).find(this.div_dossier);
-		
-		this.users = getUsers();
-		let options = this.getOptions();
+
+		this.options = this.getOptions();
+
 		this.$button.click(() => this.getDossier()); 
-		
 	}
 	
 	getUsers() {
@@ -46,12 +50,10 @@ class Users {
 			}
 		})
 	}
-	
+
 	getOptions() {
 		this.users.forEach(user => this.$select.append(new Option(user.name, user.id)))
 	}
-	
-	
 	
 	getDossier() {
 			this.$div.empty();
@@ -128,4 +130,6 @@ $.ajax('https://jsonplaceholder.typicode.com/photos', {
 	}	
 })
 */
+
+
 
