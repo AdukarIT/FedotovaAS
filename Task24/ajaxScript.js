@@ -3,9 +3,9 @@
 получите данные о пользователях. Элемент select заполните именами пользователей. По нажатию на кнопку “Получить досье” 
 выведите ниже всю доступную информацию о выбранном в данный момент пользователе.
 */
-	
-		
+
 		/*users.forEach(function(user) {
+/*users.forEach(function(user) {
 			$('#users_name').append(new Option(user.name, user.id));
 		})
 
@@ -19,7 +19,6 @@
 			})
 
 		})*/
-		
 
 class Users {
 	constructor(form) {
@@ -30,21 +29,22 @@ class Users {
 		this.$select = $(form).find(this.select__users);
 		this.$button = $(form).find(this.button_users);
 		this.$div = $(form).find(this.div_dossier);
-
-		let options = this.getOptions();
-		this.$button.click( () =>  this.getDossier()); 
+		
 		this.users = getUsers();
+		let options = this.getOptions();
+		this.$button.click(() => this.getDossier()); 
+		
 	}
 	
 	getUsers() {
 		$.ajax('https://jsonplaceholder.typicode.com/users', {
 			method: 'GET',
 			dataType: 'json',
-
-			success: function(users) {
-				this.users = users;
+			async: false,
+			success: data => {
+				this.users = data
 			}
-		})	
+		})
 	}
 	
 	getOptions() {
@@ -58,14 +58,15 @@ class Users {
 	
 			this.users.forEach(user => {
 				if(user.id == users_name.value) {
-					this.$div.append(`<p>${JSON.stringify(user)}</p>`);
+					this.$div.append($(`<p>${JSON.stringify(user)}</p>`));
 				}
-			})
-			
-			
-			
+			})		
 	}
 }; 
+
+$(function() {
+	new Users('#usersInfo');
+})
 /* Есть базы:  
 альбомов https://jsonplaceholder.typicode.com/albums 
 фотографий https://jsonplaceholder.typicode.com/photos 
@@ -126,7 +127,5 @@ $.ajax('https://jsonplaceholder.typicode.com/photos', {
 		new Photos(photos);
 	}	
 })
-
-
 */
 

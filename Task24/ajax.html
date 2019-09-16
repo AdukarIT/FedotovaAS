@@ -2,20 +2,16 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="reset.css">
 	</head>
 	<body>
-		<script src='ajaxScript.js'></script>
 		<form class='users' id='usersInfo'>
 			<select id='users_name' class='users__name'></select>
 			<button type="button" id='getter_dossier' class='users__getter'>Show dossier</button>
-			<div class='dossier' class='users__dossier'></div>
+			<div class='users__dossier'></div>
 		</form>
 		<div class='gallery'></div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
-		<script>
-			let a = new Users('#usersInfo');
-		</script>
+		<script src="https://code.jquery.com/jquery-3.4.1.js" defer></script>
+		<script src='ajaxScript.js' defer></script>
 	</body>
 </html>
