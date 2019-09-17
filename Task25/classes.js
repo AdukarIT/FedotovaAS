@@ -4,16 +4,17 @@ class Catalog {
 		
 		this.modalWindow = modalWindow;
 		this.$table = $(table);
-		this.$tr = this.$table.find('.catalog__header')
+		this.$tr_head = this.$table.find('.catalog__header')
 		this.$appender = $('.appender');
 		
 		this.books = [];
 		this.load(() => this.redrow());
+		this.$tr_product = this.$table.find('.product');
 		this.$remover = $('.remover');
 		
 		this.$remover.click((event) => this.deleted(event))
 		this.$appender.click(() => this.create());
-		this.$tr.click(() => this.edit());
+		this.$tr_product.click(event => this.edit(event.target.dataset.id));
 	}
 	
 	load(callback) {
@@ -62,11 +63,12 @@ class Catalog {
     	this.modalWindow.show();
     }
     
-    edit(event) {
-		if($(event.target.parentElement).hasClass(this.table_tr)) return;
-		
-		let tr = event.target.parentElement;
-		this.modalWindow.show(tr);
+    edit(tr_id) {
+		if(tr_id != undefined) {
+			let tr = event.target.parentElement;
+			this.modalWindow.show(tr);
+		}
+		return;
     }
     
     deleted(event) {
