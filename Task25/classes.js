@@ -10,11 +10,14 @@ class Catalog {
 		this.books = [];
 		this.load(() => this.redrow());
 		this.$tr_product = this.$table.find('.product');
-		this.$remover = $('.remover');
-		
-		this.$remover.click((event) => this.deleted(event))
+		this.$remover = $('.remover_hiden');
+
+		const self = this;
+		this.$remover.click(function() {self.deleted(this)});
 		this.$appender.click(() => this.create());
-		this.$tr_product.click(event => this.edit(event.target.dataset.id));
+		this.$tr_product.click(function(event) {
+			if(event.target.nodeName != 'BUTTON') self.edit(this.id);
+		});
 	}
 	
 	load(callback) {
@@ -27,19 +30,18 @@ class Catalog {
 				callback();
 			}		
 		})
-
-		
 	}
 
 	redrow() {
+		$('.product').detach();
 		this.books.forEach(item => {
-			this.$table.append(`<tr class='product' data-id='${item.id}'>
+			this.$table.append(`<tr class='product' id='${item.id}'>
 				<td>${item.id}</td>
-				<td>${item.title}</td>
-				<td>${item.author}</td>
-				<td>${item.prise}</td>
-				<td>${item.description}</td>
-				<td class='adder_hiden'> 
+				<td class='product__name entry'>${item.title}</td>
+				<td class='product__author entry'>${item.author}</td>
+				<td class='product__prise entry'>${item.prise}</td>
+				<td class='product__desc entry'>${item.description}</td>
+				<td class='remover_hiden'> 
 					<button type="button" class="btn btn-outline-success remover">
 						-
 					</button>
@@ -53,32 +55,27 @@ class Catalog {
         // set onclick listener to this.edit(), this.delete()}
 	}
 
-    save(book) {
-    	// save book
-        this.books[ some ] = book;
-        this.redrawBook(book);
-    }
-    
-    create() {
-    	this.modalWindow.show();
-    }
-    
-    edit(tr_id) {
-		if(tr_id != undefined) {
-			let tr = event.target.parentElement;
-			this.modalWindow.show(tr);
-		}
-		return;
-    }
-    
-    deleted(event) {
-    	this.books[event.target.parentElement.dataset.id].remove();
-			this.redrow();
-    }
-
-
-
+	save(book) {
+		// save book
+			this.books[ some ] = book;
+			this.redrawBook(book);
+	}
 	
+	create() {
+		this.modalWindow.show();
+	}
+	
+	edit(book_id) {
+		let book = this.$table.find($(`#${book_id}`)); 
+		this.modalWindow.show(book);
+	}
+	 
+	deleted(remover) {
+		let book = $(remover).parent();
+		let id = book.attr('id');
+		this.books.splice(id - 1, 1, null);
+		book.detach();
+	}
 }
 	
 class Modal {
@@ -92,26 +89,29 @@ class Modal {
 
 		this.$cancel.click(() => this.hide());
 		this.$close.click(() => this.hide());
-		
-
+		this.$save.click(() => this.save());
 	}
 
-
-	show() {
-		this.$modal.addClass('modal_show');
-    }
+	show(items) {
+		if(items != undefined) {
+			let inputs = this.$form.find('input[type="text"]');
+			let item = items.find('.entry');
+			for(let i = 0; i < inputs.length; i++) {
+				inputs[i].value = item[i].textContent;
+			}
+		}
+		this.$modal.addClass('modal_show');	
+  }
     
-    hide() {
+ 	hide() {
 		this.$form.trigger('reset');
 		this.$modal.removeClass('modal_show');
-    }
+	}
     
-    save() {
-    	this.book.title = // fill all the Book properties with its new values
-        
-    	this.saveCallback(this.book);
-        this.hide();
-    }
+	save() {
+    	
+    this.hide();
+  }
 
 
 }

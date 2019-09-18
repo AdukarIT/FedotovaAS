@@ -1,9 +1,34 @@
-.adder_hiden {
+.remover_hiden {
   display: none;
+  position: absolute;
 }
-tr:hover > .adder_hiden{
-    display: block;
-    position: absolute;
+tr:hover {
+    background-color: rgba(118, 160, 124, 0.1);
+    & > .remover_hiden {
+        display: block;
+        border: none;    
+    }
+}
+.product {
+    background-color: rgba(215, 230, 217, 0.1);
+    cursor: pointer;
+}
+.modal__close {
+    display: inline-block;
+    width: 5%;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+       border: 1px rgba(93, 173, 105, 0.3) solid;
+    }
+}
+.catalog__header {
+    background-color: rgba(81, 141, 90, 0.3);
+    font: 14pt Arial,sans-serif;
+    text-align: center;
+    &:hover {
+        background-color: rgba(81, 141, 90, 0.3);
+    }
 }
 
 .fa-calendar-edit {
