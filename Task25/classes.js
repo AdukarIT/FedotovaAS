@@ -13,7 +13,7 @@ class Catalog {
 		this.$remover = $('.remover_hiden');
 
 		const self = this;
-		this.$remover.click(function() {self.deleted(this, self.redrow)});
+		this.$remover.click(function() {self.deleted(this)});
 		this.$appender.click(() => this.create());
 		this.$tr_product.click(function(event) {
 			if(event.target.nodeName != 'BUTTON') self.edit(this.id);
@@ -33,7 +33,6 @@ class Catalog {
 	}
 
 	redrow() {
-		$('.product').detach();
 		this.books.forEach(item => {
 			this.$table.append(`<tr class='product' id='${item.id}'>
 				<td>${item.id}</td>
@@ -50,13 +49,14 @@ class Catalog {
 		})
 	}
 
-	redrawBook(book) {
-    	// redraws the only specified book row
-        // set onclick listener to this.edit(), this.delete()}
+	redrawBook(book_id, event) {
+		let book = 	this.$table.find(`#${book_id}`);		
+		if(event = 'delet') {
+			book.detach();
+		} 
 	}
 
 	save(book) {
-		// save book
 			this.books[ some ] = book;
 			this.redrawBook(book);
 	}
@@ -70,13 +70,13 @@ class Catalog {
 		this.modalWindow.show(book);
 	}
 	 
-	deleted(remover, callback) {
+	deleted(remover) {
 		let book_id = remover.parentElement.id;
 		let index = this.books.findIndex(function(elem) {
 			return elem.id == book_id; 
 		})
 		this.books.splice(index, 1);
-		callback();
+		this.redrawBook(book_id, 'delet');
 	}
 }
 	
@@ -111,7 +111,7 @@ class Modal {
 	}
     
 	save() {
-    	
+
     this.hide();
   }
 
