@@ -13,7 +13,7 @@ class Catalog {
 		this.$remover = $('.remover_hiden');
 
 		const self = this;
-		this.$remover.click(function() {self.deleted(this)});
+		this.$remover.click(function() {self.deleted(this, self.redrow)});
 		this.$appender.click(() => this.create());
 		this.$tr_product.click(function(event) {
 			if(event.target.nodeName != 'BUTTON') self.edit(this.id);
@@ -70,11 +70,13 @@ class Catalog {
 		this.modalWindow.show(book);
 	}
 	 
-	deleted(remover) {
-		let book = $(remover).parent();
-		let id = book.attr('id');
-		this.books.splice(id - 1, 1, null);
-		book.detach();
+	deleted(remover, callback) {
+		let book_id = remover.parentElement.id;
+		let index = this.books.findIndex(function(elem) {
+			return elem.id == book_id; 
+		})
+		this.books.splice(index, 1);
+		callback();
 	}
 }
 	
