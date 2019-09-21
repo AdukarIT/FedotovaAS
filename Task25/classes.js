@@ -9,37 +9,42 @@ class Catalog {
 		
 		this.books = [];
 		this.load(() => this.redrow());
-		this.$tr_product = this.$table.find('.product');
-		this.$remover = $('.remover_hiden');
-
-		const self = this;
-		this.$remover.click(function() {self.deleted(this)});
+		this.$tr_product;
+		this.$remover; 
 		this.$appender.click(() => this.create());
-		this.$tr_product.click(function(event) {
-			if(event.target.nodeName != 'BUTTON') self.edit(this.id);
-		});
+		
 	}
 	
 	load(callback) {
 		$.ajax('https://raw.githubusercontent.com/AdukarIT/FedotovaAS/master/Task25/catalogBooks.json', {
 			method: 'GET',
 			dataType: 'json',
-			async: false,
 			success: data => {
 				this.books = data;
 				callback();
+				this.initEvents();
 			}		
 		})
+	}
+
+	initEvents() {
+		this.$tr_product = this.$table.find('.product');
+		this.$remover = $('.remover_hiden');
+		const self = this;
+		this.$remover.click(function() {self.deleted(this)});
+		this.$tr_product.click(function(event) {
+			if(event.target.nodeName != 'BUTTON') self.edit(this.id);
+		});
 	}
 
 	redrow() {
 		this.books.forEach(item => {
 			this.$table.append(`<tr class='product' id='${item.id}'>
 				<td>${item.id}</td>
-				<td class='product__name entry'>${item.title}</td>
-				<td class='product__author entry'>${item.author}</td>
-				<td class='product__prise entry'>${item.prise}</td>
-				<td class='product__desc entry'>${item.description}</td>
+				<td class='product__name'>${item.title}</td>
+				<td class='product__author'>${item.author}</td>
+				<td class='product__prise'>${item.prise}</td>
+				<td class='product__desc'>${item.description}</td>
 				<td class='remover_hiden'> 
 					<button type="button" class="btn btn-outline-success remover">
 						-
@@ -48,35 +53,66 @@ class Catalog {
 			</tr>`)
 		})
 	}
-
-	redrawBook(book_id, event) {
-		let book = 	this.$table.find(`#${book_id}`);		
-		if(event = 'delet') {
-			book.detach();
-		} 
+	
+	deleteBook(book) {
+			let bookTable = this.$table.find(`#${book.id}`);
+			bookTable.detach();
 	}
 
-	save(book) {
-			this.books[ some ] = book;
-			this.redrawBook(book);
+	addBook(book) {
+			this.$table.append(`<tr class='product' id='${book.id}'>
+			<td>${book.id}</td>
+			<td class='product__name'>${book.title}</td>
+			<td class='product__author'>${book.author}</td>
+			<td class='product__prise'>${book.prise}</td>
+			<td class='product__desc'>${book.description}</td>
+			<td class='remover_hiden'> 
+				<button type="button" class="btn btn-outline-success remover">
+					-
+				</button>
+			</td>
+		</tr>`);
+		
+	} 
+
+	createBook(book) {
+
+	}
+
+	generateId() {
+		return this.books.length == 0 ? 1 : this.books[this.books.length - 1].id + 1;
 	}
 	
 	create() {
-		this.modalWindow.show();
+		let bookObj = {
+			id: this.generateId(),
+			title: '',
+			author: '',
+			prise: '',
+			description: ''
+		}
+		this.modalWindow.show(bookObj, book => {
+			this.books.push(book);
+			this.addBook(book);
+		});
 	}
 	
 	edit(book_id) {
-		let book = this.$table.find($(`#${book_id}`)); 
-		this.modalWindow.show(book);
+		let book = this.books.find(function(elem) {
+			return elem.id == book_id; 
+		})
+		this.modalWindow.show(book, book => {
+			
+		});
 	}
 	 
 	deleted(remover) {
-		let book_id = remover.parentElement.id;
+		let book = remover.parentElement;
 		let index = this.books.findIndex(function(elem) {
-			return elem.id == book_id; 
+			return elem.id == book.id; 
 		})
 		this.books.splice(index, 1);
-		this.redrawBook(book_id, 'delet');
+		this.deleteBook(book);
 	}
 }
 	
@@ -91,29 +127,28 @@ class Modal {
 
 		this.$cancel.click(() => this.hide());
 		this.$close.click(() => this.hide());
-		this.$save.click(() => this.save());
+		
 	}
 
-	show(items) {
-		if(items != undefined) {
-			let inputs = this.$form.find('input[type="text"]');
-			let item = items.find('.entry');
-			for(let i = 0; i < inputs.length; i++) {
-				inputs[i].value = item[i].textContent;
-			}
-		}
-		this.$modal.addClass('modal_show');	
+	show(book, onSuccess) {
+			this.$form.find('#form_name').val(book.title);
+			this.$form.find('#form_author').val(book.author);
+			this.$form.find('#form_prise').val(book.prise);
+			this.$form.find('#form_description').val(book.description);				
+			this.$modal.addClass('modal_show');	
+
+			this.$save.click(() => {
+				book.title = this.$form.find('#form_name').val();
+				book.author = this.$form.find('#form_author').val();
+				book.prise = this.$form.find('#form_prise').val();
+				book.description = this.$form.find('#form_description').val();
+				onSuccess(book);	
+				this.hide();
+			});
   }
     
  	hide() {
 		this.$form.trigger('reset');
 		this.$modal.removeClass('modal_show');
 	}
-    
-	save() {
-
-    this.hide();
-  }
-
-
 }
