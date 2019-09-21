@@ -50,7 +50,7 @@ class Catalog {
 						-
 					</button>
 				</td>
-			</tr>`)
+			</tr>`);
 		})
 	}
 	
@@ -60,7 +60,8 @@ class Catalog {
 	}
 
 	addBook(book) {
-			this.$table.append(`<tr class='product' id='${book.id}'>
+		let evt = this;
+		this.$table.append(`<tr class='product' id='${book.id}'>
 			<td>${book.id}</td>
 			<td class='product__name'>${book.title}</td>
 			<td class='product__author'>${book.author}</td>
@@ -71,12 +72,32 @@ class Catalog {
 					-
 				</button>
 			</td>
-		</tr>`);
-		
+		</tr>`)
+		$(`#${book.id}`).click(function(event) {
+			if(event.target.nodeName != 'BUTTON') evt.edit(this.id);
+		});
+		$(`#${book.id} > .remover_hiden`).click(function() {evt.deleted(this)});
 	} 
 
-	createBook(book) {
-
+	editBook(book, book_id) {
+		let tr = this.$table.find(`#${book_id}`);
+		let evt = this;	
+		tr.empty().append(`
+			<td>${book_id}</td>
+			<td class='product__name'>${book.title}</td>
+			<td class='product__author'>${book.author}</td>
+			<td class='product__prise'>${book.prise}</td>
+			<td class='product__desc'>${book.description}</td>
+			<td class='remover_hiden'> 
+				<button type="button" class="btn btn-outline-success remover">
+					-
+				</button>
+			</td>
+	`)
+		tr.click(function(event) {
+			if(event.target.nodeName != 'BUTTON') evt.edit(this.id);
+		});
+		$(`#${book_id} > .remover_hiden`).click(function() {evt.deleted(this)});
 	}
 
 	generateId() {
@@ -85,24 +106,31 @@ class Catalog {
 	
 	create() {
 		let bookObj = {
-			id: this.generateId(),
 			title: '',
 			author: '',
 			prise: '',
 			description: ''
 		}
 		this.modalWindow.show(bookObj, book => {
+			book.id = this.generateId();
 			this.books.push(book);
 			this.addBook(book);
 		});
 	}
 	
 	edit(book_id) {
-		let book = this.books.find(function(elem) {
+		let bookObj = this.books.find(function(elem) {
 			return elem.id == book_id; 
 		})
-		this.modalWindow.show(book, book => {
-			
+		let index = this.books.findIndex(function(elem) {
+			return elem.id == book_id; 
+		})
+		this.modalWindow.show(bookObj, book => {
+			this.books[index].title = book.title;
+			this.books[index].author = book.author;
+			this.books[index].prise = book.prise;
+			this.books[index].description = book.description;
+			this.editBook(book, book_id);
 		});
 	}
 	 
@@ -127,24 +155,27 @@ class Modal {
 
 		this.$cancel.click(() => this.hide());
 		this.$close.click(() => this.hide());
-		
+
+		this.onSuccess = null;
+		this.$save.click(() => {
+			let book = {};
+			book.title = this.$form.find('#form_name').val();
+			book.author = this.$form.find('#form_author').val();
+			book.prise = this.$form.find('#form_prise').val();
+			book.description = this.$form.find('#form_description').val();
+			this.onSuccess(book);	
+			this.hide();
+		});
 	}
 
 	show(book, onSuccess) {
+		debugger;
 			this.$form.find('#form_name').val(book.title);
 			this.$form.find('#form_author').val(book.author);
 			this.$form.find('#form_prise').val(book.prise);
 			this.$form.find('#form_description').val(book.description);				
 			this.$modal.addClass('modal_show');	
-
-			this.$save.click(() => {
-				book.title = this.$form.find('#form_name').val();
-				book.author = this.$form.find('#form_author').val();
-				book.prise = this.$form.find('#form_prise').val();
-				book.description = this.$form.find('#form_description').val();
-				onSuccess(book);	
-				this.hide();
-			});
+			this.onSuccess = onSuccess;
   }
     
  	hide() {
