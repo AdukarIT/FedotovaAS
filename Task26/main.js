@@ -25,15 +25,15 @@ class Modal {
         this.img = $(`<img src='${src}'>`); 
         
         let state = {
-            page: src
-        }
-
-        // "your thing here"
-        history.pushState(state, '', state.src);
+            page: src,
+        }        
+        
+        history.pushState(state, '', '');
         this.img.click(() => {
             this.$modal.toggleClass('modal_show');
             this.img.detach();
-            }
+            history.pushState({}, '', '');
+          }   
         );    
         this.$modal_item.append(this.img); 
         this.$modal.toggleClass('modal_show');
@@ -41,8 +41,15 @@ class Modal {
 }
 
 window.onpopstate = (e) => {
-    let modal = new Modal('#modal');
-    let img = document.createElement('img');
-    img.setAttribute('src', e.state.page);
-    modal.show(img)
+    if (e.state.page) {
+        debugger;
+        let modal = new Modal('#modal');
+        let img = document.createElement('img');
+        img.setAttribute('src', e.state.page);
+        modal.show(img);
+    }
+    return;
+  
+    let modalContent = document.querySelector('.modal__content');
+//modalContent.innerHTML = '';
 }
