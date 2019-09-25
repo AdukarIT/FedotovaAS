@@ -6,9 +6,9 @@ class Gallery {
         this.$photos = $(photos);
         this.$img = this.$photos.find(this.photos_img);
         self = this;
-        this.$img.click(function() {
-            self.modal.show(this)
-        })
+        this.$img.click((event) => {
+            this.modal.show(event.target)
+        });
     }
 
 }
@@ -22,19 +22,27 @@ class Modal {
 
     show(photo) {
         let src = photo.getAttribute('src');
-        window.onpopstate = (e) => {
-            this.$modal_item.append(`<img src='${src}'>`);
-            this.img = this.$modal_item.find('img');
+        this.img = $(`<img src='${src}'>`); 
+        
+        let state = {
+            page: src
         }
-        let stat = {
-           page: src,
-        }
-        history.pushState(stat, '', stat.page);
+
+        // "your thing here"
+        history.pushState(state, '', state.src);
         this.img.click(() => {
             this.$modal.toggleClass('modal_show');
             this.img.detach();
-          }
-        );
+            }
+        );    
+        this.$modal_item.append(this.img); 
         this.$modal.toggleClass('modal_show');
     }
+}
+
+window.onpopstate = (e) => {
+    let modal = new Modal('#modal');
+    let img = document.createElement('img');
+    img.setAttribute('src', e.state.page);
+    modal.show(img)
 }
