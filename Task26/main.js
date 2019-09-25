@@ -49,7 +49,4 @@ window.onpopstate = (e) => {
         modal.show(img);
     }
     return;
-  
-    let modalContent = document.querySelector('.modal__content');
-//modalContent.innerHTML = '';
 }
