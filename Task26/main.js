@@ -6,7 +6,8 @@ class Gallery {
         this.$photos = $(photos);
         this.$img = this.$photos.find(this.photos_img);
         self = this;
-        this.$img.click((event) => {
+        this.$img.click((event) => { 
+            history.pushState({page: event.target.getAttribute('src')}, '', '');
             this.modal.show(event.target)
         });
     }
@@ -28,7 +29,7 @@ class Modal {
             page: src,
         }        
         
-        history.pushState(state, '', '');
+       
         this.img.click(() => {
             this.$modal.toggleClass('modal_show');
             this.img.detach();
