@@ -22,9 +22,9 @@ class Basket {
         this.$clean.click(() => this.reset())
 
     }
-    redrow(books) {
+    redrow(booksId) { //айди и счет из галереи 
         this.show();
-        this.books = books;
+        this.books = booksId;
         let booksArr = JSON.parse(window.localStorage.getItem('books')) ? JSON.parse(window.localStorage.getItem('books')) : [];
         let result = 0;
         for(let i = 0; i < this.books.length; i++) {
@@ -33,20 +33,20 @@ class Basket {
                 let prise = +book.prise * +this.books[i].count;
                 result += prise;
                 this.$list.append(`<li data-id = "${book.id}" class="list__buy">
-                        <div class="list__buy__content">
-                            <p>название: ${book.title}</p>
-                            <p class="list__by__prise">стоимость: ${book.prise}</p>
-                            <div class="regulPrice">
-                                <button class="regulPrice__button plus" type="button">
-                                    +
-                                </button>
-                                <p class="list__buy__count">${this.books[i].count}</p>
-                                <button class="regulPrice__button minus" type="button">
-                                    -
-                                </button>
-                            </div>
-                        </div>
-                    </li>`);
+                                        <div class="list__buy__content">
+                                            <p>название: ${book.title}</p>
+                                            <p class="list__by__prise">стоимость: ${book.prise}</p>
+                                            <div class="regulPrice">
+                                                <button class="regulPrice__button plus" type="button">
+                                                    +
+                                                </button>
+                                                <p class="list__buy__count">${this.books[i].count}</p>
+                                                <button class="regulPrice__button minus" type="button">
+                                                    -
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>`);
                this.$count = this.$basket.find('.list__buy__count');
                this.event();
                this.getResult(result);
@@ -82,6 +82,9 @@ class Basket {
         } else if(sign == "minus") {
 
         }
+    }
+    reset() {
+
     }
 }
 
