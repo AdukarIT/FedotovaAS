@@ -86,3 +86,32 @@
         font-size: 14px;
     }
 }
+
+.basket__produсt {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1vw;
+
+    background-color: rgba(255, 255, 255, 0.973);
+    width: 100%;
+    min-height: 400px;
+    
+
+}
+.bascet__close {
+    padding: 5px;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+        border: 1px solid rgba(185, 212, 189, 0.63);
+    }
+}
+.basket__content {
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 0.767);
+}
+.basket__checkout {
+    color: rgb(255, 255, 255);
+}

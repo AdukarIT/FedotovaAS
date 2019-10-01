@@ -14,7 +14,7 @@ class Gallery {
         this.basketBooks = []; //массив книг для корзины
 
         this.loadRedrow();
-        this.$buttonBasket.click(() => this.openBasket(this.basketBooks));
+        this.$buttonBasket.click(() => this.openBasket());
     }
     //загружаем 
     //прорисовываем
@@ -23,7 +23,7 @@ class Gallery {
         this.books.forEach(book => {
             this.$ul.append(`<li data-id="${book.id} class="card">
                     <img src="https://i.pinimg.com/736x/e1/b8/c3/e1b8c3cc853fe4e5c99ae93e0c8977b6.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body" data-id="${book.id}">
                         <h5 class="product__list__title card-title">
                             ${book.title}
                         </h5>
@@ -47,7 +47,9 @@ class Gallery {
     }
 
     event() {
+        debugger;
         this.$button.click((event) => {
+            debugger;
             let parentID = event.target.parentElement.dataset.id;
             event.target.innerHTML = 'уже добавлено';
             event.target.setAttribute('disabled', 'disabled')
@@ -55,12 +57,13 @@ class Gallery {
                 id: parentID,
                 count: 1,
             })
+            this.basket.redrow(this.basketBooks);
         });
               
     }
 
-    openBasket(books) {
-        this.basket.redrow(books);
+    openBasket() {
+        this.basket.show()
     }
 }
 module.exports = Gallery;
