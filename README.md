@@ -106,3 +106,6 @@
 
 ## colorPicker
 [Task 23](https://github.com/AdukarIT/FedotovaAS/tree/master/Task23/)
+
+## Итоговая
+[Task 27](https://github.com/AdukarIT/FedotovaAS/tree/master/Task27/)
