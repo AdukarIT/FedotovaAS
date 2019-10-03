@@ -12,9 +12,10 @@ class Gallery {
         this.$button; //
         this.basket = basket; 
         this.basketBooks = []; //массив книг для корзины
-
+       
         this.load();
         this.$buttonBasket.click(() => this.openBasket());
+        
     }
     //загружаем 
     //прорисовываем
@@ -51,20 +52,19 @@ class Gallery {
     }
 
     event() {
-        debugger;
         this.$button.click((event) => {
-            debugger;
             let parentID = event.target.parentElement.dataset.id;
             event.target.innerHTML = 'уже добавлено';
             event.target.setAttribute('disabled', 'disabled');
-            let repeatСheck = this.basketBooks.find((book) => book.id == parentId)
-            if(this.basketBooks.length == 1 || repeatСheck == undefined) {
+            let repeatСheck = this.basketBooks.find((book) => book.id == parentID)
+            if(this.basketBooks.length == 0 || repeatСheck == undefined) {
                 this.basketBooks.push({
                     id: parentID,
                     count: 1,
                 })
-            }
-            window.localStorage.setItem('booksId', JSON.stringify(this.basketBooks));        
+            }    
+            window.localStorage.removeItem('booksID'); 
+            window.localStorage.setItem('booksID', JSON.stringify(this.basketBooks));   
         });      
     }
 

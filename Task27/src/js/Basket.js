@@ -18,13 +18,12 @@ class Basket {
         this.$priceMinus;
         this.$count;
 
-        this.redrow();
         this.$close.click(() => this.toClose());
         this.$clean.click(() => this.reset())
 
     }
-    redrow(booksId) { //айди и счет из галереи 
-        this.books = booksId;
+    redrow() { 
+        this.books = JSON.parse(window.localStorage.getItem('booksID')); //айди и счет из галереи 
         if(this.books != undefined && this.books.length != 0) {
             $('.empty').remove();
                 let booksArr = JSON.parse(window.localStorage.getItem('books')) ? JSON.parse(window.localStorage.getItem('books')) : [];
@@ -78,6 +77,7 @@ class Basket {
 
     show() {
         this.$basket.toggleClass('basket_show');
+        this.redrow();
     }
 
     toClose() {
