@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "build:css": "sass src/scss/style.scss:public/css/main.css",
+    "buildCSS": "sass src/scss/style.scss:public/css/main.css",
     "start": "webpack-dev-server"
   },
   "keywords": [],
