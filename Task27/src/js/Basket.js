@@ -11,26 +11,25 @@ class Basket {
         this.$close =  this.$basket.find(this.basket_span_close);
         this.$clean = this.$basket.find(this.clean);
         this.$list = this.$basket.find(this.basket_list);
-        this.$result = this.$basket.find(this.basket_result);
-        this.$checkout = this.$basket.find(this.basket_button_check);
-        this.books = [];
-        this.$pricePlus;
-        this.$priceMinus;
-        this.$count;
+        this.$result = this.$basket.find(this.basket_result);//итого
+        this.$checkout = this.$basket.find(this.basket_button_check);//купить кнопка
+        this.books = [];//айди и счет из галереи 
+        this.booksArr = JSON.parse(window.localStorage.getItem('books')) ? JSON.parse(window.localStorage.getItem('books')) : []; //массив книг оф
+        this.$pricePlus;//кнопки плюс
+        this.$priceMinus;//минус 
 
         this.$close.click(() => this.toClose());
         this.$clean.click(() => this.reset())
 
     }
     redrow() { 
-        this.books = JSON.parse(window.localStorage.getItem('booksID')); //айди и счет из галереи 
+        this.books = JSON.parse(window.localStorage.getItem('booksID')); 
         this.$list.empty();
         if(this.books != undefined && this.books.length != 0) {
             $('.empty').remove();
-                let booksArr = JSON.parse(window.localStorage.getItem('books')) ? JSON.parse(window.localStorage.getItem('books')) : [];
                 let result = 0;
                 for(let i = 0; i < this.books.length; i++) {
-                    let book = booksArr.find(item => item.id == this.books[i].id); 
+                    let book = this.booksArr.find(item => item.id == this.books[i].id); 
                     if(book) {
                         let prise = +book.prise * +this.books[i].count;
                         result += prise;
@@ -53,7 +52,6 @@ class Basket {
                                                     </div>
                                                 </div>
                                             </li>`);
-                    this.$count = this.$basket.find('.list__buy__count');
                     this.event();
                     this.getResult(result);
                     }
@@ -73,8 +71,8 @@ class Basket {
     event() {
         this.$pricePlus = this.$basket.find('.plus');
         this.$priceMinus = this.$basket.find('.minus');
-        this.$priceMinus.click((e) => this.regulPrise(e.target.parentElement, 'minus'));
-        this.$pricePlus.click((e) => this.regulPrise(e.target.parentElement, 'plus'))
+        this.$priceMinus.click((e) => this.regulPriseMinus(e));
+        this.$pricePlus.click((e) => this.regulPrisePlus(e));
     }
 
     show() {
@@ -86,14 +84,21 @@ class Basket {
         this.$basket.removeClass('basket_show');
     }
 
-    regulPrise(elem, sign) {
-        if(sign == "plus") {
-            let count = +this.$count.html() + 1;
-            this.$count.html(count);
-        } else if(sign == "minus") {
-
-        }
+    regulPrisePlus(elem) {
+        debugger;
+            let count = $(elem).closest('.list__buy');
+             this.booksArr.find(book => {
+                if(book.id == count) {
+                    book.count = +book.count + 1;
+                    return true;
+                } return false;
+            });
+            this.redrow()
     }
+    regulPriseMinus() {
+
+    }
+
     reset() {
         window.localStorage.removeItem('booksID'); 
         this.redrow();
