@@ -24,6 +24,7 @@ class Basket {
     }
     redrow() { 
         this.books = JSON.parse(window.localStorage.getItem('booksID')); //айди и счет из галереи 
+        this.$list.empty();
         if(this.books != undefined && this.books.length != 0) {
             $('.empty').remove();
                 let booksArr = JSON.parse(window.localStorage.getItem('books')) ? JSON.parse(window.localStorage.getItem('books')) : [];
@@ -59,7 +60,8 @@ class Basket {
 
                 }
         } else {
-            this.$list.append('<p class="empty">Ваша карзина пуста</p>');
+            this.$list.append('<p class="empty">Ваша корзина пуста</p>');
+            this.$result.html(`Итого: 0 бел.руб.`);
         }
 
     }
@@ -93,7 +95,8 @@ class Basket {
         }
     }
     reset() {
-
+        window.localStorage.removeItem('booksID'); 
+        this.redrow();
     }
 }
 

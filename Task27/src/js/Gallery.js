@@ -11,7 +11,7 @@ class Gallery {
         this.books; //массив из книг из хоста
         this.$button; //
         this.basket = basket; 
-        this.basketBooks = []; //массив книг для корзины
+        this.basketBooks = JSON.parse(window.localStorage.getItem('booksID')) ? JSON.parse(window.localStorage.getItem('booksID')) : []; //массив из айди книг в корзине
        
         this.load();
         this.$buttonBasket.click(() => this.openBasket());
@@ -48,7 +48,7 @@ class Gallery {
                     </button>
                 </div> 
             </li>`);
-        });                 
+        });                
     }
 
     event() {
@@ -63,7 +63,6 @@ class Gallery {
                     count: 1,
                 })
             }    
-            window.localStorage.removeItem('booksID'); 
             window.localStorage.setItem('booksID', JSON.stringify(this.basketBooks));   
         });      
     }
