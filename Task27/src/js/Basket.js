@@ -20,11 +20,14 @@ class Basket {
 
         this.$close.click(() => this.toClose());
         this.$clean.click(() => this.reset())
-
+        this.$checkout.click(() => {
+            this.reset();
+            alert('Ожидайте звонка от администратора');
+        })
     }
     redrow() { 
-        this.books = JSON.parse(window.localStorage.getItem('booksID')); 
         this.$list.empty();
+        this.books = JSON.parse(window.localStorage.getItem('booksID')) ? JSON.parse(window.localStorage.getItem('booksID')) : [];
         if(this.books != undefined && this.books.length != 0) {
             $('.empty').remove();
                 let result = 0;
@@ -85,22 +88,37 @@ class Basket {
     }
 
     regulPrisePlus(elem) {
-        debugger;
-            let count = $(elem).closest('.list__buy');
-             this.booksArr.find(book => {
-                if(book.id == count) {
-                    book.count = +book.count + 1;
-                    return true;
-                } return false;
-            });
-            this.redrow()
+        let count = elem.target.closest('.list__buy').dataset.id;
+        this.books.find(book => {
+            if(book.id == count) {
+                book.count = +book.count + 1;
+                window.localStorage.setItem('booksID', JSON.stringify(this.books));   
+                return true;
+            } return false;
+        });
+        this.redrow()
     }
-    regulPriseMinus() {
-
+    regulPriseMinus(elem) {
+        let count = elem.target.closest('.list__buy').dataset.id;
+        this.books.find(book => {
+            if(book.id == count) {
+                book.count = +book.count - 1;
+                if(book.count == 0) {
+                   let index = this.books.findIndex((e) => {return book.id == count});
+                   this.books.splice(index, 1);
+                }
+                window.localStorage.setItem('booksID', JSON.stringify(this.books));   
+                return true;
+            } return false;
+        });
+    this.redrow()
     }
 
     reset() {
         window.localStorage.removeItem('booksID'); 
+        for(let i = 0; i < $('[disabled="disabled"]').length; i++) {
+            $('[disabled="disabled"]')[i].removeAttribute('disabled');
+        }
         this.redrow();
     }
 }

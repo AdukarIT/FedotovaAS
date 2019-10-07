@@ -11,7 +11,7 @@ class Gallery {
         this.books; //массив из книг из хоста
         this.$button; //
         this.basket = basket; 
-        this.basketBooks = JSON.parse(window.localStorage.getItem('booksID')) ? JSON.parse(window.localStorage.getItem('booksID')) : []; //массив из айди книг в корзине
+        this.basketBooks = []; //массив из айди книг в корзине
        
         this.load();
         this.$buttonBasket.click(() => this.openBasket());
@@ -27,6 +27,7 @@ class Gallery {
         
     }
     redrow() {
+        this.$ul.empty();
         this.books.forEach(book => {
             this.$ul.append(`<li data-id="${book.id} class="card">
                 <img src="https://i.pinimg.com/736x/e1/b8/c3/e1b8c3cc853fe4e5c99ae93e0c8977b6.jpg" class="card-img-top" alt="...">
@@ -68,7 +69,7 @@ class Gallery {
     }
 
     openBasket() {
-        this.basket.show()
+        this.basket.show();
     }
 }
 module.exports = Gallery;
